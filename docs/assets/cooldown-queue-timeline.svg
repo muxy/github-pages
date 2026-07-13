@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="360" viewBox="0 0 1120 360" role="img" aria-labelledby="title desc">
+  <title id="title">Cooldown queue timeline</title>
+  <desc id="desc">A timeline showing an action executing immediately, a second request queued during cooldown, and queued execution after cooldown expires.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f9fc; }
+      .line { stroke: #6a7c90; stroke-width: 4; }
+      .tick { stroke: #6a7c90; stroke-width: 3; }
+      .exec { fill: #ecf7ef; stroke: #72b883; stroke-width: 2; rx: 14; }
+      .queue { fill: #fff8f0; stroke: #d6a15f; stroke-width: 2; rx: 14; }
+      .title { fill: #12365d; font: 700 21px Arial, sans-serif; }
+      .body { fill: #4d6075; font: 16px Arial, sans-serif; }
+      .time { fill: #2f6fa8; font: 700 16px Arial, sans-serif; }
+      .arrow { stroke: #2f7abf; stroke-width: 4; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#2f7abf"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1120" height="360" rx="18"/>
+  <line class="line" x1="105" y1="180" x2="1010" y2="180"/>
+  <line class="tick" x1="145" y1="160" x2="145" y2="200"/>
+  <line class="tick" x1="425" y1="160" x2="425" y2="200"/>
+  <line class="tick" x1="735" y1="160" x2="735" y2="200"/>
+  <line class="tick" x1="975" y1="160" x2="975" y2="200"/>
+  <text class="time" x="126" y="226">0s</text>
+  <text class="time" x="402" y="226">5s</text>
+  <text class="time" x="708" y="226">30s</text>
+  <text class="time" x="948" y="226">60s</text>
+  <g transform="translate(55 52)">
+    <rect class="exec" width="185" height="82"/>
+    <text class="title" x="18" y="34">Request A</text>
+    <text class="body" x="18" y="60">Executes now</text>
+  </g>
+  <path class="arrow" d="M 145 135 V 158"/>
+  <g transform="translate(335 52)">
+    <rect class="queue" width="200" height="82"/>
+    <text class="title" x="18" y="34">Request B</text>
+    <text class="body" x="18" y="60">Queued in cooldown</text>
+  </g>
+  <path class="arrow" d="M 425 135 V 158"/>
+  <g transform="translate(635 52)">
+    <rect class="exec" width="205" height="82"/>
+    <text class="title" x="18" y="34">Cooldown ends</text>
+    <text class="body" x="18" y="60">Request B executes</text>
+  </g>
+  <path class="arrow" d="M 735 135 V 158"/>
+  <text class="body" x="116" y="282">Use one FIFO queue per Action ID. Keep queues short so stale effects do not fire long after viewers expected them.</text>
+</svg>

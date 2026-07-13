@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="360" viewBox="0 0 1120 360" role="img" aria-labelledby="title desc">
+  <title id="title">Gateway lifecycle from Unity to Twitch viewers</title>
+  <desc id="desc">A five step diagram showing Unity game, Gateway SDK owner, Muxy Gateway, Twitch extension, and viewers.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f9fc; }
+      .card { fill: #ffffff; stroke: #b8c7d9; stroke-width: 2; rx: 14; }
+      .primary { fill: #12365d; font: 700 24px Arial, sans-serif; }
+      .secondary { fill: #4d6075; font: 16px Arial, sans-serif; }
+      .arrow { stroke: #2f7abf; stroke-width: 4; fill: none; marker-end: url(#arrowhead); }
+      .badge { fill: #e8f2fc; stroke: #b8d4ef; stroke-width: 1.5; }
+      .badgeText { fill: #2f6fa8; font: 700 14px Arial, sans-serif; }
+    </style>
+    <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#2f7abf"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1120" height="360" rx="18"/>
+  <g transform="translate(42 70)">
+    <rect class="card" x="0" y="0" width="175" height="150"/>
+    <rect class="badge" x="22" y="22" width="52" height="26" rx="13"/>
+    <text class="badgeText" x="48" y="40" text-anchor="middle">1</text>
+    <text class="primary" x="22" y="78">Unity Game</text>
+    <text class="secondary" x="22" y="108">Scenes, UI, gameplay</text>
+    <text class="secondary" x="22" y="132">systems</text>
+  </g>
+  <path class="arrow" d="M 226 145 H 296"/>
+  <g transform="translate(306 70)">
+    <rect class="card" x="0" y="0" width="190" height="150"/>
+    <rect class="badge" x="22" y="22" width="52" height="26" rx="13"/>
+    <text class="badgeText" x="48" y="40" text-anchor="middle">2</text>
+    <text class="primary" x="22" y="78">SDK Owner</text>
+    <text class="secondary" x="22" y="108">GameID, environment,</text>
+    <text class="secondary" x="22" y="132">SDK.Update()</text>
+  </g>
+  <path class="arrow" d="M 506 145 H 576"/>
+  <g transform="translate(586 70)">
+    <rect class="card" x="0" y="0" width="170" height="150"/>
+    <rect class="badge" x="22" y="22" width="52" height="26" rx="13"/>
+    <text class="badgeText" x="48" y="40" text-anchor="middle">3</text>
+    <text class="primary" x="22" y="78">Muxy</text>
+    <text class="primary" x="22" y="106">Gateway</text>
+    <text class="secondary" x="22" y="132">Backend transport</text>
+  </g>
+  <path class="arrow" d="M 766 145 H 836"/>
+  <g transform="translate(846 70)">
+    <rect class="card" x="0" y="0" width="220" height="150"/>
+    <rect class="badge" x="22" y="22" width="52" height="26" rx="13"/>
+    <text class="badgeText" x="48" y="40" text-anchor="middle">4</text>
+    <text class="primary" x="22" y="78">Twitch Extension</text>
+    <text class="secondary" x="22" y="108">Actions, polls,</text>
+    <text class="secondary" x="22" y="132">game texts</text>
+  </g>
+  <path class="arrow" d="M 956 226 V 268"/>
+  <g transform="translate(846 270)">
+    <rect class="card" x="0" y="0" width="220" height="58"/>
+    <text class="primary" x="22" y="37">Viewers interact</text>
+  </g>
+</svg>

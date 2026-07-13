@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="330" viewBox="0 0 1120 330" role="img" aria-labelledby="title desc">
+  <title id="title">Broadcaster authentication flow</title>
+  <desc id="desc">A sequence showing configuration PIN entry, token save, and silent reauthentication.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f9fc; }
+      .step { fill: #ffffff; stroke: #b8c7d9; stroke-width: 2; rx: 14; }
+      .ok { fill: #ecf7ef; stroke: #9ac7a5; stroke-width: 2; rx: 14; }
+      .title { fill: #12365d; font: 700 22px Arial, sans-serif; }
+      .body { fill: #4d6075; font: 16px Arial, sans-serif; }
+      .arrow { stroke: #2f7abf; stroke-width: 4; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#2f7abf"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1120" height="330" rx="18"/>
+  <g transform="translate(44 74)">
+    <rect class="step" width="180" height="132"/>
+    <text class="title" x="22" y="42">Extension</text>
+    <text class="body" x="22" y="74">Streamer copies</text>
+    <text class="body" x="22" y="98">Configuration PIN</text>
+  </g>
+  <path class="arrow" d="M 236 140 H 306"/>
+  <g transform="translate(318 74)">
+    <rect class="step" width="180" height="132"/>
+    <text class="title" x="22" y="42">Game UI</text>
+    <text class="body" x="22" y="74">Trim and uppercase</text>
+    <text class="body" x="22" y="98">the PIN</text>
+  </g>
+  <path class="arrow" d="M 510 140 H 580"/>
+  <g transform="translate(592 74)">
+    <rect class="step" width="190" height="132"/>
+    <text class="title" x="22" y="42">Gateway SDK</text>
+    <text class="body" x="22" y="74">AuthenticateWithPIN</text>
+    <text class="body" x="22" y="98">returns token</text>
+  </g>
+  <path class="arrow" d="M 794 140 H 864"/>
+  <g transform="translate(876 74)">
+    <rect class="ok" width="200" height="132"/>
+    <text class="title" x="22" y="42">Connected</text>
+    <text class="body" x="22" y="74">Save refresh token</text>
+    <text class="body" x="22" y="98">for next launch</text>
+  </g>
+  <path class="arrow" d="M 976 215 C 976 270 164 270 164 215"/>
+  <text class="body" x="422" y="292">Next launch: AuthenticateWithRefreshToken before asking for a new PIN</text>
+</svg>

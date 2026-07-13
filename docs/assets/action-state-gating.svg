@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="370" viewBox="0 0 1120 370" role="img" aria-labelledby="title desc">
+  <title id="title">Action availability by game state</title>
+  <desc id="desc">A state diagram showing actions hidden or cleared in menus, disabled during loading and pause, and available during gameplay.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f9fc; }
+      .off { fill: #fff8f0; stroke: #d6a15f; stroke-width: 2; rx: 14; }
+      .on { fill: #ecf7ef; stroke: #72b883; stroke-width: 2; rx: 14; }
+      .title { fill: #12365d; font: 700 22px Arial, sans-serif; }
+      .body { fill: #4d6075; font: 16px Arial, sans-serif; }
+      .arrow { stroke: #2f7abf; stroke-width: 4; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#2f7abf"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1120" height="370" rx="18"/>
+  <g transform="translate(42 115)">
+    <rect class="off" width="170" height="110"/>
+    <text class="title" x="22" y="44">Main Menu</text>
+    <text class="body" x="22" y="76">Clear actions</text>
+  </g>
+  <path class="arrow" d="M 224 170 H 292"/>
+  <g transform="translate(304 115)">
+    <rect class="off" width="170" height="110"/>
+    <text class="title" x="22" y="44">Loading</text>
+    <text class="body" x="22" y="76">Disable actions</text>
+  </g>
+  <path class="arrow" d="M 486 170 H 554"/>
+  <g transform="translate(566 95)">
+    <rect class="on" width="190" height="150"/>
+    <text class="title" x="22" y="44">Gameplay</text>
+    <text class="body" x="22" y="76">Set available</text>
+    <text class="body" x="22" y="100">actions</text>
+    <text class="body" x="22" y="124">Update texts</text>
+  </g>
+  <path class="arrow" d="M 768 170 H 836"/>
+  <g transform="translate(848 115)">
+    <rect class="off" width="220" height="110"/>
+    <text class="title" x="22" y="44">Pause / Cutscene</text>
+    <text class="body" x="22" y="76">Disable or hide</text>
+  </g>
+  <path class="arrow" d="M 956 232 C 956 318 132 318 132 232"/>
+  <text class="body" x="386" y="338">On results, disconnects, or return to menu: clear gameplay actions</text>
+</svg>
