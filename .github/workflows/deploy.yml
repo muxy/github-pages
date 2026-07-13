@@ -32,6 +32,8 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Migrate ReadMe export markup
         run: python scripts/migrate_readme_export.py
@@ -54,4 +56,3 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
-
