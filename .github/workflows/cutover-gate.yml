@@ -1,0 +1,33 @@
+name: Verify docs production cutover gate
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      DOCS_PRODUCTION: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt -r requirements-dev.txt
+      - name: Require every current page and SDK release to be approved
+        run: |
+          python scripts/validate_docs.py --require-approved
+          python scripts/verify_sdk_sources.py --online
+          python scripts/verify_sdk_snippets.py --online
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Verify generated reference and static contracts
+        run: |
+          python scripts/generate_api_reference.py
+          mkdocs build --strict
+          python scripts/generate_site_contracts.py
+          python scripts/validate_docs.py --site site

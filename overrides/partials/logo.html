@@ -1,0 +1,11 @@
+{% if config.theme.logo %}
+  <img
+    src="{{ config.theme.logo | url }}"
+    alt="Muxy"
+    width="567"
+    height="567"
+  >
+{% else %}
+  {% set icon = config.theme.icon.logo or "material/library" %}
+  {% include ".icons/" ~ icon ~ ".svg" %}
+{% endif %}

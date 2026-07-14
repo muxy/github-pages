@@ -1,0 +1,9 @@
+* @muxy/engineering
+
+/openapi/ @albert-wang
+/scripts/generate_api_reference.py @albert-wang
+/docs/reference/ @albert-wang
+/docs/docs/unity-gateway-*.md @albert-wang @soulfoam
+/docs/docs/unity-gamelink-tutorial.md @albert-wang @soulfoam
+/docs/docs/unity-fps-demo-code-walkthrough.md @albert-wang @soulfoam
+/docs/recipes/gamelink-*.md @albert-wang

@@ -1,0 +1,31 @@
+sources:
+  medkit:
+    products: [MEDKit]
+    repository: muxy/extensions-js
+    documented_version: 2.4.18
+    npm_package: '@muxy/extensions-js'
+    release_state: released
+  gateway-unity:
+    products: [Gateway]
+    repository: muxy/gateway-unity
+    documented_version: v1.0.0-rc
+    ref: v1.0.0-rc
+    release_state: tagged-source
+  gamelink-unity:
+    products: [Unity]
+    repository: muxy/gamelink-unity
+    documented_version: unverified
+    ref: d68d60fee8f7a5615a126e3aa6013b969be4ea03
+    release_state: unpublished
+  gamelink-cpp:
+    products: [GameLink WebSocket, GameLink Native]
+    repository: muxy/gamelink-cpp
+    documented_version: commit-16c6b97
+    ref: 16c6b9796ae02105153ac33482d83ac609398d2e
+    release_state: unpublished
+  gamelink-unity-fps-demo:
+    products: []
+    repository: muxy/gamelink-unity-fps-demo
+    documented_version: unverified
+    ref: 0c4975d3a670aefe642dff2429af8fc481443a7f
+    release_state: sample

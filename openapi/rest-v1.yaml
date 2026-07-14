@@ -1,0 +1,1988 @@
+openapi: 3.1.0
+info:
+  title: Muxy REST API
+  version: 1.0.0
+  description: Version-controlled source of truth recovered from the Muxy ReadMe API
+    reference.
+servers:
+- url: https://api.muxy.io/v1/e
+paths:
+  /accumulate:
+    get:
+      summary: Accumulate
+      description: 'Accumulate
+
+
+        Requires an admin, backend, or broadcaster JWT.'
+      operationId: get-accumulate
+      parameters:
+      - name: id
+        in: query
+        description: The name of the accumulation buffer from which to retrieve data.
+        schema:
+          type: string
+          default: default
+      - name: start
+        in: query
+        description: Unix millisecond timestamp of earliest entry to include in the
+          result.
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        observed:
+                          type: integer
+                          example: 1634401498121
+                          default: 0
+                        channel_id:
+                          type: string
+                          example: '12345'
+                        opaque_user_id:
+                          type: string
+                          example: U12345
+                        user_id:
+                          type: string
+                          example: '12345'
+                        data:
+                          type: object
+                          properties: {}
+                  latest:
+                    type: integer
+                    example: 1634401498121
+                    default: 0
+              example:
+                data:
+                - observed: 1634401498121
+                  channel_id: '12345'
+                  opaque_user_id: U12345
+                  user_id: ''
+                  data:
+                    next_game: Day of the Tentacle
+                latest: 1634401498121
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+        '403':
+          description: The JWT role is not allowed to perform this operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: The JWT role is not allowed to perform this operation.
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request GET \\\n  --url https://api.muxy.io/v1/e/accumulate\
+            \ \\\n  --header 'authorization: <Client ID> <broadcaster, admin, or backend\
+            \ JWT>' \\\n  --header 'content-type: application/json'"
+        samples-languages:
+        - curl
+      x-doc-slug: accumulate-1
+      security:
+      - MuxyAuthorization: []
+    post:
+      summary: Accumulate
+      description: ''
+      operationId: post-accumulate
+      parameters:
+      - name: id
+        in: query
+        description: The name of the accumulation buffer to which to write data.
+        schema:
+          type: string
+          default: default
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Complete JSON value to store or submit.
+              additionalProperties: true
+            example:
+              next_game: Day of the Tentacle
+        required: true
+      responses:
+        '200':
+          description: Write accepted. The current service returns an empty JSON object.
+          content:
+            application/json:
+              schema:
+                type: object
+                maxProperties: 0
+              example: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request POST \\\n  --url https://api.muxy.io/v1/e/accumulate\
+            \ \\\n  --header 'authorization: <Client ID> <any JWT>' \\\n  --header\
+            \ 'content-type: application/json' \\\n  --data '{ \"next_game\": \"Day\
+            \ of the Tentacle\" }'"
+        samples-languages:
+        - curl
+      x-doc-slug: accumulate-2
+      security:
+      - MuxyAuthorization: []
+  /config/channel:
+    post:
+      summary: Channel Config
+      description: 'Channel Config
+
+
+        Requires an admin or broadcaster JWT.'
+      operationId: post-config-channel
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Complete JSON value to store or submit.
+              additionalProperties: true
+            example:
+              broadcaster_birthday: '2000-01-01'
+        required: true
+      responses:
+        '200':
+          description: Write accepted. The current service returns an empty JSON object.
+          content:
+            application/json:
+              schema:
+                type: object
+                maxProperties: 0
+              example: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+        '403':
+          description: The JWT role is not allowed to perform this operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: The JWT role is not allowed to perform this operation.
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request POST \\\n  --url https://sandbox.api.muxy.io/v1/e/config/channel\
+            \ \\\n  --header 'authorization: <Client ID> <admin or broadcaster JWT>'\
+            \ \\\n  --header 'content-type: application/json' \\\n  --data '{ \"broadcaster_birthday\"\
+            : \"2000-01-01\" }'"
+        - language: javascript
+          code: "const medkit = new Muxy.SDK();\nawait medkit.loaded();\n\nconst state\
+            \ = medkit.setChannelConfig({\n  \"broadcaster_birthday\": \"2000-01-01\"\
+            \n});"
+        samples-languages:
+        - curl
+        - javascript
+      x-doc-slug: channel-config-1
+      security:
+      - MuxyAuthorization: []
+    patch:
+      summary: Channel Config
+      description: 'Channel Config
+
+
+        Requires an admin or broadcaster JWT.'
+      operationId: patch-config-channel
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - type: array
+                description: RFC 6902 JSON Patch operations.
+                items:
+                  $ref: '#/components/schemas/JsonPatchOperation'
+              - type: object
+                description: JSON Merge Patch object.
+                additionalProperties: true
+            example:
+            - op: replace
+              path: /favorite_color
+              value: blue
+        required: true
+      responses:
+        '200':
+          description: Write accepted. The current service returns an empty JSON object.
+          content:
+            application/json:
+              schema:
+                type: object
+                maxProperties: 0
+              example: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+        '403':
+          description: The JWT role is not allowed to perform this operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: The JWT role is not allowed to perform this operation.
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request PATCH \\\n  --url https://api.muxy.io/v1/e/config/channel\
+            \ \\\n  --header 'authorization: <Client ID> <admin or broadcaster JWT>'\
+            \ \\\n  --header 'content-type: application/json' \\\n  --data '[{ \"\
+            op\": \"add\", \"path\": \"/settings/enable_features\", \"value\": true\
+            \ }]'"
+        samples-languages:
+        - curl
+      x-doc-slug: channel-config-2
+      security:
+      - MuxyAuthorization: []
+    get:
+      summary: Channel Config
+      description: ''
+      operationId: get-config-channel
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              example:
+                broadcaster_birthday: '2000-01-01'
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request GET \\\n  --url https://api.muxy.io/v1/e/config/channel\
+            \ \\\n  --header 'authorization: <Client ID> <any JWT>' \\\n  --header\
+            \ 'content-type: application/json'"
+        - language: javascript
+          code: 'const medkit = new Muxy.SDK();
+
+            await medkit.loaded();
+
+
+            const config = medkit.getChannelConfig();'
+        samples-languages:
+        - curl
+        - javascript
+      x-doc-slug: channel-config
+      security:
+      - MuxyAuthorization: []
+  /channel_state:
+    post:
+      summary: Channel State
+      description: 'Channel State
+
+
+        Requires an admin, backend, or broadcaster JWT.'
+      operationId: post-channel-state
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Complete JSON value to store or submit.
+              additionalProperties: true
+            example:
+              favorite_color: blue
+        required: true
+      responses:
+        '200':
+          description: Write accepted. The current service returns an empty JSON object.
+          content:
+            application/json:
+              schema:
+                type: object
+                maxProperties: 0
+              example: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+        '403':
+          description: The JWT role is not allowed to perform this operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: The JWT role is not allowed to perform this operation.
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request POST \\\n  --url https://sandbox.api.muxy.io/v1/e/channel_state\
+            \ \\\n  --header 'authorization: <Client ID> <admin, backend, or broadcaster\
+            \ JWT>' \\\n  --header 'content-type: application/json' \\\n  --data '{\
+            \ \"favorite_color\": \"blue\" }'"
+        samples-languages:
+        - curl
+      x-doc-slug: channel-state-1
+      security:
+      - MuxyAuthorization: []
+    patch:
+      summary: Channel State
+      description: 'Channel State
+
+
+        Requires an admin, backend, or broadcaster JWT.'
+      operationId: patch-channel-state
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - type: array
+                description: RFC 6902 JSON Patch operations.
+                items:
+                  $ref: '#/components/schemas/JsonPatchOperation'
+              - type: object
+                description: JSON Merge Patch object.
+                additionalProperties: true
+            example:
+            - op: replace
+              path: /favorite_color
+              value: blue
+        required: true
+      responses:
+        '200':
+          description: Write accepted. The current service returns an empty JSON object.
+          content:
+            application/json:
+              schema:
+                type: object
+                maxProperties: 0
+              example: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+        '403':
+          description: The JWT role is not allowed to perform this operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: The JWT role is not allowed to perform this operation.
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request PATCH \\\n  --url https://api.muxy.io/v1/e/channel_state\
+            \ \\\n  --header 'authorization: <Client ID> <admin, backend, or broadcaster\
+            \ JWT>' \\\n  --header 'content-type: application/json' \\\n  --data '[{\
+            \ \"op\": \"add\", \"path\": \"/ice_cream/toppings\", \"value\": [\"chocolate\
+            \ chips\"] }]'"
+        samples-languages:
+        - curl
+      x-doc-slug: channel-state-2
+      security:
+      - MuxyAuthorization: []
+    get:
+      summary: Channel State
+      description: ''
+      operationId: get-channel-state
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              example:
+                favorite_color: blue
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request GET \\\n  --url https://api.muxy.io/v1/e/channel_state\
+            \ \\\n  --header 'authorization: <Client ID> <any JWT>' \\\n  --header\
+            \ 'content-type: application/json'"
+        samples-languages:
+        - curl
+      x-doc-slug: channel-state
+      security:
+      - MuxyAuthorization: []
+  /config/extension:
+    get:
+      summary: Extension Config
+      description: ''
+      operationId: get-config-extension
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              example:
+                release_date: '2021-10-31'
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request GET \\\n  --url https://api.muxy.io/v1/e/config/extension\
+            \ \\\n  --header 'authorization: <Client ID> <any JWT>' \\\n  --header\
+            \ 'content-type: application/json'"
+          name: Request global config data
+        - language: javascript
+          code: 'const medkit = new Muxy.SDK();
+
+            await medkit.loaded();
+
+
+            const config = medkit.getExtensionConfig();'
+        samples-languages:
+        - curl
+        - javascript
+      x-doc-slug: extension-config-1
+      security:
+      - MuxyAuthorization: []
+    post:
+      summary: Extension Config
+      description: 'Extension Config
+
+
+        Requires an admin JWT; backend JWTs are rejected.'
+      operationId: post-config-extension
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Complete JSON value to store or submit.
+              additionalProperties: true
+            example:
+              release_date: '2021-10-31'
+        required: true
+      responses:
+        '200':
+          description: Write accepted. The current service returns an empty JSON object.
+          content:
+            application/json:
+              schema:
+                type: object
+                maxProperties: 0
+              example: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+        '403':
+          description: The JWT role is not allowed to perform this operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: The JWT role is not allowed to perform this operation.
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request POST \\\n  --url https://sandbox.api.muxy.io/v1/e/config/extension\
+            \ \\\n  --header 'authorization: <Client ID> <admin JWT>' \\\n  --header\
+            \ 'content-type: application/json' \\\n  --data '{ \"release_date\": \"\
+            2021-10-31\" }'"
+        - language: javascript
+          code: "const medkit = new Muxy.SDK();\nawait medkit.loaded();\n\nconst state\
+            \ = medkit.setExtensionConfig({\n  \"release_date\": \"2021-10-31\"\n\
+            });"
+        samples-languages:
+        - curl
+        - javascript
+      x-doc-slug: extension-config-2
+      security:
+      - MuxyAuthorization: []
+    patch:
+      summary: Extension Config
+      description: 'Extension Config
+
+
+        Requires an admin JWT; backend JWTs are rejected.'
+      operationId: patch-config-extension
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - type: array
+                description: RFC 6902 JSON Patch operations.
+                items:
+                  $ref: '#/components/schemas/JsonPatchOperation'
+              - type: object
+                description: JSON Merge Patch object.
+                additionalProperties: true
+            example:
+            - op: replace
+              path: /favorite_color
+              value: blue
+        required: true
+      responses:
+        '200':
+          description: Write accepted. The current service returns an empty JSON object.
+          content:
+            application/json:
+              schema:
+                type: object
+                maxProperties: 0
+              example: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+        '403':
+          description: The JWT role is not allowed to perform this operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: The JWT role is not allowed to perform this operation.
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request PATCH \\\n  --url https://api.muxy.io/v1/e/config/extension\
+            \ \\\n  --header 'authorization: <Client ID> <admin JWT>' \\\n  --header\
+            \ 'content-type: application/json' \\\n  --data '[{ \"op\": \"add\", \"\
+            path\": \"/settings/enable_features\", \"value\": true }]'"
+        samples-languages:
+        - curl
+      x-doc-slug: extension-config-3
+      security:
+      - MuxyAuthorization: []
+  /config:
+    get:
+      summary: All Config
+      description: ''
+      operationId: get-config
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  channel:
+                    type: object
+                    properties: {}
+                  extension:
+                    type: object
+                    properties: {}
+              example:
+                channel: {}
+                extension: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request GET \\\n  --url https://api.muxy.io/v1/e/config \\\
+            \n  --header 'authorization: <Client ID> <any JWT>' \\\n  --header 'content-type:\
+            \ application/json'"
+        - language: javascript
+          code: 'const medkit = new Muxy.SDK();
+
+            await medkit.loaded();
+
+
+            const config = medkit.getConfig();'
+        - language: node
+          code: "type ExtensionConfig = {\n  enablePurchases?: Boolean;\n};\ntype\
+            \ ChannelConfig = {\n  itemAmount?: Number;\n};\ntype Config = {\n  channel:\
+            \ ChannelConfig;\n  extension: ExtensionConfig;\n};\n\nconst medkit =\
+            \ new Muxy.SDK();\nawait medkit.loaded();\n\nconst config = medkit.getConfig<Config>();\n\
+            console.log(config.channel.itemAmount || 100);"
+        samples-languages:
+        - curl
+        - javascript
+        - node
+      x-doc-slug: extension-config
+      security:
+      - MuxyAuthorization: []
+  /extension_state:
+    patch:
+      summary: Extension State
+      description: 'Extension State
+
+
+        Requires a validated admin or backend JWT.'
+      operationId: patch-extension-state
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - type: array
+                description: RFC 6902 JSON Patch operations.
+                items:
+                  $ref: '#/components/schemas/JsonPatchOperation'
+              - type: object
+                description: JSON Merge Patch object.
+                additionalProperties: true
+            example:
+            - op: replace
+              path: /favorite_color
+              value: blue
+        required: true
+      responses:
+        '200':
+          description: Write accepted. The current service returns an empty JSON object.
+          content:
+            application/json:
+              schema:
+                type: object
+                maxProperties: 0
+              example: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+        '403':
+          description: The JWT role is not allowed to perform this operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: The JWT role is not allowed to perform this operation.
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request PATCH \\\n  --url https://api.muxy.io/v1/e/extension_state\
+            \ \\\n  --header 'authorization: <Client ID> <Backend JWT>' \\\n  --header\
+            \ 'content-type: application/json' \\\n  --data '[{ \"op\": \"add\", \"\
+            path\": \"/ice_cream/toppings\", \"value\": [\"sprinkles\", \"caramel\"\
+            ] }]'"
+        samples-languages:
+        - curl
+      x-doc-slug: extension-state-1
+      security:
+      - MuxyAuthorization: []
+    post:
+      summary: Extension State
+      description: 'Extension State
+
+
+        Requires a validated admin or backend JWT.'
+      operationId: post-extension-state
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Complete JSON value to store or submit.
+              additionalProperties: true
+            example:
+              favorite_color: blue
+        required: true
+      responses:
+        '200':
+          description: Write accepted. The current service returns an empty JSON object.
+          content:
+            application/json:
+              schema:
+                type: object
+                maxProperties: 0
+              example: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+        '403':
+          description: The JWT role is not allowed to perform this operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: The JWT role is not allowed to perform this operation.
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request POST \\\n  --url https://sandbox.api.muxy.io/v1/e/extension_state\
+            \ \\\n  --header 'authorization: <Client ID> <admin or backend JWT>' \\\
+            \n  --header 'content-type: application/json' \\\n  --data '{ \"favorite_color\"\
+            : \"blue\" }'"
+        samples-languages:
+        - curl
+      x-doc-slug: extension-state
+      security:
+      - MuxyAuthorization: []
+    get:
+      summary: Extension State
+      description: ''
+      operationId: get-extension-state
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              example:
+                favorite_color: blue
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request GET \\\n  --url https://api.muxy.io/v1/e/extension_state\
+            \ \\\n  --header 'authorization: <Client ID> <any JWT>' \\\n  --header\
+            \ 'content-type: application/json'"
+        samples-languages:
+        - curl
+      x-doc-slug: viewer-state-4
+      security:
+      - MuxyAuthorization: []
+  /extension_viewer_state:
+    post:
+      summary: Extension Viewer State
+      description: ''
+      operationId: post-extension-viewer-state
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Complete JSON value to store or submit.
+              additionalProperties: true
+            example:
+              favorite_color: blue
+        required: true
+      responses:
+        '200':
+          description: Write accepted. The current service returns an empty JSON object.
+          content:
+            application/json:
+              schema:
+                type: object
+                maxProperties: 0
+              example: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request POST \\\n  --url https://sandbox.api.muxy.io/v1/e/extension_viewer_state\
+            \ \\\n  --header 'authorization: <Client ID> <viewer JWT>' \\\n  --header\
+            \ 'content-type: application/json' \\\n  --data '{ \"favorite_color\"\
+            : \"blue\" }'"
+        samples-languages:
+        - curl
+      x-doc-slug: extension-viewer-state-1
+      security:
+      - MuxyAuthorization: []
+    patch:
+      summary: Extension Viewer State
+      description: ''
+      operationId: patch-extension-viewer-state
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - type: array
+                description: RFC 6902 JSON Patch operations.
+                items:
+                  $ref: '#/components/schemas/JsonPatchOperation'
+              - type: object
+                description: JSON Merge Patch object.
+                additionalProperties: true
+            example:
+            - op: replace
+              path: /favorite_color
+              value: blue
+        required: true
+        description: Admin JWTs may also send an object mapping up to 1,000 Twitch
+          user IDs to patch values.
+      responses:
+        '200':
+          description: Write accepted. The current service returns an empty JSON object.
+          content:
+            application/json:
+              schema:
+                type: object
+                maxProperties: 0
+              example: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request PATCH \\\n  --url https://api.muxy.io/v1/e/extension_viewer_state\
+            \ \\\n  --header 'authorization: <Client ID> <viewer JWT>' \\\n  --header\
+            \ 'content-type: application/json' \\\n  --data '[{ \"op\": \"add\", \"\
+            path\": \"/ice_cream/toppings\", \"value\": [\"nuts\", \"whipped cream\"\
+            ] }]'"
+        samples-languages:
+        - curl
+      x-doc-slug: extension-viewer-state-2
+      security:
+      - MuxyAuthorization: []
+    get:
+      summary: Get extension viewer state
+      description: Returns extension-wide state for the current viewer. A backend
+        JWT may use `userID` to select one Twitch user. A validated admin JWT may
+        instead pass up to 1,000 comma-separated Twitch IDs in `user_ids`; the response
+        is then keyed by each ID whose state exists.
+      operationId: get-extension-viewer-state
+      responses:
+        '200':
+          description: The selected viewer state, or an object keyed by Twitch user
+            ID for a `user_ids` batch request.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                description: Developer-defined state. Batch responses map each found
+                  Twitch user ID to its state object.
+              examples:
+                Current viewer:
+                  value:
+                    favorite_color: blue
+                Admin batch:
+                  value:
+                    '12345':
+                      favorite_color: blue
+                    '67890':
+                      favorite_color: green
+        '400':
+          description: State lookup failed, or more than 1,000 IDs were supplied.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: Too many ids specified
+        '403': &id002
+          description: The JWT role is not allowed to perform this operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: role is not authorized
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request GET \\\n  --url https://api.muxy.io/v1/e/extension_viewer_state\
+            \ \\\n  --header 'authorization: <Client ID> <any JWT>' \\\n  --header\
+            \ 'content-type: application/json'"
+        samples-languages:
+        - curl
+      x-doc-slug: extension-viewer-state
+      security:
+      - MuxyAuthorization: []
+      x-doc-description: Read one viewer's extension-wide state or batch-read state
+        for up to 1,000 Twitch user IDs.
+      parameters:
+      - name: userID
+        in: query
+        required: false
+        description: Twitch user ID to read when using a backend JWT. Ignored for
+          other roles and superseded when `user_ids` is present.
+        schema:
+          type: string
+      - name: user_ids
+        in: query
+        required: false
+        description: Comma-separated Twitch user IDs for an admin-only batch read.
+          At most 1,000 IDs are accepted; missing state entries are omitted from the
+          result.
+        schema:
+          type: string
+  /rank:
+    get:
+      summary: Rank
+      description: ''
+      operationId: get-rank
+      parameters:
+      - name: id
+        in: query
+        description: The ranking-buffer ID that identifies a question for which responses
+          are ranked.
+        schema:
+          type: string
+          default: default
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"data\": [\n    {\n      \"key\": \"DOTA\",\n    \
+                    \  \"score\": 12\n    },\n    {\n      \"key\": \"FIFA 2014\"\
+                    ,\n      \"score\": 8\n    }\n  ]\n}"
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        key:
+                          type: string
+                          example: DOTA
+                        score:
+                          type: integer
+                          example: 12
+                          default: 0
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request GET \\\n  --url https://api.muxy.io/v1/e/rank?id=next-game\
+            \ \\\n  --header 'authorization: <Client ID> <backend, admin, or broadcaster\
+            \ JWT>' \\\n  --header 'content-type: application/json'"
+        samples-languages:
+        - curl
+      x-doc-slug: rank-1
+      security:
+      - MuxyAuthorization: []
+    post:
+      summary: Rank
+      description: ''
+      operationId: post-rank
+      parameters:
+      - name: id
+        in: query
+        description: The ranking-buffer ID that identifies a question for which responses
+          are ranked.
+        schema:
+          type: string
+          default: default
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                key:
+                  type: string
+                  description: A string submitted by the user in response to this
+                    question, as the `key` value in a JSON object.
+        required: false
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accepted:
+                    type: boolean
+                    example: true
+                    default: true
+                  original:
+                    type: string
+                    example: Serious Sam
+              example:
+                accepted: true
+                original: Serious Sam
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request POST \\\n  --url https://api.muxy.io/v1/e/rank?id=next-game\
+            \ \\\n  --header 'authorization: <Client ID> <any JWT>' \\\n  --header\
+            \ 'content-type: application/json' \\\n  --data '{ \"key\": \"Last of\
+            \ Us\" }'"
+        samples-languages:
+        - curl
+      x-doc-slug: rank-2
+      security:
+      - MuxyAuthorization: []
+    delete:
+      summary: Rank
+      description: ''
+      operationId: delete-rank
+      parameters:
+      - name: id
+        in: query
+        description: The ID that identifies a question being ranked.
+        schema:
+          type: string
+          default: default
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request DELETE \\\n  --url https://api.muxy.io/v1/e/rank?id=next-game\
+            \ \\\n  --header 'authorization: <Client ID> <broadcaster, admin, or backend\
+            \ JWT>' \\\n  --header 'content-type: application/json'"
+        samples-languages:
+        - curl
+      x-doc-slug: rank-3
+      security:
+      - MuxyAuthorization: []
+  /viewer_state:
+    post:
+      summary: Viewer State
+      description: ''
+      operationId: post-viewer-state
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Complete JSON value to store or submit.
+              additionalProperties: true
+            example:
+              favorite_color: blue
+        required: true
+      responses:
+        '200':
+          description: Write accepted. The current service returns an empty JSON object.
+          content:
+            application/json:
+              schema:
+                type: object
+                maxProperties: 0
+              example: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request POST \\\n  --url https://sandbox.api.muxy.io/v1/e/viewer_state\
+            \ \\\n  --header 'authorization: <Client ID> <viewer JWT>' \\\n  --header\
+            \ 'content-type: application/json' \\\n  --data '{ \"favorite_color\"\
+            : \"blue\" }'"
+        samples-languages:
+        - curl
+      x-doc-slug: viewer-state-1
+      security:
+      - MuxyAuthorization: []
+    get:
+      summary: Viewer State
+      description: ''
+      operationId: get-viewer-state
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              example:
+                favorite_color: blue
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request GET \\\n  --url https://api.muxy.io/v1/e/viewer_state\
+            \ \\\n  --header 'authorization: <Client ID> <any JWT>' \\\n  --header\
+            \ 'content-type: application/json'"
+        samples-languages:
+        - curl
+      x-doc-slug: viewer-state-2
+      security:
+      - MuxyAuthorization: []
+    patch:
+      summary: Viewer State
+      description: ''
+      operationId: patch-viewer-state
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - type: array
+                description: RFC 6902 JSON Patch operations.
+                items:
+                  $ref: '#/components/schemas/JsonPatchOperation'
+              - type: object
+                description: JSON Merge Patch object.
+                additionalProperties: true
+            example:
+            - op: replace
+              path: /favorite_color
+              value: blue
+        required: true
+      responses:
+        '200':
+          description: Write accepted. The current service returns an empty JSON object.
+          content:
+            application/json:
+              schema:
+                type: object
+                maxProperties: 0
+              example: {}
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request PATCH \\\n  --url https://api.muxy.io/v1/e/viewer_state\
+            \ \\\n  --header 'authorization: <Client ID> <viewer JWT>' \\\n  --header\
+            \ 'content-type: application/json' \\\n  --data '[{ \"op\": \"add\", \"\
+            path\": \"/ice_cream/toppings\", \"value\": [\"hot chocolate\"] }]'"
+        samples-languages:
+        - curl
+      x-doc-slug: viewer-state-3
+      security:
+      - MuxyAuthorization: []
+  /all_state:
+    get:
+      summary: All State
+      description: ''
+      operationId: get-all-state
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              example:
+                extension: {}
+                channel: {}
+                viewer: {}
+                extension_viewer: {}
+              schema:
+                type: object
+                required:
+                - extension
+                - channel
+                - viewer
+                - extension_viewer
+                properties:
+                  extension:
+                    type: object
+                    additionalProperties: true
+                  channel:
+                    type: object
+                    additionalProperties: true
+                  viewer:
+                    type: object
+                    additionalProperties: true
+                  extension_viewer:
+                    type: object
+                    additionalProperties: true
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: '400'
+      deprecated: false
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request GET \\\n  --url https://api.muxy.io/v1/e/all_state\
+            \ \\\n  --header 'authorization: <Client ID> <any JWT>' \\\n  --header\
+            \ 'content-type: application/json'"
+        samples-languages:
+        - curl
+      x-doc-slug: viewer-state
+      security:
+      - MuxyAuthorization: []
+  /vote:
+    get:
+      summary: Get vote totals
+      description: Returns aggregate statistics and, when available, the current viewer's
+        known vote.
+      operationId: vote-get
+      parameters:
+      - &id001
+        name: id
+        in: query
+        required: false
+        description: Poll identifier. Defaults to `default`; global polls use an ID
+          beginning with `global`.
+        schema:
+          type: string
+          default: default
+          maxLength: 64
+      responses:
+        '200':
+          description: Current vote statistics.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VoteResponse'
+              example:
+                stddev: 0
+                mean: 1
+                sum: 2
+                specific:
+                - 0
+                - 2
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                - 0
+                count: 2
+                decay: {}
+                vote: 1
+    post:
+      summary: Submit votes
+      description: 'Submits a value from -128 through 128. If `value` is omitted the
+        handler submits `0`. Missing or explicit `count: 0` becomes `1`; positive
+        counts are capped at 30 per request and must also fit the poll''s configured
+        per-user limit.'
+      operationId: vote-submit
+      parameters:
+      - *id001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                value:
+                  type: integer
+                  minimum: -128
+                  maximum: 128
+                  default: 0
+                count:
+                  type: integer
+                  minimum: 0
+                  maximum: 30
+                  default: 1
+                  description: Number of copies to submit. The service treats 0 as
+                    1.
+            example:
+              value: 1
+              count: 1
+      responses:
+        '200':
+          description: Vote accepted and current statistics returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VoteResponse'
+        '400': &id004
+          description: The request body or poll configuration is invalid.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: Invalid body
+    delete:
+      summary: Delete a poll
+      description: Deletes a poll. Requires an admin, backend, or broadcaster JWT.
+      operationId: vote-delete
+      parameters:
+      - *id001
+      responses:
+        '200': &id003
+          description: Operation accepted. The current service returns an empty JSON
+            object.
+          content:
+            application/json:
+              schema:
+                type: object
+                maxProperties: 0
+              example: {}
+        '403': *id002
+  /vote_logs:
+    get:
+      summary: Get vote logs
+      description: Returns individual vote records. Requires a valid admin JWT.
+      operationId: vote-logs
+      parameters:
+      - *id001
+      responses:
+        '200':
+          description: Vote log records.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - result
+                properties:
+                  result:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        identifier:
+                          type: string
+                        opaque:
+                          type: string
+                        value:
+                          type: integer
+                        timestamp:
+                          type: integer
+              example:
+                result: []
+        '403': *id002
+        '500': &id005
+          description: The service could not complete the operation because an internal
+            or storage dependency failed.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+              example:
+                reason: ''
+  /vote_modifier:
+    post:
+      summary: Add a vote modifier
+      description: Adds a signed adjustment for one user. Requires an admin, backend,
+        or broadcaster JWT.
+      operationId: vote-modifier
+      parameters:
+      - *id001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - user
+              - add
+              properties:
+                user:
+                  type: string
+                add:
+                  type: integer
+            example:
+              user: U12345
+              add: 2
+      responses:
+        '200': *id003
+        '400': *id004
+        '403': *id002
+  /vote_config:
+    get:
+      summary: Get poll configuration
+      description: Returns the stored configuration and computed poll status.
+      operationId: vote-config-get
+      parameters:
+      - *id001
+      responses:
+        '200':
+          description: Poll configuration.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VoteConfiguration'
+        '404':
+          description: No configuration exists for this poll.
+          content:
+            application/json:
+              schema:
+                type: object
+              example: {}
+    post:
+      summary: Create or update poll configuration
+      description: Creates or replaces poll configuration. Requires an admin, backend,
+        or broadcaster JWT.
+      operationId: vote-config-post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - id
+              - config
+              properties:
+                id:
+                  type: string
+                  maxLength: 64
+                config:
+                  $ref: '#/components/schemas/VoteConfiguration'
+            example:
+              id: next-game
+              config:
+                prompt: Choose the next game
+                options:
+                - A
+                - B
+                startsAt: 1760000000
+                endsAt: 1760003600
+      responses:
+        '200': *id003
+        '400': *id004
+        '403': *id002
+        '500': *id005
+  /json_store:
+    get:
+      summary: Get a JSON store
+      description: Returns a named channel-scoped JSON document. The `default` store
+        is used when `id` is omitted; IDs beginning with `global` use extension-wide
+        storage. A cache miss can return `202` while a registered external data source
+        is being refreshed.
+      operationId: get-json-store
+      x-doc-title: Get a JSON Store
+      x-doc-description: Read a named channel-scoped or extension-wide JSON store.
+      parameters:
+      - name: id
+        in: query
+        required: false
+        description: Store identifier. Defaults to `default`; IDs beginning with `global`
+          use extension-wide storage.
+        schema:
+          type: string
+          default: default
+      responses:
+        '200':
+          description: The stored JSON document.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+              example:
+                favorite_color: blue
+        '202':
+          description: The document is not cached and a registered source is being
+            refreshed, or another request already holds the refresh lock.
+          content:
+            application/json:
+              schema:
+                type: object
+                maxProperties: 0
+              example: {}
+        '404':
+          description: No cached document or registered source exists for this store
+            identifier.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: Not Found
+        '500': *id005
+        '502':
+          description: The registered external source returned a response that was
+            not a JSON object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: external server returned a bad response
+  /user_ids:
+    get:
+      summary: List shared Twitch user IDs
+      description: Returns Twitch user IDs that users have shared with the extension.
+        Requires a backend JWT or a validated admin JWT for the extension owner or
+        a listed extension administrator. Continue scanning until `next` is `0`.
+      operationId: get-user-ids
+      x-doc-title: List Shared Twitch User IDs
+      x-doc-description: Page through Twitch user IDs shared with an extension.
+      parameters:
+      - name: cursor
+        in: query
+        required: false
+        description: Redis scan cursor returned as `next` by the previous call. Start
+          with `0` and stop when the response returns `0`.
+        schema:
+          type: string
+          default: '0'
+      responses:
+        '200':
+          description: One scan page of shared Twitch user IDs.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - next
+                - results
+                properties:
+                  next:
+                    type: string
+                    description: Cursor for the next scan page; `0` means the scan
+                      is complete.
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                      - twitch_id
+                      properties:
+                        twitch_id:
+                          type: string
+              example:
+                next: '0'
+                results:
+                - twitch_id: '27419011'
+        '403': *id002
+        '500': *id005
+  /gamelink/token:
+    post:
+      summary: Create a GameLink authorization code
+      description: Creates a six-character authorization code for the current JWT.
+        The code expires after five minutes and can be exchanged by a GameLink client
+        during PIN authentication.
+      operationId: post-gamelink-token
+      x-doc-title: Create a GameLink Authorization Code
+      x-doc-description: Create a short-lived GameLink PIN for the current extension
+        authorization.
+      responses:
+        '200':
+          description: A short-lived GameLink authorization code.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - token
+                properties:
+                  token:
+                    type: string
+                    minLength: 6
+                    maxLength: 6
+                    pattern: ^[A-HJ-KM-NP-Z2-46-9]{6}$
+                    description: Six-character code using an ambiguity-reduced uppercase
+                      alphabet; expires after five minutes.
+              example:
+                token: ABC234
+        '400':
+          description: The serialized authorization header exceeds 1,024 characters.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                reason: Bad request
+  /broadcast:
+    post:
+      summary: Send a channel broadcast
+      description: Requires a broadcaster, admin, or backend JWT.
+      operationId: broadcast-channel
+      security:
+      - MuxyAuthorization: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BroadcastMessage'
+            example:
+              event: score-updated
+              data:
+                score: 42
+              target: broadcast
+              user_id: '12345678'
+      responses:
+        '200':
+          description: Message accepted for delivery.
+          content:
+            application/json:
+              schema:
+                type: object
+              example: {}
+        '400': *id004
+        '403': *id002
+  /extension_broadcast:
+    post:
+      summary: Send an extension-wide broadcast
+      description: Requires a privileged broadcaster, admin, or backend JWT.
+      operationId: broadcast-extension
+      security:
+      - MuxyAuthorization: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BroadcastMessage'
+            example:
+              event: score-updated
+              data:
+                score: 42
+      responses:
+        '200':
+          description: Message accepted for delivery.
+          content:
+            application/json:
+              schema:
+                type: object
+              example: {}
+        '400': *id004
+        '403': *id002
+  /whisper_self:
+    post:
+      summary: Send a message to the current viewer
+      description: Uses the viewer represented by the JWT.
+      operationId: whisper-self
+      security:
+      - MuxyAuthorization: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BroadcastMessage'
+            example:
+              event: score-updated
+              data:
+                score: 42
+      responses:
+        '200':
+          description: Message accepted for delivery.
+          content:
+            application/json:
+              schema:
+                type: object
+              example: {}
+        '400': *id004
+        '403': *id002
+components:
+  securitySchemes:
+    MuxyAuthorization:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: '`<Twitch Extension Client ID> <Muxy JWT>`'
+  schemas:
+    JsonPatchOperation:
+      type: object
+      required:
+      - op
+      - path
+      properties:
+        op:
+          type: string
+          enum:
+          - add
+          - remove
+          - replace
+          - move
+          - copy
+          - test
+        path:
+          type: string
+          description: JSON Pointer to the target value.
+        from:
+          type: string
+          description: Source JSON Pointer for move or copy.
+        value:
+          description: Value used by add, replace, or test.
+    ErrorResponse:
+      type: object
+      properties:
+        reason:
+          type: string
+    BroadcastMessage:
+      type: object
+      properties:
+        target:
+          type: string
+          description: PubSub target; use broadcast for a channel-wide message.
+        event:
+          type: string
+          default: default
+        user_id:
+          type: string
+          description: Target Twitch channel ID for channel broadcasts.
+        data:
+          type: object
+          additionalProperties: true
+      required:
+      - data
+    VoteResponse:
+      type: object
+      required:
+      - stddev
+      - mean
+      - sum
+      - specific
+      - count
+      - decay
+      properties:
+        stddev:
+          type: number
+          description: Sample standard deviation across effective stored votes.
+        mean:
+          type: number
+          description: Mean of all effective stored vote values.
+        sum:
+          type: number
+          description: Sum of all effective stored vote values.
+        specific:
+          type: array
+          description: Exactly 32 counters. Indexes 0 through 31 count votes whose
+            value equals that index; values outside this range still contribute to
+            the other statistics.
+          minItems: 32
+          maxItems: 32
+          items:
+            type: integer
+            minimum: 0
+        count:
+          type: integer
+          minimum: 0
+          description: Number of effective stored vote entries after per-user replacement
+            and modifiers; this is not the number of requests.
+        decay:
+          type: object
+          additionalProperties: true
+        vote:
+          type: integer
+          minimum: -128
+          maximum: 128
+          description: The caller's known vote, omitted when no vote is known.
+    VoteConfiguration:
+      type: object
+      properties:
+        userIDVoting:
+          type: boolean
+        distinctOptionsPerUser:
+          type: integer
+          minimum: 1
+          maximum: 258
+          default: 1
+        totalVotesPerUser:
+          type: integer
+          minimum: 1
+          maximum: 1024
+          default: 1
+        votesPerOption:
+          type: integer
+          minimum: 1
+          maximum: 1024
+          default: 1
+        global:
+          type: boolean
+        disabled:
+          type: boolean
+        prompt:
+          type: string
+        options:
+          type: array
+          items:
+            type: string
+        userData: {}
+        endsAt:
+          type: integer
+          description: Unix timestamp in seconds.
+        startsAt:
+          type: integer
+          description: Unix timestamp in seconds.
+        status:
+          type: string
+          enum:
+          - pending
+          - active
+          - expired
+          readOnly: true
+security:
+- MuxyAuthorization: []
