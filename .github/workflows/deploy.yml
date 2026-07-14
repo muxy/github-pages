@@ -78,6 +78,9 @@ jobs:
             --exclude-loopback
             --exclude '^https://docs\.muxy\.io'
             --exclude '^https://github\.com/muxy/github-pages/(?:raw|edit)/main/'
+            --exclude '^https://(?:sandbox\.)?api\.muxy\.io(?:/|$)'
+            --exclude '^https://api\.twitch\.tv/helix/users\?\$\{query\}$'
+            --exclude '^https://www\.npmjs\.com/package/jose$'
             --accept '200..=399'
             --files-from './site/current-link-inputs.txt'
           fail: true
