@@ -1,0 +1,140 @@
+schema_version: 1
+verification_scope:
+  kind: source-declarations-only
+  compiles_examples: false
+  note: This manifest verifies published/tagged source provenance and SDK API names; it does not compile JavaScript or C# examples.
+
+artifacts:
+  medkit-2.4.18:
+    source_id: medkit
+    kind: npm-tarball
+    package: '@muxy/extensions-js'
+    version: 2.4.18
+    registry_metadata_url: https://registry.npmjs.org/%40muxy%2Fextensions-js/2.4.18
+    tarball_url: https://registry.npmjs.org/@muxy/extensions-js/-/extensions-js-2.4.18.tgz
+    npm_integrity: sha512-/NexUio8QiEM6IRZ7Yl0wK9etYhyTHpv9OevRB1yfX8Ogtw+Mw31GdDLmVLxfd/ojDIv5dZEGAgxtMdc7DRnCw==
+    npm_shasum: c77504c4f7bfe43074c686f6ab4a4ec3473dd90c
+    sha256: 134333dff2faa6702ff0258b1c5118e85ac65bdb159eb52adf1a79ab9f8b1a1f
+    files:
+      package/package.json: fc57f15cccf81c5658e73d55aefe1ad6784616d09e132e94b277bc40afac1a00
+      package/dist/types/src/sdk.d.ts: d0734a91a7d707270fc1d3217d7ea419b66a2eacc6182a4b31a0545d6e9776f0
+      package/dist/types/src/muxy.d.ts: da3db462fa5afade98c7c235e0e23b727278c2e701f7c05bce451b332383c7de
+      package/dist/types/src/debug.d.ts: 3b5a7c52fb18072dbf7ac0c722ffff28aa9ede268e26187977e6bae64fb314bc
+    documentation:
+      product: MEDKit
+      status: current
+      globs:
+        - docs/docs/**/*.md
+      required_literals:
+        docs/docs/quick-start.md: npm install @muxy/extensions-js@2.4.18
+      sdk_declarations: package/dist/types/src/sdk.d.ts
+      muxy_declarations:
+        - package/dist/types/src/muxy.d.ts
+        - package/dist/types/src/debug.d.ts
+      expected_sdk_methods:
+        - accumulate
+        - beginDebugHelixTokenFlow
+        - clearRankData
+        - getAccumulateData
+        - getAllState
+        - getChannelConfig
+        - getChannelState
+        - getConfig
+        - getExtensionConfig
+        - getExtensionState
+        - getExtensionUsers
+        - getExtensionViewerState
+        - getFullVoteLogs
+        - getJSONStore
+        - getOffsetDate
+        - getRankData
+        - getUser
+        - getViewerState
+        - getVoteData
+        - listen
+        - loaded
+        - rank
+        - send
+        - setChannelConfig
+        - setChannelState
+        - setExtensionConfig
+        - setExtensionState
+        - setExtensionViewerState
+        - setViewerState
+        - signedRequest
+        - unlisten
+        - vote
+      expected_muxy_members:
+        - DebuggingOptions
+        - SDK
+        - debug
+        - setup
+
+  gateway-unity-v1.0.0-rc:
+    source_id: gateway-unity
+    kind: github-tag
+    repository: https://github.com/muxy/gateway-unity.git
+    ref: refs/tags/v1.0.0-rc
+    ref_kind: lightweight-tag
+    resolved_commit: 9ee3ace5d6c44d2169101c33588864488a3d0610
+    raw_base_url: https://raw.githubusercontent.com/muxy/gateway-unity/9ee3ace5d6c44d2169101c33588864488a3d0610/
+    package_version: 0.0.1
+    provenance_state: tagged-source-not-confirmed-package-release
+    files:
+      Runtime/MuxyGateway.cs: 5409539289e754ca842da5be27b39f6c5561f0bfc1d6c290f5cae4d8379bae09
+      Prefabs/MuxyGatewayManager.cs: c921add67feb9cbc68b3d6a564baacc9ef8e78781e03a30ec746e483adef4ea8
+      package.json: 3e26b65b2dbc0b1f3677c90ac7e3b92e5ababa53027893e120e1df56eb2682a6
+    documentation:
+      product: Gateway
+      status: current
+      globs:
+        - docs/docs/unity-gateway-*.md
+      required_literals:
+        docs/docs/unity-gateway-installation.md: https://github.com/muxy/gateway-unity.git#v1.0.0-rc
+      symbol_sources:
+        - Runtime/MuxyGateway.cs
+        - Prefabs/MuxyGatewayManager.cs
+      expected_symbols:
+        - AcceptGameAction
+        - AuthenticateWithPIN
+        - AuthenticateWithRefreshToken
+        - ConvertTextureToBase64
+        - GameAction
+        - GameAction.InfiniteCount
+        - GameActionCategory.Help
+        - GameActionCategory.Hinder
+        - GameActionState.Available
+        - GameMetadata
+        - GameText
+        - MuxyGatewayGameActionUsedEvent
+        - SDK
+        - SDK.OnAuthenticateDelegate
+        - SDK.OnBitsUsedDelegate
+        - SDK.OnGameActionUsedDelegate
+        - OnBitsUsed
+        - OnGameActionUsed
+        - PollConfiguration
+        - PollMode.Order
+        - RefundGameAction
+        - RunInProduction
+        - RunInSandbox
+        - SetGameActions
+        - SetGameMetadata
+        - SetGameTexts
+        - StartPoll
+        - StopWebsocketTransport
+        - Update
+
+blocked_sources:
+  gateway-unity:
+    expected_release_state: tagged-source
+    required_review_state: blocked-release
+    reason: The public tag resolves, but package metadata and runtime version disagree and the pinned transport does not compile supported standalone players.
+  gamelink-unity:
+    expected_release_state: unpublished
+    required_review_state: blocked-release
+    reason: No versioned public Unity package is available.
+  gamelink-cpp:
+    expected_release_state: unpublished
+    required_review_state: blocked-release
+    reason: No versioned public native package is available.

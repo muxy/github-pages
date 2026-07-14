@@ -1,2 +1,4 @@
 mkdocs-material==9.5.50
-
+Pillow==11.3.0
+PyYAML==6.0.2
+openapi-spec-validator==0.7.2

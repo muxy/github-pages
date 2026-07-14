@@ -1,5 +1,9 @@
 site_name: Muxy Documentation
-site_description: Muxy developer documentation migrated from ReadMe.
+site_description: Build interactive game and Twitch experiences with Muxy SDKs, APIs, and protocols.
+site_url: https://docs.muxy.io/
+repo_url: https://github.com/muxy/github-pages
+repo_name: muxy/github-pages
+edit_uri: edit/main/docs/
 
 docs_dir: docs
 site_dir: site
@@ -7,12 +11,158 @@ use_directory_urls: true
 
 theme:
   name: material
+  custom_dir: overrides
+  logo: assets/readme/86e839b-muxy-character.svg
+  favicon: assets/readme/86e839b-muxy-character.svg
+  font: false
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Use dark theme
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Use light theme
   features:
-    - navigation.indexes
+    - navigation.tabs
     - navigation.sections
+    - navigation.indexes
+    - navigation.path
     - navigation.top
+    - navigation.tracking
+    - toc.follow
     - search.highlight
     - search.suggest
+    - search.share
+    - content.code.copy
+    - content.action.edit
+    - content.action.view
+    - content.tabs.link
+
+nav:
+  - Start Here:
+      - Home: index.md
+      - Quick Start: docs/quick-start.md
+      - Get Started with MEDKit: docs/getting-started-with-medkit.md
+      - Build a Simple Extension: docs/build-a-simple-extension.md
+      - Create a Viewer Panel: docs/create-a-viewer-panel.md
+      - Create a Broadcaster Panel: docs/create-a-broadcaster-panel.md
+      - Basic Login Workflow: docs/basic-muxy-login-workflow.md
+      - Install MEDKit Manually: docs/install-manually.md
+  - Guides:
+      - Development Basics:
+          - Developing with MEDKit: docs/developing-with-medkit.md
+          - User Simulation: docs/set-up-user-simulation.md
+          - Data Tracking: docs/data-tracking.md
+          - Extension and Viewer State: docs/state-information.md
+          - Configuration Data: docs/store-configuration-data.md
+          - Arbitrary JSON Data: docs/arbitrary-state.md
+          - Viewer Information: docs/get-viewer-information.md
+          - Twitch API: docs/call-into-the-twitch-api.md
+      - Viewer Engagement:
+          - Data Aggregation: docs/data-aggregation-techniques.md
+          - Accumulation: docs/accumulation.md
+          - Ranking: docs/ranking.md
+          - Engagement Tools: docs/viewer-engagement-tools.md
+          - Polls and Voting: docs/voting.md
+  - Recipes:
+      - Generate a Production JWT: recipes/generate-a-production-jwt.md
+      - Create the MEDKit Control Object: recipes/create-the-medkit-control-object.md
+      - Simulate Users While Testing: recipes/simulate-users-while-testing.md
+      - GameLink Polling: recipes/gamelink-polling.md
+      - GameLink Transactions: recipes/gamelink-transactions.md
+  - SDKs & Game Engines:
+      - Gateway for Unity:
+          - Overview: docs/unity-gateway-tutorial.md
+          - Prefab Quickstart: docs/unity-gateway-prefab-quickstart.md
+          - Installation: docs/unity-gateway-installation.md
+          - Authentication and Lifecycle: docs/unity-gateway-authentication.md
+          - Actions: docs/unity-gateway-actions.md
+          - Polls and Game Text: docs/unity-gateway-polls-game-text.md
+          - Production Practices: docs/unity-gateway-production.md
+          - QA Checklist: docs/unity-gateway-qa.md
+      - Unity GameLink Tutorial: docs/unity-gamelink-tutorial.md
+      - Unity FPS Demo: docs/unity-fps-demo-code-walkthrough.md
+  - API Reference:
+      - Overview: reference/medkit-rest-api.md
+      - Sandbox:
+          - Developing in the Sandbox: reference/dev-auth.md
+          - Authorization for Testing: reference/try-sandbox-auth.md
+      - Configuration:
+          - Overview: reference/config-api.md
+          - All Config: reference/extension-config.md
+          - Extension Config (GET): reference/extension-config-1.md
+          - Extension Config (POST): reference/extension-config-2.md
+          - Extension Config (PATCH): reference/extension-config-3.md
+          - Channel Config (GET): reference/channel-config.md
+          - Channel Config (POST): reference/channel-config-1.md
+          - Channel Config (PATCH): reference/channel-config-2.md
+      - State:
+          - Overview: reference/rest-state-api.md
+          - All State: reference/viewer-state.md
+          - Extension State (all): reference/viewer-state-4.md
+          - Extension State (POST): reference/extension-state.md
+          - Extension State (PATCH): reference/extension-state-1.md
+          - Channel State (GET): reference/channel-state.md
+          - Channel State (POST): reference/channel-state-1.md
+          - Channel State (PATCH): reference/channel-state-2.md
+          - Viewer State (GET): reference/viewer-state-2.md
+          - Viewer State (POST): reference/viewer-state-1.md
+          - Viewer State (PATCH): reference/viewer-state-3.md
+          - Extension Viewer State (GET): reference/extension-viewer-state.md
+          - Extension Viewer State (POST): reference/extension-viewer-state-1.md
+          - Extension Viewer State (PATCH): reference/extension-viewer-state-2.md
+          - JSON Store (GET): reference/get-json-store.md
+          - Extension User IDs (GET): reference/get-user-ids.md
+      - Engagement:
+          - Overview: reference/aggregation-api.md
+          - Basic Accumulation: reference/accumulate.md
+          - Accumulate (GET): reference/accumulate-1.md
+          - Accumulate (POST): reference/accumulate-2.md
+          - Basic Ranking: reference/rank.md
+          - Rank (GET): reference/rank-1.md
+          - Rank (POST): reference/rank-2.md
+          - Rank (DELETE): reference/rank-3.md
+          - Poll Management: reference/poll-managment.md
+          - Get Vote Totals: reference/vote-get.md
+          - Submit Votes: reference/vote-submit.md
+          - Delete a Poll: reference/vote-delete.md
+          - Get Vote Logs: reference/vote-logs.md
+          - Add a Vote Modifier: reference/vote-modifier.md
+          - Get Poll Configuration: reference/vote-config-get.md
+          - Configure a Poll: reference/vote-config-post.md
+      - Communication:
+          - Overview: reference/communication-api.md
+          - Broadcast Messaging: reference/broadcast.md
+          - Channel Broadcast (POST): reference/broadcast-channel.md
+          - Extension Broadcast (POST): reference/broadcast-extension.md
+          - Whisper Self (POST): reference/whisper-self.md
+          - GameLink Token (POST): reference/post-gamelink-token.md
+  - Protocols:
+      - GameLink WebSocket:
+          - Overview: reference/websocket-protocol.md
+          - Authentication: reference/ws-authentication.md
+          - Client-Server Communication: reference/ws-pubsub.md
+          - Server State: reference/ws-state-access.md
+          - Polling: reference/ws-polling.md
+          - Purchase Transactions: reference/ws-purchase-transactions.md
+      - GameLink Native Library:
+          - Overview: reference/gamelink-library.md
+          - SDK Class: reference/sdk-class.md
+          - Extension Setup: reference/extension-setup-api.md
+          - State and Configuration: reference/state-config-fns.md
+          - Event Handling: reference/event-handling.md
+  - Troubleshooting:
+      - Troubleshooting Tips: docs/troubleshooting-tips.md
+  - Changelog:
+      - GameLink Release: changelog/gamelink-release.md
 
 markdown_extensions:
   - admonition
@@ -22,10 +172,25 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: false
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 plugins:
   - search
+
+extra:
+  docs_production: !ENV [DOCS_PRODUCTION, 'false']
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/muxy
+      name: Muxy on GitHub
 
 extra_css:
   - assets/stylesheets/home.css

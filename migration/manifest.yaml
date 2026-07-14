@@ -1,0 +1,2429 @@
+schema_version: 1
+generated_from: https://docs.muxy.io
+generated_on: '2026-07-14'
+counts:
+  homepage: 1
+  current: 72
+  archived: 14
+  total: 87
+documents:
+- title: GameLink Launch Announcement
+  description: Historical announcement for the public launch of Muxy GameLink.
+  section: changelog
+  slug: gamelink-release
+  legacy_url: https://docs.muxy.io/changelog/gamelink-release
+  legacy_markdown_url: https://docs.muxy.io/changelog/gamelink-release.md
+  status: current
+  canonical_slug: gamelink-release
+  target_file: docs/changelog/gamelink-release.md
+  product: GameLink
+  owner: Developer Experience
+  source_of_truth: muxy/github-pages:migration/readme
+  version: historical
+  redirects: []
+  review_state: approved
+  page_type: concept
+  source_sha256: 8a106befa05e587ee80d11fab47dd7781cec2a939821470b743c79c6ef27f153
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: fbeea1cf5a0997c9025b4d7a059650439a176e0ce07d6611b08e1d6c4bf40a31
+- title: Accumulating User Data
+  description: Append viewer JSON events and consume them safely with a durable timestamp
+    cursor.
+  section: docs
+  slug: accumulation
+  legacy_url: https://docs.muxy.io/docs/accumulation
+  legacy_markdown_url: https://docs.muxy.io/docs/accumulation.md
+  status: current
+  canonical_slug: accumulation
+  target_file: docs/docs/accumulation.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: concept
+  source_sha256: 5d1cc7dafa88bfb1dac110ef8a99b733239750c332f30e25ee67162986777dd3
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: a7fd5169844d5d4fdfd7ee3604e6c66f149ea44a447ff025036964b41a1e7c4f
+- title: Read Arbitrary JSON Stores
+  description: Read a channel-scoped JSON store and react to its update event with
+    MEDKit.
+  section: docs
+  slug: arbitrary-state
+  legacy_url: https://docs.muxy.io/docs/arbitrary-state
+  legacy_markdown_url: https://docs.muxy.io/docs/arbitrary-state.md
+  status: current
+  canonical_slug: arbitrary-state
+  target_file: docs/docs/arbitrary-state.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: task-guide
+  source_sha256: 8c91390c25b6a3cee9c0b49960458ec29d00473e0727ecf3748f874859afef05
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: f0d38a7853e1f00a1897d1b9c9adddb390e1e75126071e2f709ac2bbf2210ebc
+- title: Request a GameLink PIN with MEDKit
+  description: Request and display a short-lived GameLink PIN from a broadcaster configuration
+    page.
+  section: docs
+  slug: basic-muxy-login-workflow
+  legacy_url: https://docs.muxy.io/docs/basic-muxy-login-workflow
+  legacy_markdown_url: https://docs.muxy.io/docs/basic-muxy-login-workflow.md
+  status: current
+  canonical_slug: basic-muxy-login-workflow
+  target_file: docs/docs/basic-muxy-login-workflow.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: task-guide
+  source_sha256: 5f00370bd0a88954b848054133ed4dc67965148421822f3e83760c50766983f8
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 7619b1e6ad38d871a17374a08e6f7169d01cb65b0a94fb754a2ec4a6b7c1dabb
+- title: Basic Usage
+  description: Archived Muxy documentation for Basic Usage.
+  section: docs
+  slug: basic-usage-examples
+  legacy_url: https://docs.muxy.io/docs/basic-usage-examples
+  legacy_markdown_url: https://docs.muxy.io/docs/basic-usage-examples.md
+  status: archived
+  canonical_slug: basic-usage-examples
+  target_file: docs/docs/basic-usage-examples.md
+  product: Unreal
+  owner: Unreal SDK owner
+  source_of_truth: muxy/github-pages:migration/readme
+  version: unverified
+  redirects: []
+  review_state: needs-sme-review
+  page_type: task-guide
+  source_sha256: 9f4b4ea720d436c7fc058b95c53b9f6d347c55c2c7e866d2bcedea4a7117cba1
+- title: Build a Simple Extension
+  description: Build a two-page MEDKit extension with a broadcaster dashboard and
+    viewer panel.
+  section: docs
+  slug: build-a-simple-extension
+  legacy_url: https://docs.muxy.io/docs/build-a-simple-extension
+  legacy_markdown_url: https://docs.muxy.io/docs/build-a-simple-extension.md
+  status: current
+  canonical_slug: build-a-simple-extension
+  target_file: docs/docs/build-a-simple-extension.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: task-guide
+  source_sha256: a483ec7eb3543c574f1dd368129acd00330f8149093d73142c64b18da124fc1a
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: f7928f1c2bd168675f1f221474a3cc7d30a73aea86322d69ca0a34076bcf208b
+- title: Call the Twitch API from an Extension
+  description: Call supported Twitch Helix endpoints with the current viewer's Extension
+    Helix token.
+  section: docs
+  slug: call-into-the-twitch-api
+  legacy_url: https://docs.muxy.io/docs/call-into-the-twitch-api
+  legacy_markdown_url: https://docs.muxy.io/docs/call-into-the-twitch-api.md
+  status: current
+  canonical_slug: call-into-the-twitch-api
+  target_file: docs/docs/call-into-the-twitch-api.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: task-guide
+  source_sha256: 8eb6ad18ac9d6f52556d84f3bf939a1b511279e6f623053f81a0fb6c21b10cd9
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 064448edf166ecfd45b19592c7c94122553b4644f5c3eee6e7005bdf13dca6b1
+- title: Create a Broadcaster Panel
+  description: Build a broadcaster dashboard page that stores and broadcasts a message
+    with MEDKit.
+  section: docs
+  slug: create-a-broadcaster-panel
+  legacy_url: https://docs.muxy.io/docs/create-a-broadcaster-panel
+  legacy_markdown_url: https://docs.muxy.io/docs/create-a-broadcaster-panel.md
+  status: current
+  canonical_slug: create-a-broadcaster-panel
+  target_file: docs/docs/create-a-broadcaster-panel.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: task-guide
+  source_sha256: 87f5c08512c828cabc6707120cd08738177f41d092de5a4cab2e4a8320761327
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: c42ac8a98d92c08104c647a88262e339ca781a5e757fec983fb2f73f826fe1d7
+- title: Integrate a Muxy Login Flow
+  description: Archived Muxy documentation for Integrate a Muxy Login Flow.
+  section: docs
+  slug: create-a-muxy-login-flow
+  legacy_url: https://docs.muxy.io/docs/create-a-muxy-login-flow
+  legacy_markdown_url: https://docs.muxy.io/docs/create-a-muxy-login-flow.md
+  status: archived
+  canonical_slug: create-a-muxy-login-flow
+  target_file: docs/docs/create-a-muxy-login-flow.md
+  product: Unreal
+  owner: Unreal SDK owner
+  source_of_truth: muxy/github-pages:migration/readme
+  version: unverified
+  redirects: []
+  review_state: needs-sme-review
+  page_type: task-guide
+  source_sha256: 7662918f3a81a895fe838c99f34c14eaf211436a93bfb5338d50cf0cb26725a4
+- title: Create a Viewer Panel
+  description: Build a Twitch viewer panel that reads channel state and receives live
+    MEDKit messages.
+  section: docs
+  slug: create-a-viewer-panel
+  legacy_url: https://docs.muxy.io/docs/create-a-viewer-panel
+  legacy_markdown_url: https://docs.muxy.io/docs/create-a-viewer-panel.md
+  status: current
+  canonical_slug: create-a-viewer-panel
+  target_file: docs/docs/create-a-viewer-panel.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: task-guide
+  source_sha256: ea0f58505e166977562a9c0a21a93b16cf8e7dafe4227cf97429c002e4027fc0
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: beb92ac7ef960845ce392d374f0865bf526417b15876b5251a7ac47ad6445597
+- title: Aggregate Viewer Data
+  description: Choose MEDKit accumulation, ranking, or voting APIs for large-audience
+    input.
+  section: docs
+  slug: data-aggregation-techniques
+  legacy_url: https://docs.muxy.io/docs/data-aggregation-techniques
+  legacy_markdown_url: https://docs.muxy.io/docs/data-aggregation-techniques.md
+  status: current
+  canonical_slug: data-aggregation-techniques
+  target_file: docs/docs/data-aggregation-techniques.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: concept
+  source_sha256: af0d478aba6cfb7b14e077f2cd15f9aba9d9ebfda67996732f4f9605ee43bbe0
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: c0bb1ef20d7eb5b21354b46e10ba0de06a3815d1877c93484eac11b249d45f36
+- title: Choose a MEDKit Data Store
+  description: Choose state, configuration, or a named JSON store for extension data.
+  section: docs
+  slug: data-tracking
+  legacy_url: https://docs.muxy.io/docs/data-tracking
+  legacy_markdown_url: https://docs.muxy.io/docs/data-tracking.md
+  status: current
+  canonical_slug: data-tracking
+  target_file: docs/docs/data-tracking.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: concept
+  source_sha256: 651f94b670a19b0d494122a443340827aed533286639e4da323d071c62340428
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 7d7dbdf9315dddee22b4d5580e29475825c265f05dd83cc60247dadfd1400eaa
+- title: Developing with MEDKit
+  description: Learn the MEDKit lifecycle and choose the correct state, config, messaging,
+    and test APIs.
+  section: docs
+  slug: developing-with-medkit
+  legacy_url: https://docs.muxy.io/docs/developing-with-medkit
+  legacy_markdown_url: https://docs.muxy.io/docs/developing-with-medkit.md
+  status: current
+  canonical_slug: developing-with-medkit
+  target_file: docs/docs/developing-with-medkit.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: concept
+  source_sha256: d0269d2a35f91d2125ee11078dba229d1415028f7741b11f97ecb4288484feee
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: e8efb179bc4e157af23d8efb55f756b10b57c1c49957321d323cc1b58dc55128
+- title: Get Viewer Information
+  description: Read the current MEDKit user and enumerate shared Twitch IDs from an
+    admin context.
+  section: docs
+  slug: get-viewer-information
+  legacy_url: https://docs.muxy.io/docs/get-viewer-information
+  legacy_markdown_url: https://docs.muxy.io/docs/get-viewer-information.md
+  status: current
+  canonical_slug: get-viewer-information
+  target_file: docs/docs/get-viewer-information.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: task-guide
+  source_sha256: a0eb0023811deee47c3fc81bd92e51c0cb799349232cd41c79ea2af3914dbba3
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: cd3788e367ec16f92978ba62d06e3aa351b6d9515113440cce7c5e0d47f0fc1a
+- title: Get Started with MEDKit
+  description: Choose a MEDKit project path and initialize the published JavaScript
+    SDK.
+  section: docs
+  slug: getting-started-with-medkit
+  legacy_url: https://docs.muxy.io/docs/getting-started-with-medkit
+  legacy_markdown_url: https://docs.muxy.io/docs/getting-started-with-medkit.md
+  status: current
+  canonical_slug: getting-started-with-medkit
+  target_file: docs/docs/getting-started-with-medkit.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: quickstart
+  source_sha256: d20a84b1dd9891c859ccd03adcddf7c7d956385405da70b644c0037d16466cf2
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 3bae26b7b3bd72afc3afa43151e925b7fba587e04712cac276333572a186eb3d
+- title: Implement GameLink Polling
+  description: Archived Muxy documentation for Implement GameLink Polling.
+  section: docs
+  slug: implement-gamelink-polling
+  legacy_url: https://docs.muxy.io/docs/implement-gamelink-polling
+  legacy_markdown_url: https://docs.muxy.io/docs/implement-gamelink-polling.md
+  status: archived
+  canonical_slug: implement-gamelink-polling
+  target_file: docs/docs/implement-gamelink-polling.md
+  product: Unreal
+  owner: Unreal SDK owner
+  source_of_truth: muxy/github-pages:migration/readme
+  version: unverified
+  redirects: []
+  review_state: needs-sme-review
+  page_type: task-guide
+  source_sha256: b3c71f08d6e2042c0227e33ee67d64506366801abbfd01bdb754d618c5bc9ed5
+- title: Initialize the Muxy Plugin
+  description: Archived Muxy documentation for Initialize the Muxy Plugin.
+  section: docs
+  slug: initialize-the-extension
+  legacy_url: https://docs.muxy.io/docs/initialize-the-extension
+  legacy_markdown_url: https://docs.muxy.io/docs/initialize-the-extension.md
+  status: archived
+  canonical_slug: initialize-the-extension
+  target_file: docs/docs/initialize-the-extension.md
+  product: Unreal
+  owner: Unreal SDK owner
+  source_of_truth: muxy/github-pages:migration/readme
+  version: unverified
+  redirects: []
+  review_state: needs-sme-review
+  page_type: task-guide
+  source_sha256: 0e342a7ed45573ac7b69f9408b6b7544945cfb49ff6851575309a3758d2c70d3
+- title: Install MEDKit Manually
+  description: Add MEDKit to a browser project and verify state access in the Muxy
+    sandbox.
+  section: docs
+  slug: install-manually
+  legacy_url: https://docs.muxy.io/docs/install-manually
+  legacy_markdown_url: https://docs.muxy.io/docs/install-manually.md
+  status: current
+  canonical_slug: install-manually
+  target_file: docs/docs/install-manually.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: task-guide
+  source_sha256: 30f1f9b02d54a9a7e83044653651000f535ee6f339f349baa9012c95444cb4c2
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 2cb6d7feef00c9e92b0e4a80398041e9b42f173ddfa26003c63c3376718310a1
+- title: Install the Muxy Plugin for Unreal Engine
+  description: Archived Muxy documentation for Install the Muxy Plugin for Unreal
+    Engine.
+  section: docs
+  slug: install-the-muxy-plugin-for-unreal-engine
+  legacy_url: https://docs.muxy.io/docs/install-the-muxy-plugin-for-unreal-engine
+  legacy_markdown_url: https://docs.muxy.io/docs/install-the-muxy-plugin-for-unreal-engine.md
+  status: archived
+  canonical_slug: install-the-muxy-plugin-for-unreal-engine
+  target_file: docs/docs/install-the-muxy-plugin-for-unreal-engine.md
+  product: Unreal
+  owner: Unreal SDK owner
+  source_of_truth: muxy/github-pages:migration/readme
+  version: unverified
+  redirects: []
+  review_state: needs-sme-review
+  page_type: task-guide
+  source_sha256: 2bea5b839aeb5c52712d320a47daade8d7a6645fa1bf15bf3b5d3bcbe572087d
+- title: Manage Polling
+  description: Archived Muxy documentation for Manage Polling.
+  section: docs
+  slug: manage-polling
+  legacy_url: https://docs.muxy.io/docs/manage-polling
+  legacy_markdown_url: https://docs.muxy.io/docs/manage-polling.md
+  status: archived
+  canonical_slug: manage-polling
+  target_file: docs/docs/manage-polling.md
+  product: Unreal
+  owner: Unreal SDK owner
+  source_of_truth: muxy/github-pages:migration/readme
+  version: unverified
+  redirects: []
+  review_state: needs-sme-review
+  page_type: task-guide
+  source_sha256: 0d5b2cde26dfdc9ec9b4e1494fe47c1155e8af0ec76e225a8c8bf6cb715a7478
+- title: MEDKit Quick Start
+  description: Register a Twitch Extension, install MEDKit 2.4.18, and initialize
+    a browser page.
+  section: docs
+  slug: quick-start
+  legacy_url: https://docs.muxy.io/docs/quick-start
+  legacy_markdown_url: https://docs.muxy.io/docs/quick-start.md
+  status: current
+  canonical_slug: quick-start
+  target_file: docs/docs/quick-start.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: quickstart
+  source_sha256: a57335714ecf884be0d40a631b3631180b6bc81c51c83257cad78ff09598c10a
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 6d55aa21545ec3c9270d8fe20c17350deb6152ea77f2180d4543433f808d18ee
+- title: Ranking User Data
+  description: Count normalized open-ended viewer answers and manage each ranking
+    round safely.
+  section: docs
+  slug: ranking
+  legacy_url: https://docs.muxy.io/docs/ranking
+  legacy_markdown_url: https://docs.muxy.io/docs/ranking.md
+  status: current
+  canonical_slug: ranking
+  target_file: docs/docs/ranking.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: concept
+  source_sha256: 3d119d2caa5687be906158b5fbeaab82ebea0f2a74fceca2d5820d36daa79a9e
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: bd16099f30be5020d075331a1212147df9a776eab66a928ffac136ac1c28f51e
+- title: Set Up MEDKit User Simulation
+  description: Simulate channel, user, role, and Helix authorization while testing
+    MEDKit locally.
+  section: docs
+  slug: set-up-user-simulation
+  legacy_url: https://docs.muxy.io/docs/set-up-user-simulation
+  legacy_markdown_url: https://docs.muxy.io/docs/set-up-user-simulation.md
+  status: current
+  canonical_slug: set-up-user-simulation
+  target_file: docs/docs/set-up-user-simulation.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: task-guide
+  source_sha256: 3b4a57ec63e874bb493633d63c03958d7307e5a4708638966c34d86bf9f700a3
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: ac7ca53ff78d665ab03a8c003f6d0e3f9156685171923c4e31b06098cbba27b3
+- title: Store Extension and Viewer State
+  description: Read and write extension, channel, viewer, and extension-viewer state
+    with MEDKit.
+  section: docs
+  slug: state-information
+  legacy_url: https://docs.muxy.io/docs/state-information
+  legacy_markdown_url: https://docs.muxy.io/docs/state-information.md
+  status: current
+  canonical_slug: state-information
+  target_file: docs/docs/state-information.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: concept
+  source_sha256: b553240761d4ee492a40a00ac92fc0b0abb9fafb922ee8b3d91b9d746f4e40f9
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 1ea0db59c9faf2e7d4ff9d12db704731729584029f45b8d629695f596181b147
+- title: Store Configuration Data
+  description: Read and write long-lived extension and channel configuration with
+    MEDKit.
+  section: docs
+  slug: store-configuration-data
+  legacy_url: https://docs.muxy.io/docs/store-configuration-data
+  legacy_markdown_url: https://docs.muxy.io/docs/store-configuration-data.md
+  status: current
+  canonical_slug: store-configuration-data
+  target_file: docs/docs/store-configuration-data.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: concept
+  source_sha256: 1bfb3d7fe77909459c759d4b0856042c35228eb5836c87b6a37e391468aeb68d
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 3bdb6f436a7eaf0f9bc07515207c43e1d9c9a5dcf2acfbecb84cf401c0c4f250
+- title: Trivia Contests
+  description: Archived Muxy documentation for Trivia Contests.
+  section: docs
+  slug: trivia
+  legacy_url: https://docs.muxy.io/docs/trivia
+  legacy_markdown_url: https://docs.muxy.io/docs/trivia.md
+  status: archived
+  canonical_slug: trivia
+  target_file: docs/docs/trivia.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: v1
+  redirects: []
+  review_state: needs-sme-review
+  page_type: task-guide
+  source_sha256: 8c149c4e5bbeebe9940c09df87c5a14e93c420b0cefb491865d1677c8bb701a5
+- title: Troubleshoot MEDKit 2.4.18
+  description: Diagnose MEDKit initialization, authorization, state, voting, and clock
+    problems.
+  section: docs
+  slug: troubleshooting-tips
+  legacy_url: https://docs.muxy.io/docs/troubleshooting-tips
+  legacy_markdown_url: https://docs.muxy.io/docs/troubleshooting-tips.md
+  status: current
+  canonical_slug: troubleshooting-tips
+  target_file: docs/docs/troubleshooting-tips.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: troubleshooting
+  source_sha256: e68e09a0b8f75dd39dcb331269913f7085a499ddce2cecd3521bbfd7bb2f2b09
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 982181d88d010917b2155bf4d3189f81809e6336226681f8abfd2e3c3b755290
+- title: Unity FPS Demo Code Walkthrough
+  description: Trace authentication, polls, state, datastream events, and purchases
+    through the public Unity FPS demo.
+  section: docs
+  slug: unity-fps-demo-code-walkthrough
+  legacy_url: https://docs.muxy.io/docs/unity-fps-demo-code-walkthrough
+  legacy_markdown_url: https://docs.muxy.io/docs/unity-fps-demo-code-walkthrough.md
+  status: current
+  canonical_slug: unity-fps-demo-code-walkthrough
+  target_file: docs/docs/unity-fps-demo-code-walkthrough.md
+  product: Unity
+  owner: Unity SDK owner
+  source_of_truth: muxy/gamelink-unity
+  version: unverified
+  redirects: []
+  review_state: blocked-release
+  page_type: task-guide
+  source_sha256: b9bd1eb6c1cb7b621f5cc10afe9cee187f523e58d4b76936a68b652780192dd3
+- title: Unity GameLink Tutorial
+  description: Connect a Unity game to GameLink, authenticate with a broadcaster PIN,
+    and run a viewer poll.
+  section: docs
+  slug: unity-gamelink-tutorial
+  legacy_url: https://docs.muxy.io/docs/unity-gamelink-tutorial
+  legacy_markdown_url: https://docs.muxy.io/docs/unity-gamelink-tutorial.md
+  status: current
+  canonical_slug: unity-gamelink-tutorial
+  target_file: docs/docs/unity-gamelink-tutorial.md
+  product: Unity
+  owner: Unity SDK owner
+  source_of_truth: muxy/gamelink-unity
+  version: unverified
+  redirects: []
+  review_state: blocked-release
+  page_type: task-guide
+  source_sha256: 2d58cfaf98198dfdb16e07c674ff2ac549a75137270d09cdf2351838574d4a9f
+- title: Unity Gateway Tutorial
+  description: Add Muxy Gateway actions, polls, game text, and viewer interaction
+    to a Unity game.
+  section: docs
+  slug: unity-gateway-tutorial
+  legacy_url: https://docs.muxy.io/docs/unity-gateway-tutorial
+  legacy_markdown_url: https://docs.muxy.io/docs/unity-gateway-tutorial.md
+  status: current
+  canonical_slug: unity-gateway-tutorial
+  target_file: docs/docs/unity-gateway-tutorial.md
+  product: Gateway
+  owner: Gateway SDK owner
+  source_of_truth: muxy/gateway-unity
+  version: v1.0.0-rc
+  redirects: []
+  review_state: blocked-release
+  page_type: task-guide
+  source_sha256: 5fecb0d9932d6038170f8abc58014d6ccb274e278f1d62cc89cce10dcd49286e
+- title: Choose a Viewer Engagement API
+  description: Choose a verified MEDKit 2.4.18 API for votes, rankings, accumulated
+    input, or trivia.
+  section: docs
+  slug: viewer-engagement-tools
+  legacy_url: https://docs.muxy.io/docs/viewer-engagement-tools
+  legacy_markdown_url: https://docs.muxy.io/docs/viewer-engagement-tools.md
+  status: current
+  canonical_slug: viewer-engagement-tools
+  target_file: docs/docs/viewer-engagement-tools.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: concept
+  source_sha256: 79eab6972b1cea0bd6178291054084b8da4a27f354a0f80ea213ec571b0f627a
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: a96f3f33bfe174913bb11eb619b04d6bbeedca1d9484f6b4b9cf6fa831d7f4af
+- title: Collect Votes with MEDKit
+  description: Submit numeric votes, read aggregate results, react to updates, and
+    retrieve admin logs.
+  section: docs
+  slug: voting
+  legacy_url: https://docs.muxy.io/docs/voting
+  legacy_markdown_url: https://docs.muxy.io/docs/voting.md
+  status: current
+  canonical_slug: voting
+  target_file: docs/docs/voting.md
+  product: MEDKit
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  review_state: approved
+  page_type: concept
+  source_sha256: ce65dcfa854115f11cf0bd8ca86ed5b9cd93a2f17bb022c9b85d02464cb13247
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: bda9b89d75fd4f4f1f74fe1d682791041a278763268e1e886e27df8470191545
+- title: Workflow examples
+  description: Archived Muxy documentation for Workflow examples.
+  section: docs
+  slug: workflow-examples
+  legacy_url: https://docs.muxy.io/docs/workflow-examples
+  legacy_markdown_url: https://docs.muxy.io/docs/workflow-examples.md
+  status: archived
+  canonical_slug: workflow-examples
+  target_file: docs/docs/workflow-examples.md
+  product: Unreal
+  owner: Unreal SDK owner
+  source_of_truth: muxy/github-pages:migration/readme
+  version: unverified
+  redirects: []
+  review_state: needs-sme-review
+  page_type: task-guide
+  source_sha256: 25a9dd5905af8858cfac03ba7368b4b75003679305f61ada64a7768c2b05bedc
+- title: Basic Accumulation
+  description: Basic accumulation allows you to collect large amounts of user input
+    into a list for consumption by a backend.
+  section: reference
+  slug: accumulate
+  legacy_url: https://docs.muxy.io/reference/accumulate
+  legacy_markdown_url: https://docs.muxy.io/reference/accumulate.md
+  status: current
+  canonical_slug: accumulate
+  target_file: docs/reference/accumulate.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: becf6ffa202139d7c84fcccee6c4b8ab759f40ebf81175722c2a50c6160518be
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: b1c76c068b0e2b3e9314b9fdb002742ec1abd43ac08a636cb39ff5bffd166f94
+- title: Accumulate
+  description: Retrieve entries from a named accumulation buffer.
+  section: reference
+  slug: accumulate-1
+  legacy_url: https://docs.muxy.io/reference/accumulate-1
+  legacy_markdown_url: https://docs.muxy.io/reference/accumulate-1.md
+  status: current
+  canonical_slug: accumulate-1
+  target_file: docs/reference/accumulate-1.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 9f4dd20882307803d90123790c5d7b6c31aa8f7b7481f1a1f66fbc0ba22ea906
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 9d60dc557c9ce839cbeab5e84e8187dbe4aad69badb15f4e5e4da908ca5985af
+- title: Accumulate
+  description: Add a JSON entry to a named accumulation buffer.
+  section: reference
+  slug: accumulate-2
+  legacy_url: https://docs.muxy.io/reference/accumulate-2
+  legacy_markdown_url: https://docs.muxy.io/reference/accumulate-2.md
+  status: current
+  canonical_slug: accumulate-2
+  target_file: docs/reference/accumulate-2.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 8cdfa5b134c2a9757580cb69649a8739207fdeab8d3d2277d6683b559543e994
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 33922c8a8a308c050a294d0aa54ae73b9efc534794398fc8695e003e84d3dd30
+- title: Aggregation API
+  description: Navigate the accumulation and ranking operations in the Muxy REST API.
+  section: reference
+  slug: aggregation-api
+  legacy_url: https://docs.muxy.io/reference/aggregation-api
+  legacy_markdown_url: https://docs.muxy.io/reference/aggregation-api.md
+  status: current
+  canonical_slug: aggregation-api
+  target_file: docs/reference/aggregation-api.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 0fd3c488b956329fc0234a15b6fc209fc24839590d72a491b125f3498f8d46e4
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: ccdbe3d53427c67e232ed38379398e5a21dd5d8a8c7bdb6fc05c65fe1356c432
+- title: Broadcast Messaging
+  description: Send channel, extension-wide, and back-channel PubSub messages through
+    the Muxy REST API.
+  section: reference
+  slug: broadcast
+  legacy_url: https://docs.muxy.io/reference/broadcast
+  legacy_markdown_url: https://docs.muxy.io/reference/broadcast.md
+  status: current
+  canonical_slug: broadcast
+  target_file: docs/reference/broadcast.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 95ea25e86f18e4b7045b29a11bfe043a1a6736b5c8149ea55b539e01df93982d
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 9bce7aec46d7f4cf53d03c94767ca6184a2b5e78d7cdfcea2b0f7d711538c8ef
+- title: Channel Config
+  description: Retrieve the current channel configuration document.
+  section: reference
+  slug: channel-config
+  legacy_url: https://docs.muxy.io/reference/channel-config
+  legacy_markdown_url: https://docs.muxy.io/reference/channel-config.md
+  status: current
+  canonical_slug: channel-config
+  target_file: docs/reference/channel-config.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 3d7c2f31fa6d5fa7b53992998e8ef118d82131170f0e4f8588609468f4d1c4a9
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 813567cf8702a6147521bea3cf0aab41279f37d482d5c8d0f94c7db58f672dea
+- title: Channel Config
+  description: Replace the current channel configuration document.
+  section: reference
+  slug: channel-config-1
+  legacy_url: https://docs.muxy.io/reference/channel-config-1
+  legacy_markdown_url: https://docs.muxy.io/reference/channel-config-1.md
+  status: current
+  canonical_slug: channel-config-1
+  target_file: docs/reference/channel-config-1.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: dbb53e0931759d72f12ad184160b5d9f273f1e21403e9736d2431c5618657670
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: eacc6a5c26243cd07b6d7e8657a105dc95d04c0ad83590c567b760248d76b489
+- title: Channel Config
+  description: Patch selected fields in the current channel configuration document.
+  section: reference
+  slug: channel-config-2
+  legacy_url: https://docs.muxy.io/reference/channel-config-2
+  legacy_markdown_url: https://docs.muxy.io/reference/channel-config-2.md
+  status: current
+  canonical_slug: channel-config-2
+  target_file: docs/reference/channel-config-2.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 9c285f933d20f463f6d3f724e20bcafe18df94c7963502150e8c58eec33b9735
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 6bf10bdcf0194fd2f9c42fed39a8da72a610d888ea80ada9256be4066fb9d28f
+- title: Channel State
+  description: Retrieve the current channel state document.
+  section: reference
+  slug: channel-state
+  legacy_url: https://docs.muxy.io/reference/channel-state
+  legacy_markdown_url: https://docs.muxy.io/reference/channel-state.md
+  status: current
+  canonical_slug: channel-state
+  target_file: docs/reference/channel-state.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: d1b127f666b351ffcb850a15d582d571e05e257def1b1c8fb08f3629a4a49509
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 5a6bb410091917dec2ecf98f90853a49e35d71cb175591224f3b360629c4dc9d
+- title: Channel State
+  description: Replace the current channel state document.
+  section: reference
+  slug: channel-state-1
+  legacy_url: https://docs.muxy.io/reference/channel-state-1
+  legacy_markdown_url: https://docs.muxy.io/reference/channel-state-1.md
+  status: current
+  canonical_slug: channel-state-1
+  target_file: docs/reference/channel-state-1.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: a7ec9976af8c223074146504588308cc568ea0887c6a9ec7fad717129003ef06
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: dd3689772e6b97eb056b216bbc89be5e8ffd312bfc8181b00dee17223d3294c2
+- title: Channel State
+  description: Patch selected fields in the current channel state document.
+  section: reference
+  slug: channel-state-2
+  legacy_url: https://docs.muxy.io/reference/channel-state-2
+  legacy_markdown_url: https://docs.muxy.io/reference/channel-state-2.md
+  status: current
+  canonical_slug: channel-state-2
+  target_file: docs/reference/channel-state-2.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 8e12498153850f53af2239d8feb59244e1147efe869bb5af4245461740a5edd3
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: a4e2a0981792c76b54afe93b25e13477603daad970b83179d438cba7efe4fdd3
+- title: Communication API
+  description: Navigate the channel, extension-wide, and current-viewer messaging
+    operations in the Muxy REST API.
+  section: reference
+  slug: communication-api
+  legacy_url: https://docs.muxy.io/reference/communication-api
+  legacy_markdown_url: https://docs.muxy.io/reference/communication-api.md
+  status: current
+  canonical_slug: communication-api
+  target_file: docs/reference/communication-api.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: b15f1abf248060477b5cbf607e0838190b5e9fc06aa99fee668fc076e16305f1
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 85225ead4aeedc35c65d5e8b816c36b157127205a1310adab894aa29bc5ff128
+- title: Config API
+  description: Navigate the extension-wide and channel-specific configuration operations
+    in the Muxy REST API.
+  section: reference
+  slug: config-api
+  legacy_url: https://docs.muxy.io/reference/config-api
+  legacy_markdown_url: https://docs.muxy.io/reference/config-api.md
+  status: current
+  canonical_slug: config-api
+  target_file: docs/reference/config-api.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 4d7b2c214b2a042a85960889caaefe189cd052cdb4653ea4a0b05083e9352a26
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 90b946e298508f148707ea7ad3bf4acc0cba1b33e8a9e8f6d639f84f559c4768
+- title: Developing in the Sandbox
+  description: Muxy provides an off-Twitch environment for development and testing.
+  section: reference
+  slug: dev-auth
+  legacy_url: https://docs.muxy.io/reference/dev-auth
+  legacy_markdown_url: https://docs.muxy.io/reference/dev-auth.md
+  status: current
+  canonical_slug: dev-auth
+  target_file: docs/reference/dev-auth.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 2c4a42a1bb313380feae0ff7a2557d88a3b1e3396da6b18c0e8c8071861548c5
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 787b1a5da01b08c1ac8718b2756446a35ba4ebc3e28690a466e69ba99e13a95d
+- title: GameLink C++ Events and Subscriptions
+  description: Register C++ callbacks for authentication, state, configuration, datastream,
+    polls, and transactions.
+  section: reference
+  slug: event-handling
+  legacy_url: https://docs.muxy.io/reference/event-handling
+  legacy_markdown_url: https://docs.muxy.io/reference/event-handling.md
+  status: current
+  canonical_slug: event-handling
+  target_file: docs/reference/event-handling.md
+  product: GameLink Native
+  owner: Native SDK owner
+  source_of_truth: muxy/gamelink-cpp
+  version: commit-16c6b97
+  redirects: []
+  review_state: blocked-release
+  page_type: sdk-reference
+  source_sha256: f8324ab0b9e02ade22fc6ff80fb19bcc33a886b4897e3abc9bc5e38cc65b92a3
+- title: All Config
+  description: Retrieve the combined channel and extension configuration documents.
+  section: reference
+  slug: extension-config
+  legacy_url: https://docs.muxy.io/reference/extension-config
+  legacy_markdown_url: https://docs.muxy.io/reference/extension-config.md
+  status: current
+  canonical_slug: extension-config
+  target_file: docs/reference/extension-config.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: b1bc6ec7da8792b6a716c69695eef6cafcd2003c48c17e3b7743ef5adae889c4
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 82684ad22e6bea7a37fd41fb0ba2b495d0bcc7591dcdfc6bec806b51bbf26211
+- title: Extension Config
+  description: Retrieve the extension-wide configuration document.
+  section: reference
+  slug: extension-config-1
+  legacy_url: https://docs.muxy.io/reference/extension-config-1
+  legacy_markdown_url: https://docs.muxy.io/reference/extension-config-1.md
+  status: current
+  canonical_slug: extension-config-1
+  target_file: docs/reference/extension-config-1.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 4cf95004645ad7143d0c81f7583e159ebd887a53f108c03e05404afb203c9ae1
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: c4ac4f0afd0906b8c2370ab39d42c4fe554b1beda7a47d53a1944ce14142213b
+- title: Extension Config
+  description: Replace the extension-wide configuration document.
+  section: reference
+  slug: extension-config-2
+  legacy_url: https://docs.muxy.io/reference/extension-config-2
+  legacy_markdown_url: https://docs.muxy.io/reference/extension-config-2.md
+  status: current
+  canonical_slug: extension-config-2
+  target_file: docs/reference/extension-config-2.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: bd6206a48085b6b7b0d0aae6fc64dead2705c5e7b8ba9fdf5962936bf57cbb1c
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 5ce8dadd66c75d6bc6f94d0a3bdb5ae1a15f4a8b8c7a495931dac1b714eabca8
+- title: Extension Config
+  description: Patch selected fields in the extension-wide configuration document.
+  section: reference
+  slug: extension-config-3
+  legacy_url: https://docs.muxy.io/reference/extension-config-3
+  legacy_markdown_url: https://docs.muxy.io/reference/extension-config-3.md
+  status: current
+  canonical_slug: extension-config-3
+  target_file: docs/reference/extension-config-3.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 0ac6620f0f1371369ff97b4f52d629cb7363a25cb7f7a1850ee7c6663cf23cca
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: ee4b93f4e3e87180c688e4fb89345c11219a5f90e418c0baaf6ae348b6784f1a
+- title: GameLink C++ Setup and Authentication
+  description: Connect a native C++ transport, authenticate with a PIN or refresh
+    token, and recover after reconnects.
+  section: reference
+  slug: extension-setup-api
+  legacy_url: https://docs.muxy.io/reference/extension-setup-api
+  legacy_markdown_url: https://docs.muxy.io/reference/extension-setup-api.md
+  status: current
+  canonical_slug: extension-setup-api
+  target_file: docs/reference/extension-setup-api.md
+  product: GameLink Native
+  owner: Native SDK owner
+  source_of_truth: muxy/gamelink-cpp
+  version: commit-16c6b97
+  redirects: []
+  review_state: blocked-release
+  page_type: sdk-reference
+  source_sha256: f4a9d9b73b658f6db5456308b8f2cf555006f9537121f16470f2201d2ca657f8
+- title: Extension State
+  description: Replace the extension-wide state document.
+  section: reference
+  slug: extension-state
+  legacy_url: https://docs.muxy.io/reference/extension-state
+  legacy_markdown_url: https://docs.muxy.io/reference/extension-state.md
+  status: current
+  canonical_slug: extension-state
+  target_file: docs/reference/extension-state.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 8122804092e8a6173081e6b84145e65f61bdbb91c3356d91239fe1c1978c44ec
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: af05f17d7d88c9a9ae203109cd152dc5221addcc90d263aa78fa0afc03872efa
+- title: Extension State
+  description: Patch selected fields in the extension-wide state document.
+  section: reference
+  slug: extension-state-1
+  legacy_url: https://docs.muxy.io/reference/extension-state-1
+  legacy_markdown_url: https://docs.muxy.io/reference/extension-state-1.md
+  status: current
+  canonical_slug: extension-state-1
+  target_file: docs/reference/extension-state-1.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: dfc2fee5135be84b584663bee6488c713ab853388e941cc84175af68310a5450
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 874c323f3ca11af0709223ae327de1015ce31bbddd68acd2235204f6882e9709
+- title: Extension Viewer State
+  description: Read one viewer's extension-wide state or batch-read state for up to
+    1,000 Twitch user IDs.
+  section: reference
+  slug: extension-viewer-state
+  legacy_url: https://docs.muxy.io/reference/extension-viewer-state
+  legacy_markdown_url: https://docs.muxy.io/reference/extension-viewer-state.md
+  status: current
+  canonical_slug: extension-viewer-state
+  target_file: docs/reference/extension-viewer-state.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 0d49d675d0358ed35d227d5d58144ffe4b5ab2b558231ef653a091eb6b838ae4
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: ddd98cd7b28da7458bcd833744042c1dc9a53e81d56c161d5210dd48fa39e6ce
+- title: Extension Viewer State
+  description: Replace extension-wide state for the selected viewer.
+  section: reference
+  slug: extension-viewer-state-1
+  legacy_url: https://docs.muxy.io/reference/extension-viewer-state-1
+  legacy_markdown_url: https://docs.muxy.io/reference/extension-viewer-state-1.md
+  status: current
+  canonical_slug: extension-viewer-state-1
+  target_file: docs/reference/extension-viewer-state-1.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: f39a3e60057521921dbb8677d1db6917a4c6398354b99f9d6ec46d1a47769de4
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 27b2ae69d185bcf4d761676fcf278dd291686e9163df0110cb27749563064bef
+- title: Extension Viewer State
+  description: Patch extension-wide state for the selected viewer.
+  section: reference
+  slug: extension-viewer-state-2
+  legacy_url: https://docs.muxy.io/reference/extension-viewer-state-2
+  legacy_markdown_url: https://docs.muxy.io/reference/extension-viewer-state-2.md
+  status: current
+  canonical_slug: extension-viewer-state-2
+  target_file: docs/reference/extension-viewer-state-2.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 74c088c93b9d9f0f4fc3061cd4e2884a627fb24d539c5b2d5353507ff63a5f72
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: fe9b3ece75a11d2c1a33b6807e04671661d3f45428544cd60efe9586fbe2d3d6
+- title: Game Codes
+  description: Archived Muxy documentation for Game Codes.
+  section: reference
+  slug: game-codes
+  legacy_url: https://docs.muxy.io/reference/game-codes
+  legacy_markdown_url: https://docs.muxy.io/reference/game-codes.md
+  status: archived
+  canonical_slug: game-codes
+  target_file: docs/reference/game-codes.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: needs-sme-review
+  page_type: protocol-reference
+  source_sha256: 39af8e83352b4293d59e4998130ec5b014ce236e150595532b099dd5859c95c7
+- title: GameLink C++ Library
+  description: Integrate the native GameLink C++ SDK, provide a WebSocket transport,
+    and authenticate with Muxy.
+  section: reference
+  slug: gamelink-library
+  legacy_url: https://docs.muxy.io/reference/gamelink-library
+  legacy_markdown_url: https://docs.muxy.io/reference/gamelink-library.md
+  status: current
+  canonical_slug: gamelink-library
+  target_file: docs/reference/gamelink-library.md
+  product: GameLink Native
+  owner: Native SDK owner
+  source_of_truth: muxy/gamelink-cpp
+  version: commit-16c6b97
+  redirects: []
+  review_state: blocked-release
+  page_type: sdk-reference
+  source_sha256: 4d3a4f6293de2857e91ea5ee653eb62e917ebcd0ef3e8c6d2f1f5ad6a4fd0de8
+- title: Initialization API
+  description: Archived Muxy documentation for Initialization API.
+  section: reference
+  slug: initialization-api
+  legacy_url: https://docs.muxy.io/reference/initialization-api
+  legacy_markdown_url: https://docs.muxy.io/reference/initialization-api.md
+  status: archived
+  canonical_slug: initialization-api
+  target_file: docs/reference/initialization-api.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: needs-sme-review
+  page_type: protocol-reference
+  source_sha256: 86386bdd2ab524deafd68b16855f20ed65919b09b3112d2c8e129d2d0a9db20d
+- title: Using the MEDKit REST API
+  description: Base URLs, authorization, request conventions, and route groups for
+    the Muxy REST API.
+  section: reference
+  slug: medkit-rest-api
+  legacy_url: https://docs.muxy.io/reference/medkit-rest-api
+  legacy_markdown_url: https://docs.muxy.io/reference/medkit-rest-api.md
+  status: current
+  canonical_slug: medkit-rest-api
+  target_file: docs/reference/medkit-rest-api.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 2ed5d05ba174d3bed6798044e76b5c15b0ba8afaf181e8d103a1d49a158c37a2
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 709610af1c93853d304d140a0dd369ab59b1bf767217c63e85b67f5765683d0d
+- title: Game-initiated PIN Authorization
+  description: Archived Muxy documentation for Game-initiated PIN Authorization.
+  section: reference
+  slug: pin-auth
+  legacy_url: https://docs.muxy.io/reference/pin-auth
+  legacy_markdown_url: https://docs.muxy.io/reference/pin-auth.md
+  status: archived
+  canonical_slug: pin-auth
+  target_file: docs/reference/pin-auth.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: needs-sme-review
+  page_type: protocol-reference
+  source_sha256: 43cfe9a10d4ad17a2e6c471db0e65d14ea8b90121a80088e5d919de2e50b5b2f
+- title: Poll Management
+  description: The voting endpoints allow for high-volume polling activity.
+  section: reference
+  slug: poll-managment
+  legacy_url: https://docs.muxy.io/reference/poll-managment
+  legacy_markdown_url: https://docs.muxy.io/reference/poll-managment.md
+  status: current
+  canonical_slug: poll-managment
+  target_file: docs/reference/poll-managment.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: c2e7619f51d9e2b78001e3f4c83a52278c038bf402e50252e6f970011df1e540
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 4b781aa227c2c552637295f71ffff35fc3511eaaae689f9d934fe83fe7a096b9
+- title: Basic Ranking
+  description: The REST API provides a ranking service that collects user input and
+    counts matching values.
+  section: reference
+  slug: rank
+  legacy_url: https://docs.muxy.io/reference/rank
+  legacy_markdown_url: https://docs.muxy.io/reference/rank.md
+  status: current
+  canonical_slug: rank
+  target_file: docs/reference/rank.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 87e393ddba909a50439039e70d0830fac4e2096c4be1cd2622d8d168d56704bc
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 6247216df54365185c6492ae3053a945abe46576dbb1a52801bf71426de77d6f
+- title: Rank
+  description: Retrieve ranked values from a named ranking buffer.
+  section: reference
+  slug: rank-1
+  legacy_url: https://docs.muxy.io/reference/rank-1
+  legacy_markdown_url: https://docs.muxy.io/reference/rank-1.md
+  status: current
+  canonical_slug: rank-1
+  target_file: docs/reference/rank-1.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 46f5baa19ea39f6b448bd0c261497e8825f09c9e450242d5c1087b2a00be289a
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: ea4daa80f79a687ae97ebe1a77b0365f39dc21a2e195c33915a5482d2f039e7f
+- title: Rank
+  description: Submit a value to a named ranking buffer.
+  section: reference
+  slug: rank-2
+  legacy_url: https://docs.muxy.io/reference/rank-2
+  legacy_markdown_url: https://docs.muxy.io/reference/rank-2.md
+  status: current
+  canonical_slug: rank-2
+  target_file: docs/reference/rank-2.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: ae86c8f30066adc890b96f3f13ad03f829e87118de4879b6ee11e93e4d45922b
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: be01b422d2a63067f159e4593d70ef13364a0438bb6bc292b4a6a2e52791f00b
+- title: Rank
+  description: Delete a named ranking buffer and its stored values.
+  section: reference
+  slug: rank-3
+  legacy_url: https://docs.muxy.io/reference/rank-3
+  legacy_markdown_url: https://docs.muxy.io/reference/rank-3.md
+  status: current
+  canonical_slug: rank-3
+  target_file: docs/reference/rank-3.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: c5ceefbe117ac8ddc5690cf78d5e11d7a0b062d80d92f9647a031dacbcea8a0f
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 57ab0aa309b8253e45420608e72cacdf8b79f59809ce56c4809c7a98b9a1131a
+- title: State API
+  description: Navigate the extension, channel, and viewer state operations in the
+    Muxy REST API.
+  section: reference
+  slug: rest-state-api
+  legacy_url: https://docs.muxy.io/reference/rest-state-api
+  legacy_markdown_url: https://docs.muxy.io/reference/rest-state-api.md
+  status: current
+  canonical_slug: rest-state-api
+  target_file: docs/reference/rest-state-api.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: e3397d89a8fbc9bc540505b8a3b4f1700912ee5aeb07c5aa530def4e6aada9fa
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 1cf3a90d04dc27be550a02108a941cb8a7fb865734b34cab3b04efb4b1b04df6
+- title: GameLink C++ SDK Class
+  description: Understand the GameLink C++ request queue, transport lifecycle, callback
+    dispatch, and error model.
+  section: reference
+  slug: sdk-class
+  legacy_url: https://docs.muxy.io/reference/sdk-class
+  legacy_markdown_url: https://docs.muxy.io/reference/sdk-class.md
+  status: current
+  canonical_slug: sdk-class
+  target_file: docs/reference/sdk-class.md
+  product: GameLink Native
+  owner: Native SDK owner
+  source_of_truth: muxy/gamelink-cpp
+  version: commit-16c6b97
+  redirects: []
+  review_state: blocked-release
+  page_type: sdk-reference
+  source_sha256: 6487846083d3358a63c12246278ec64a8e7fe40d94cdee03a795751e767029d3
+- title: GameLink C++ State and Configuration
+  description: Read, replace, patch, and subscribe to GameLink state and configuration
+    from C++.
+  section: reference
+  slug: state-config-fns
+  legacy_url: https://docs.muxy.io/reference/state-config-fns
+  legacy_markdown_url: https://docs.muxy.io/reference/state-config-fns.md
+  status: current
+  canonical_slug: state-config-fns
+  target_file: docs/reference/state-config-fns.md
+  product: GameLink Native
+  owner: Native SDK owner
+  source_of_truth: muxy/gamelink-cpp
+  version: commit-16c6b97
+  redirects: []
+  review_state: blocked-release
+  page_type: sdk-reference
+  source_sha256: 0206e073951165f011e35bbfe6dbae1f9587eced40934c66ee361d3f1897c7ac
+- title: Transaction Management
+  description: Archived Muxy documentation for Transaction Management.
+  section: reference
+  slug: transactions
+  legacy_url: https://docs.muxy.io/reference/transactions
+  legacy_markdown_url: https://docs.muxy.io/reference/transactions.md
+  status: archived
+  canonical_slug: transactions
+  target_file: docs/reference/transactions.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: needs-sme-review
+  page_type: protocol-reference
+  source_sha256: d4d3c833c9e5900fc7fedcecda8c7ccc754d62214eff3238543a68c8104cac22
+- title: Trivia Contest Management
+  description: Archived Muxy documentation for Trivia Contest Management.
+  section: reference
+  slug: trivia-1
+  legacy_url: https://docs.muxy.io/reference/trivia-1
+  legacy_markdown_url: https://docs.muxy.io/reference/trivia-1.md
+  status: archived
+  canonical_slug: trivia-1
+  target_file: docs/reference/trivia-1.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: needs-sme-review
+  page_type: protocol-reference
+  source_sha256: 094c64b3a2c36d50b138c2ea4f13d1976ccf4025aa1c1328315e8bafec40fb75
+- title: Authorization for Testing
+  description: Create one or more sandbox JWTs for simulated users.
+  section: reference
+  slug: try-sandbox-auth
+  legacy_url: https://docs.muxy.io/reference/try-sandbox-auth
+  legacy_markdown_url: https://docs.muxy.io/reference/try-sandbox-auth.md
+  status: current
+  canonical_slug: try-sandbox-auth
+  target_file: docs/reference/try-sandbox-auth.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/sandbox-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 38a8136fafc17e6e8cedff5d1796d83f88f825731f52071142ac38558685e46c
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 801fc4017383d74c9084e911f4db3044d8395e895eb7316b766139d6901832da
+- title: User Information
+  description: Archived Muxy documentation for User Information.
+  section: reference
+  slug: user-info
+  legacy_url: https://docs.muxy.io/reference/user-info
+  legacy_markdown_url: https://docs.muxy.io/reference/user-info.md
+  status: archived
+  canonical_slug: user-info
+  target_file: docs/reference/user-info.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: needs-sme-review
+  page_type: protocol-reference
+  source_sha256: 3ae815d06065031c7adfb74e6be6bd45a89795518d8eafcab23c8e216466b300
+- title: All State
+  description: Retrieve extension, channel, viewer, and extension-viewer state in
+    one response.
+  section: reference
+  slug: viewer-state
+  legacy_url: https://docs.muxy.io/reference/viewer-state
+  legacy_markdown_url: https://docs.muxy.io/reference/viewer-state.md
+  status: current
+  canonical_slug: viewer-state
+  target_file: docs/reference/viewer-state.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 5af881097494c01c23b93b5c54d69a9cfcdca350895a78cef825bbf6d583b854
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: b303a25bc89cecc8a9592da425f29cca06c7c970a82f050f1d0bffa96c835e19
+- title: Viewer State
+  description: Replace channel-scoped state for the current viewer.
+  section: reference
+  slug: viewer-state-1
+  legacy_url: https://docs.muxy.io/reference/viewer-state-1
+  legacy_markdown_url: https://docs.muxy.io/reference/viewer-state-1.md
+  status: current
+  canonical_slug: viewer-state-1
+  target_file: docs/reference/viewer-state-1.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: d2204df98b6af4de408e6d48a9ba504cbceab5ab44ec02c2e20531555af89e5c
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 45c4ae31028ca56af0e40f46b6abbaef4c2dfcab57c78b6ce6b8357cf45d3701
+- title: Viewer State
+  description: Retrieve channel-scoped state for the current viewer.
+  section: reference
+  slug: viewer-state-2
+  legacy_url: https://docs.muxy.io/reference/viewer-state-2
+  legacy_markdown_url: https://docs.muxy.io/reference/viewer-state-2.md
+  status: current
+  canonical_slug: viewer-state-2
+  target_file: docs/reference/viewer-state-2.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 17db15150437ece1634489d04a686ad3b4718ce9bfa439f947849c399b72265a
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: c4597b2ab8ce922eb0caf00714dee247d25cc39ea30bca2554bc6a4b2ee6b1c1
+- title: Viewer State
+  description: Patch channel-scoped state for the current viewer.
+  section: reference
+  slug: viewer-state-3
+  legacy_url: https://docs.muxy.io/reference/viewer-state-3
+  legacy_markdown_url: https://docs.muxy.io/reference/viewer-state-3.md
+  status: current
+  canonical_slug: viewer-state-3
+  target_file: docs/reference/viewer-state-3.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 0f2fc6e1c589714e4437b139cbe634057fe18dd95c8f2d12362d9ff31e7ed0eb
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 31187a41f9fbee51409d90f12014be6ad6ec9fa0a3e153adfa4cc65e6a58e1f9
+- title: Extension State
+  description: Retrieve the extension-wide state document.
+  section: reference
+  slug: viewer-state-4
+  legacy_url: https://docs.muxy.io/reference/viewer-state-4
+  legacy_markdown_url: https://docs.muxy.io/reference/viewer-state-4.md
+  status: current
+  canonical_slug: viewer-state-4
+  target_file: docs/reference/viewer-state-4.md
+  product: REST API
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: protocol-reference
+  source_sha256: 85ee471b2dddd683b424f9c1666b2a101d6ffd942246efdf14e7daff0803efbe
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 75220e11dcac1eaca739e49ead31ecb862f425053fd38605d2ff903b4aed1bee
+- title: GameLink WebSocket Protocol
+  description: Connect to GameLink and exchange source-verified request, response,
+    update, and error envelopes.
+  section: reference
+  slug: websocket-protocol
+  legacy_url: https://docs.muxy.io/reference/websocket-protocol
+  legacy_markdown_url: https://docs.muxy.io/reference/websocket-protocol.md
+  status: current
+  canonical_slug: websocket-protocol
+  target_file: docs/reference/websocket-protocol.md
+  product: GameLink WebSocket
+  owner: GameLink owner
+  source_of_truth: muxy/gamelink-cpp
+  version: commit-16c6b97
+  redirects: []
+  review_state: blocked-release
+  page_type: protocol-reference
+  source_sha256: a0860bc1a63918cf7567a1c45c0bb38a9b7675732549ab35cd8a9b8eb47a5620
+- title: GameLink WebSocket Authentication
+  description: Authenticate a GameLink WebSocket connection with a PIN or refresh
+    token using the pinned wire schema.
+  section: reference
+  slug: ws-authentication
+  legacy_url: https://docs.muxy.io/reference/ws-authentication
+  legacy_markdown_url: https://docs.muxy.io/reference/ws-authentication.md
+  status: current
+  canonical_slug: ws-authentication
+  target_file: docs/reference/ws-authentication.md
+  product: GameLink WebSocket
+  owner: GameLink owner
+  source_of_truth: muxy/gamelink-cpp
+  version: commit-16c6b97
+  redirects: []
+  review_state: blocked-release
+  page_type: protocol-reference
+  source_sha256: 644889fe538225417684831cbb00bd4a5d58848654c3c9833efe2f8a8bcdbf50
+- title: GameLink WebSocket Polling
+  description: Create, configure, read, subscribe to, stop, and delete GameLink polls
+    using the pinned wire schema.
+  section: reference
+  slug: ws-polling
+  legacy_url: https://docs.muxy.io/reference/ws-polling
+  legacy_markdown_url: https://docs.muxy.io/reference/ws-polling.md
+  status: current
+  canonical_slug: ws-polling
+  target_file: docs/reference/ws-polling.md
+  product: GameLink WebSocket
+  owner: GameLink owner
+  source_of_truth: muxy/gamelink-cpp
+  version: commit-16c6b97
+  redirects: []
+  review_state: blocked-release
+  page_type: protocol-reference
+  source_sha256: 8b9db649868e1b6e3ac39b20969ae11601166d3f7a68198153b5644b1d05563e
+- title: GameLink Broadcasts and Subscriptions
+  description: Send viewer broadcasts and construct source-verified GameLink service
+    subscriptions.
+  section: reference
+  slug: ws-pubsub
+  legacy_url: https://docs.muxy.io/reference/ws-pubsub
+  legacy_markdown_url: https://docs.muxy.io/reference/ws-pubsub.md
+  status: current
+  canonical_slug: ws-pubsub
+  target_file: docs/reference/ws-pubsub.md
+  product: GameLink WebSocket
+  owner: GameLink owner
+  source_of_truth: muxy/gamelink-cpp
+  version: commit-16c6b97
+  redirects: []
+  review_state: blocked-release
+  page_type: protocol-reference
+  source_sha256: 7b5a4a0326b6341ae6548e5104a281f01881a3381c16fb6d885301816aa91d1d
+- title: GameLink WebSocket Purchase Transactions
+  description: Subscribe to purchases and get, validate, or refund transactions using
+    source-verified target and field names.
+  section: reference
+  slug: ws-purchase-transactions
+  legacy_url: https://docs.muxy.io/reference/ws-purchase-transactions
+  legacy_markdown_url: https://docs.muxy.io/reference/ws-purchase-transactions.md
+  status: current
+  canonical_slug: ws-purchase-transactions
+  target_file: docs/reference/ws-purchase-transactions.md
+  product: GameLink WebSocket
+  owner: GameLink owner
+  source_of_truth: muxy/gamelink-cpp
+  version: commit-16c6b97
+  redirects: []
+  review_state: blocked-release
+  page_type: protocol-reference
+  source_sha256: 212fb873003e520573853d2e0764e7ae9354f0414af3f72d54ae27c33309540c
+- title: GameLink WebSocket State Access
+  description: Read, replace, patch, and subscribe to channel or extension state with
+    the pinned GameLink schema.
+  section: reference
+  slug: ws-state-access
+  legacy_url: https://docs.muxy.io/reference/ws-state-access
+  legacy_markdown_url: https://docs.muxy.io/reference/ws-state-access.md
+  status: current
+  canonical_slug: ws-state-access
+  target_file: docs/reference/ws-state-access.md
+  product: GameLink WebSocket
+  owner: GameLink owner
+  source_of_truth: muxy/gamelink-cpp
+  version: commit-16c6b97
+  redirects: []
+  review_state: blocked-release
+  page_type: protocol-reference
+  source_sha256: 2a42764d55cb22877dfc727f035cc59343fb59207c603a29138af4ed2bf9da6c
+assets:
+- legacy_url: https://files.readme.io/009b038-Action_Name_and_Description_for_Code.png
+  target_file: docs/assets/readme/009b038-Action_Name_and_Description_for_Code.png
+  sha256: 8b6c3085ae955d045e367b040a1cc78427a025ee7bf2c5e5406171d76dd66d85
+- legacy_url: https://files.readme.io/00e7f7a-state.png
+  target_file: docs/assets/readme/00e7f7a-state.png
+  sha256: cfa4b15e0cc84f8bec60e4b3fa08a87431892df7cb20c90f5ff99176ecf4693b
+- legacy_url: https://files.readme.io/04b6a99-clear.png
+  target_file: docs/assets/readme/04b6a99-clear.png
+  sha256: 6516e32b6c45b05761f9ccba8c068c5e9cdc923459481e643630966185e3e41a
+- legacy_url: https://files.readme.io/10e2e4f-level_blueprint.png
+  target_file: docs/assets/readme/10e2e4f-level_blueprint.png
+  sha256: caa5e1831def20567c43eb27ee4ac6453d3ce102468524c8f4d2213bc8f9f891
+- legacy_url: https://files.readme.io/20993fa-small-ReadMe_GameInfo.png
+  target_file: docs/assets/readme/20993fa-small-ReadMe_GameInfo.png
+  sha256: ca53a6579445d1da56004b665fa9993d7a0b901a24716a31ce451fd44a107c08
+- legacy_url: https://files.readme.io/23c55ba-twitch_ui_1.png
+  target_file: docs/assets/readme/23c55ba-twitch_ui_1.png
+  sha256: 5caffa16d587a23053e96f9499a9f9f0c69605ea809d3ad27c6d44c12b77cb5c
+- legacy_url: https://files.readme.io/24497ec-basic_poll.png
+  target_file: docs/assets/readme/24497ec-basic_poll.png
+  sha256: c85b8e5df6b69e0b59b5e06efb59599c8c41a7b5c168feb8c3462bee12c2fa1f
+- legacy_url: https://files.readme.io/253ea5e-unique.png
+  target_file: docs/assets/readme/253ea5e-unique.png
+  sha256: a66699f336be8748c7c2ccc85a7828fc16a96edb69cbc2f878c74608b6fcc549
+- legacy_url: https://files.readme.io/26086e3-sample.png
+  target_file: docs/assets/readme/26086e3-sample.png
+  sha256: c823c0103cc1a2b3c86a5cb60c3e5fe4a0ddda5a95d05f3e0314fd59009218b6
+- legacy_url: https://files.readme.io/31bfa99-delete.png
+  target_file: docs/assets/readme/31bfa99-delete.png
+  sha256: 76894bfe7a1d90d99f07b4e75505b835d6fd12e724e0e59e4ae1d3650bddfba4
+- legacy_url: https://files.readme.io/359c7ca-broadcast.png
+  target_file: docs/assets/readme/359c7ca-broadcast.png
+  sha256: c69ed5c181292cb069741f00a696c72d0a80882b97817640f325f0311de7f413
+- legacy_url: https://files.readme.io/380b00e-Screen_1_-_Options.png
+  target_file: docs/assets/readme/380b00e-Screen_1_-_Options.png
+  sha256: 48c43a6b277261c562dde1727f3fb5ac5bb2fbc0de6930e5e3338025513896ef
+- legacy_url: https://files.readme.io/3af5e52-game_awards.png
+  target_file: docs/assets/readme/3af5e52-game_awards.png
+  sha256: 6abb5f7114f97e42380aa11f69acc3306ca43ff1d0459880916f372fe9a0c007
+- legacy_url: https://files.readme.io/3e8fbde-Screen_Shot_2022-01-16_at_12.00.59_PM.png
+  target_file: docs/assets/readme/3e8fbde-Screen_Shot_2022-01-16_at_12.00.59_PM.png
+  sha256: 08d35adda911292933e75dd4e7c694c58e4b014e2ceeda5fd12d6477aa26bc8f
+- legacy_url: https://files.readme.io/494e571-metadata.png
+  target_file: docs/assets/readme/494e571-metadata.png
+  sha256: 2cb35c27a145ea9a7eed31337fdda4d6fd47e0192433dd6566ad718b20f8808e
+- legacy_url: https://files.readme.io/4a4b9f5-small-ReadMe-Actions.png
+  target_file: docs/assets/readme/4a4b9f5-small-ReadMe-Actions.png
+  sha256: 189e8a4512d4de90fd46af8673aa1e95e3983e01cc6747124c210dd128345c1a
+- legacy_url: https://files.readme.io/4acba44-broadcast.png
+  target_file: docs/assets/readme/4acba44-broadcast.png
+  sha256: aa4aa9340b54371432967a5f3afb0926bb2fca3d1769991c69a40bf745754f01
+- legacy_url: https://files.readme.io/51d5f2c-install_from_git.png
+  target_file: docs/assets/readme/51d5f2c-install_from_git.png
+  sha256: d4ea98ab9adb74d94c0232628c4b9d89fc890c5252a4be84afc17e66e793f227
+- legacy_url: https://files.readme.io/542578a-refresh_save.png
+  target_file: docs/assets/readme/542578a-refresh_save.png
+  sha256: 622b9e7c0e7cb917a8a1208462a7b17c6c6a7ded1582880ae6e10f5df4c11b3a
+- legacy_url: https://files.readme.io/5d70d90-load_jwt.png
+  target_file: docs/assets/readme/5d70d90-load_jwt.png
+  sha256: 4712569ead4a83d3765f1539081e937441ce51fec0eb09b1f9bdaf8d0ad5192e
+- legacy_url: https://files.readme.io/5db1b12-twitch_ui_2.png
+  target_file: docs/assets/readme/5db1b12-twitch_ui_2.png
+  sha256: abbdacfba3f6abefb92cd6ffe2e10862d46facf3dd8c3235c7be7eee9c9342da
+- legacy_url: https://files.readme.io/61970fc-image.png
+  target_file: docs/assets/readme/61970fc-image.png
+  sha256: 4b5c78498ed333a7d7fa2370b32f6a82c1c0f69485d5dd412c9903106237699d
+- legacy_url: https://files.readme.io/66268f9-on_clicked.png
+  target_file: docs/assets/readme/66268f9-on_clicked.png
+  sha256: 1f4e1b9f4ed50a6a0d9b4c2fc147b0de09551d207df8f0bbd7d63675aeca9c42
+- legacy_url: https://files.readme.io/6bd6f8d-layout_ui.png
+  target_file: docs/assets/readme/6bd6f8d-layout_ui.png
+  sha256: 097d1f884cb64107c9b583a8f9f43b644c558e20ec66df1a028f37669d663ada
+- legacy_url: https://files.readme.io/6d60c60-is_connected.png
+  target_file: docs/assets/readme/6d60c60-is_connected.png
+  sha256: aa8fc0fc51368e6f23e44f0811d7a0ccfd53f62ecdb8a3206ad0184a9108f229
+- legacy_url: https://files.readme.io/70289c7-save_jwt.png
+  target_file: docs/assets/readme/70289c7-save_jwt.png
+  sha256: 2f3d3f0c17e559bfd40baf067815284d93998aebbf65d55509e0c98dc1882c9b
+- legacy_url: https://files.readme.io/7754dab-small-ReadMe_polling.png
+  target_file: docs/assets/readme/7754dab-small-ReadMe_polling.png
+  sha256: f3a5b83448c6b2512232f4c98556061896091dd61629dba365f463659d1f95e5
+- legacy_url: https://files.readme.io/77c8f7c-Screen_Shot_2022-01-16_at_12.48.38_PM.png
+  target_file: docs/assets/readme/77c8f7c-Screen_Shot_2022-01-16_at_12.48.38_PM.png
+  sha256: ae6b7799f96d9ff31430cbaca361171ccec7faeb5e7f0b87cff8e48439619430
+- legacy_url: https://files.readme.io/7a14ce4-small-ReadMe_Coins.png
+  target_file: docs/assets/readme/7a14ce4-small-ReadMe_Coins.png
+  sha256: 12f6bc95169766dd1145958613bd3ae4bc6c36c8ee6022a8fa9c399ed7ef6138
+- legacy_url: https://files.readme.io/7afe9f0-authjwt.png
+  target_file: docs/assets/readme/7afe9f0-authjwt.png
+  sha256: efe160f03db026389867bc9b6fe0ca53fce4f88acbba5afbc038c8524f8a4384
+- legacy_url: https://files.readme.io/86e839b-muxy-character.svg
+  target_file: docs/assets/readme/86e839b-muxy-character.svg
+  sha256: db90630bd85b81d45ba16475208a16e2b4e20d2fb7dd034a0cf3a7bafc79e2d8
+- legacy_url: https://files.readme.io/87783f7-assign_event.png
+  target_file: docs/assets/readme/87783f7-assign_event.png
+  sha256: 20e38688f0230822df05be6f2f2fb1bb198c0306b4d0f151325a9011d782f90f
+- legacy_url: https://files.readme.io/8807478-unity_attach_pin.png
+  target_file: docs/assets/readme/8807478-unity_attach_pin.png
+  sha256: 0049b95f6276f4c0cfa9b0b304c71a4df70445e587c4409879e6278f01d9bae8
+- legacy_url: https://files.readme.io/8fe9b7b-clearstate.png
+  target_file: docs/assets/readme/8fe9b7b-clearstate.png
+  sha256: 7d3eab65feabb28b7c2c0eb8e894e3b84a47d477c520af865a536c5d4d3a72c1
+- legacy_url: https://files.readme.io/94fd392-ui_layout.png
+  target_file: docs/assets/readme/94fd392-ui_layout.png
+  sha256: a774eb54a72c462d48a2bdb5752acf06976e44b2692d64bbbde37ebe3c9b6a7a
+- legacy_url: https://files.readme.io/982d29c-unity_before_cleanup.png
+  target_file: docs/assets/readme/982d29c-unity_before_cleanup.png
+  sha256: 188579564df857cabd96f2b994ce4147f5548969ccd08ed23fb8a7a6d018a940
+- legacy_url: https://files.readme.io/9edb3d3-create_widget.png
+  target_file: docs/assets/readme/9edb3d3-create_widget.png
+  sha256: 39fd12cf4fdf3dd68e8398d9fd82db208766013aab3514623642d7b6a9a7b9de
+- legacy_url: https://files.readme.io/a09f782-plugin.png
+  target_file: docs/assets/readme/a09f782-plugin.png
+  sha256: 8ad1b06f45d720a45baf76f7989ffea4a0115177884be8bc77156dac386b5815
+- legacy_url: https://files.readme.io/b4f5d32-structure.png
+  target_file: docs/assets/readme/b4f5d32-structure.png
+  sha256: 217aec80d80d57131f64d758476bf18a9f2a0bf1d894a8770132c27da31db7e1
+- legacy_url: https://files.readme.io/bf6f4e2-unity_on_click.png
+  target_file: docs/assets/readme/bf6f4e2-unity_on_click.png
+  sha256: e2a821ac97c8063c2f0831fa1d6717f32cdb06fa5bd9158616905dfcf7c13172
+- legacy_url: https://files.readme.io/c93ce04-authevent.png
+  target_file: docs/assets/readme/c93ce04-authevent.png
+  sha256: b047162b0e9fe1f5842f985111f8158497546140499b80fd2bcb050d4d8285d1
+- legacy_url: https://files.readme.io/c98fe32-assign_event_result.png
+  target_file: docs/assets/readme/c98fe32-assign_event_result.png
+  sha256: 6fa06cf150f7db1c1f188c5354c5062411c4b215b6dcf21c26c4eb9ab50994ae
+- legacy_url: https://files.readme.io/cc6f2cf-authblueprints.png
+  target_file: docs/assets/readme/cc6f2cf-authblueprints.png
+  sha256: cc8a80bd30ab3066e96c181fad8422e144a37601d4e56eee7baa889e58405723
+- legacy_url: https://files.readme.io/d7e6cba-unity_ui_tree.png
+  target_file: docs/assets/readme/d7e6cba-unity_ui_tree.png
+  sha256: 7729ce6d8cb692421f2d5e14c4e2b25fbcc437602863ddd01dadafcdb93585e9
+- legacy_url: https://files.readme.io/e147abd-Screen_4_-_Paste_Pin_Ctrl_V.png
+  target_file: docs/assets/readme/e147abd-Screen_4_-_Paste_Pin_Ctrl_V.png
+  sha256: f5942c04b4e4e588ffd92d991962199024f329c1898ce135bb6672f722f8cbd6
+- legacy_url: https://files.readme.io/e40525a-008.png
+  target_file: docs/assets/readme/e40525a-008.png
+  sha256: 34b370382d8677cffd4040b5abdad3aeb680ae2b4a4d7680865df248f40b8891
+- legacy_url: https://files.readme.io/e9df84d-add_to_viewport.png
+  target_file: docs/assets/readme/e9df84d-add_to_viewport.png
+  sha256: 642fdec90294221b6e9ba0951952710a1b11360c8b94be21aa6bd5834d8a849e
+- legacy_url: https://files.readme.io/ede7ce9-savegame_variable.png
+  target_file: docs/assets/readme/ede7ce9-savegame_variable.png
+  sha256: 9970ebba3cdc3fb7860c9d5a5e4038a9908c4b36347d6d50e3e0480f3428f226
+- legacy_url: https://files.readme.io/f3439f7-layout.png
+  target_file: docs/assets/readme/f3439f7-layout.png
+  sha256: 3c643af09c21d0d82adcb043276fde691a8d3acbb462226a8a6e96fc6fc2c7b5
+- legacy_url: https://files.readme.io/f561f9d-transaction.png
+  target_file: docs/assets/readme/f561f9d-transaction.png
+  sha256: a6f61c92db4e8efcf70962323670cf539f744e010e4d4f619b00b6a6ebe5ac93
+- legacy_url: https://files.readme.io/f77114e-twitch_manage.png
+  target_file: docs/assets/readme/f77114e-twitch_manage.png
+  sha256: 3c6c5db5d0b554df0fa0404d1fef3d820e34cc4e799ca82d706261b7969b2181
+- legacy_url: https://files.readme.io/f8ea582-get_results.png
+  target_file: docs/assets/readme/f8ea582-get_results.png
+  sha256: b265243f52c2f7406ed58f10fbdc62caad89b4603b1e4adf68b2657ed85d50eb
+derived_documents:
+- title: Create Gateway Game Actions
+  description: Define viewer actions, handle purchases, and bound their gameplay impact.
+  section: docs
+  slug: unity-gateway-actions
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: unity-gateway-actions
+  target_file: docs/docs/unity-gateway-actions.md
+  product: Gateway
+  status: current
+  owner: Gateway SDK owner
+  source_of_truth: muxy/gateway-unity
+  version: v1.0.0-rc
+  redirects: []
+  legacy_parent: https://docs.muxy.io/docs/unity-gateway-tutorial
+  review_state: blocked-release
+  page_type: task-guide
+- title: Authenticate and Manage the Gateway Lifecycle
+  description: Authenticate Gateway with a PIN, reuse refresh tokens, and publish
+    game metadata safely.
+  section: docs
+  slug: unity-gateway-authentication
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: unity-gateway-authentication
+  target_file: docs/docs/unity-gateway-authentication.md
+  product: Gateway
+  status: current
+  owner: Gateway SDK owner
+  source_of_truth: muxy/gateway-unity
+  version: v1.0.0-rc
+  redirects: []
+  legacy_parent: https://docs.muxy.io/docs/unity-gateway-tutorial
+  review_state: blocked-release
+  page_type: task-guide
+- title: Install and Initialize Gateway for Unity
+  description: Install the pinned Gateway Unity package and create a component that
+    owns its SDK lifecycle.
+  section: docs
+  slug: unity-gateway-installation
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: unity-gateway-installation
+  target_file: docs/docs/unity-gateway-installation.md
+  product: Gateway
+  status: current
+  owner: Gateway SDK owner
+  source_of_truth: muxy/gateway-unity
+  version: v1.0.0-rc
+  redirects: []
+  legacy_parent: https://docs.muxy.io/docs/unity-gateway-tutorial
+  review_state: blocked-release
+  page_type: task-guide
+- title: Add Gateway Polls and Game Text
+  description: Start an audience poll and publish current game information through
+    Gateway.
+  section: docs
+  slug: unity-gateway-polls-game-text
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: unity-gateway-polls-game-text
+  target_file: docs/docs/unity-gateway-polls-game-text.md
+  product: Gateway
+  status: current
+  owner: Gateway SDK owner
+  source_of_truth: muxy/gateway-unity
+  version: v1.0.0-rc
+  redirects: []
+  legacy_parent: https://docs.muxy.io/docs/unity-gateway-tutorial
+  review_state: blocked-release
+  page_type: task-guide
+- title: Gateway Prefab Quickstart
+  description: Add Gateway authentication, actions, notifications, polls, and game
+    text to Unity with the packaged prefabs.
+  section: docs
+  slug: unity-gateway-prefab-quickstart
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: unity-gateway-prefab-quickstart
+  target_file: docs/docs/unity-gateway-prefab-quickstart.md
+  product: Gateway
+  status: current
+  owner: Gateway SDK owner
+  source_of_truth: muxy/gateway-unity
+  version: v1.0.0-rc
+  redirects: []
+  legacy_parent: https://docs.muxy.io/docs/unity-gateway-tutorial
+  review_state: blocked-release
+  page_type: quickstart
+- title: Prepare Gateway for Production
+  description: Make a Gateway Unity integration resilient, secure, and observable
+    before release.
+  section: docs
+  slug: unity-gateway-production
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: unity-gateway-production
+  target_file: docs/docs/unity-gateway-production.md
+  product: Gateway
+  status: current
+  owner: Gateway SDK owner
+  source_of_truth: muxy/gateway-unity
+  version: v1.0.0-rc
+  redirects: []
+  legacy_parent: https://docs.muxy.io/docs/unity-gateway-tutorial
+  review_state: blocked-release
+  page_type: task-guide
+- title: Gateway Unity QA Checklist
+  description: Verify authentication, actions, polls, metadata, game text, reconnects,
+    and production configuration.
+  section: docs
+  slug: unity-gateway-qa
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: unity-gateway-qa
+  target_file: docs/docs/unity-gateway-qa.md
+  product: Gateway
+  status: current
+  owner: Gateway SDK owner
+  source_of_truth: muxy/gateway-unity
+  version: v1.0.0-rc
+  redirects: []
+  legacy_parent: https://docs.muxy.io/docs/unity-gateway-tutorial
+  review_state: blocked-release
+  page_type: task-guide
+- title: Create the MEDKit Control Object
+  description: Initialize MEDKit and wait until Twitch authorization is available.
+  section: recipes
+  slug: create-the-medkit-control-object
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: create-the-medkit-control-object
+  target_file: docs/recipes/create-the-medkit-control-object.md
+  product: MEDKit
+  status: current
+  owner: Developer Experience
+  source_of_truth: muxy/extensions-js
+  version: 2.4.18
+  redirects: []
+  legacy_parent: null
+  review_state: approved
+  page_type: task-guide
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 06d6386c0e70f1d592e2fafa03c3e0793160761277d915da33e01dad30485334
+- title: GameLink Polling
+  description: Create an audience poll and process real-time result updates with GameLink
+    C++.
+  section: recipes
+  slug: gamelink-polling
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: gamelink-polling
+  target_file: docs/recipes/gamelink-polling.md
+  product: GameLink Native
+  status: current
+  owner: Native SDK owner
+  source_of_truth: muxy/gamelink-cpp
+  version: commit-16c6b97
+  redirects: []
+  legacy_parent: null
+  review_state: blocked-release
+  page_type: task-guide
+- title: GameLink Transactions
+  description: Subscribe to purchases and validate completed transactions with GameLink
+    C++.
+  section: recipes
+  slug: gamelink-transactions
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: gamelink-transactions
+  target_file: docs/recipes/gamelink-transactions.md
+  product: GameLink Native
+  status: current
+  owner: Native SDK owner
+  source_of_truth: muxy/gamelink-cpp
+  version: commit-16c6b97
+  redirects: []
+  legacy_parent: null
+  review_state: blocked-release
+  page_type: task-guide
+- title: Generate a Production JWT
+  description: Create a short-lived backend JWT for direct calls to the Muxy REST
+    API.
+  section: recipes
+  slug: generate-a-production-jwt
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: generate-a-production-jwt
+  target_file: docs/recipes/generate-a-production-jwt.md
+  product: REST API
+  status: current
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  legacy_parent: null
+  review_state: approved
+  page_type: protocol-reference
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: c32dcffa67ccea8c4d3377580acb8850ec501f412fc8aa2bdcd92330d81cb9a2
+- title: Simulate Users While Testing
+  description: Obtain sandbox JWTs for viewer, broadcaster, and admin test sessions.
+  section: recipes
+  slug: simulate-users-while-testing
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: simulate-users-while-testing
+  target_file: docs/recipes/simulate-users-while-testing.md
+  product: MEDKit
+  status: current
+  owner: Developer Experience
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: 2.4.18
+  redirects: []
+  legacy_parent: null
+  review_state: approved
+  page_type: task-guide
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 356d9ade1877fbf782ca46e79dff9086914c8920b8c27313f0c9901153dc99b6
+- title: Send a Channel Broadcast
+  description: Publish a Muxy PubSub message to one channel or viewer.
+  section: reference
+  slug: broadcast-channel
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: broadcast-channel
+  target_file: docs/reference/broadcast-channel.md
+  product: REST API
+  status: current
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  legacy_parent: null
+  review_state: approved
+  page_type: protocol-reference
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 682da1ee23e56b37fdbd81548d4325955ae8ead79dd801e479377f60f6e422e3
+- title: Send an Extension-wide Broadcast
+  description: Publish a Muxy PubSub message to every active extension channel.
+  section: reference
+  slug: broadcast-extension
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: broadcast-extension
+  target_file: docs/reference/broadcast-extension.md
+  product: REST API
+  status: current
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  legacy_parent: null
+  review_state: approved
+  page_type: protocol-reference
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 0ebea31f83b3a800a483ed575b5c0066ce6ebb7c76d77ff0a5e6f3cfbe0aea13
+- title: Get a JSON Store
+  description: Read a named channel-scoped or extension-wide JSON store.
+  section: reference
+  slug: get-json-store
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: get-json-store
+  target_file: docs/reference/get-json-store.md
+  product: REST API
+  status: current
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  legacy_parent: null
+  review_state: approved
+  page_type: protocol-reference
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: b486cef7f51aaaabe112556e09a1905a00b0178ef9c3bd26036089a67fbc839d
+- title: List Shared Twitch User IDs
+  description: Page through Twitch user IDs shared with an extension.
+  section: reference
+  slug: get-user-ids
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: get-user-ids
+  target_file: docs/reference/get-user-ids.md
+  product: REST API
+  status: current
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  legacy_parent: null
+  review_state: approved
+  page_type: protocol-reference
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 630e59cace6cd9f9ad364f022fb543b371a3c524568f5619c7e7a9aa8c211d83
+- title: Create a GameLink Authorization Code
+  description: Create a short-lived GameLink PIN for the current extension authorization.
+  section: reference
+  slug: post-gamelink-token
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: post-gamelink-token
+  target_file: docs/reference/post-gamelink-token.md
+  product: REST API
+  status: current
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  legacy_parent: null
+  review_state: approved
+  page_type: protocol-reference
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 022565deb0304d297ece9edc78a780637dd96d0bf4c297e7445d83dfbc814132
+- title: Get Poll Configuration
+  description: Get stored limits, schedule, options, and status for a poll.
+  section: reference
+  slug: vote-config-get
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: vote-config-get
+  target_file: docs/reference/vote-config-get.md
+  product: REST API
+  status: current
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  legacy_parent: null
+  review_state: approved
+  page_type: protocol-reference
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: e92d681c15f0aad86118ddb3dcc7a14c18c9aa2a6b7dc64dff1ac4adae96620f
+- title: Create or Update Poll Configuration
+  description: Configure poll limits, schedule, prompt, and options.
+  section: reference
+  slug: vote-config-post
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: vote-config-post
+  target_file: docs/reference/vote-config-post.md
+  product: REST API
+  status: current
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  legacy_parent: null
+  review_state: approved
+  page_type: protocol-reference
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: e14e11c42a1adfcb06d64e60f3a571c6c8e2ed5ed472cae7dc9e769a4679db77
+- title: Delete a Poll
+  description: Delete a poll and notify subscribed clients.
+  section: reference
+  slug: vote-delete
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: vote-delete
+  target_file: docs/reference/vote-delete.md
+  product: REST API
+  status: current
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  legacy_parent: null
+  review_state: approved
+  page_type: protocol-reference
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: c5585774caf3e70efa0f0f7b6808e152ab15d668d56965526f17ba9e140f2354
+- title: Get Vote Totals
+  description: Get aggregate statistics and the current viewer vote for a poll.
+  section: reference
+  slug: vote-get
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: vote-get
+  target_file: docs/reference/vote-get.md
+  product: REST API
+  status: current
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  legacy_parent: null
+  review_state: approved
+  page_type: protocol-reference
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 7f231c468943aa57a080ff365a6b171283b69443e10ed5b58db29345fa86364b
+- title: Get Vote Logs
+  description: Get individual vote records for a poll from an admin context.
+  section: reference
+  slug: vote-logs
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: vote-logs
+  target_file: docs/reference/vote-logs.md
+  product: REST API
+  status: current
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  legacy_parent: null
+  review_state: approved
+  page_type: protocol-reference
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 647af60351402d45f179e8b9561760e7177edcde60c1b1c0de98c353ff9ecfd6
+- title: Add a Vote Modifier
+  description: Add a signed vote adjustment for one user.
+  section: reference
+  slug: vote-modifier
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: vote-modifier
+  target_file: docs/reference/vote-modifier.md
+  product: REST API
+  status: current
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  legacy_parent: null
+  review_state: approved
+  page_type: protocol-reference
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: 9ac9be62fc8c3a0f773c43e618c418f1d51d75b336f6bfffc1d57c072782f4d8
+- title: Submit Votes
+  description: Submit one or more votes to a poll.
+  section: reference
+  slug: vote-submit
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: vote-submit
+  target_file: docs/reference/vote-submit.md
+  product: REST API
+  status: current
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  legacy_parent: null
+  review_state: approved
+  page_type: protocol-reference
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: dd10963d0bcf25ea16b3999a1a9b6956b1a86edc65c68099320b17903b0063fd
+- title: Send a Message to the Current Viewer
+  description: Publish a Muxy PubSub back-channel message to the authorized viewer.
+  section: reference
+  slug: whisper-self
+  legacy_url: null
+  legacy_markdown_url: null
+  canonical_slug: whisper-self
+  target_file: docs/reference/whisper-self.md
+  product: REST API
+  status: current
+  owner: API Platform
+  source_of_truth: muxy/github-pages:openapi/rest-v1.yaml
+  version: v1
+  redirects: []
+  legacy_parent: null
+  review_state: approved
+  page_type: protocol-reference
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: c81c4defcdc8711eb4afddf38db78644f1565f971e8a054f494606b67172a45d
+homepage:
+  title: Add Twitch Viewer Interactions to Your Game
+  description: Use Muxy Gateway to add actions, polls, game text, and other Twitch
+    viewer interactions without building or publishing a Twitch Extension.
+  section: home
+  slug: index
+  legacy_url: https://docs.muxy.io/
+  legacy_markdown_url: https://docs.muxy.io/index.md
+  status: current
+  canonical_slug: index
+  target_file: docs/index.md
+  product: Muxy Platform
+  owner: Developer Experience
+  source_of_truth: muxy/github-pages
+  version: v1
+  redirects: []
+  review_state: approved
+  page_type: concept
+  approved_by: peter-bonanni
+  approved_at: '2026-07-14T20:34:54Z'
+  approval_method: user-authorized-codex-assisted-source-review
+  approved_content_sha256: dbfcbc946bf8c2f5dd71085083cbefe4eaf9f375fb1607e8b467878b1aa72910
+site_counts:
+  current: 98
+  archived: 14
+  total: 112
