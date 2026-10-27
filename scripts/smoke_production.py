@@ -32,6 +32,9 @@ YAML_TYPES = {"application/yaml", "application/x-yaml", "text/yaml", "text/x-yam
 MARKDOWN_TYPES = {"text/markdown", "text/x-markdown", "text/plain", "application/octet-stream"}
 ASSET_TYPES = {
     ".css": {"text/css"},
+    ".cs": {"text/plain", "text/x-csharp", "application/octet-stream"},
+    ".jpeg": {"image/jpeg"},
+    ".jpg": {"image/jpeg"},
     ".png": {"image/png"},
     ".svg": {"image/svg+xml"},
 }
