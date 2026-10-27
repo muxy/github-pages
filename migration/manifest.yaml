@@ -1986,7 +1986,7 @@ derived_documents:
   status: current
   owner: Gateway SDK owner
   source_of_truth: muxy/gateway-unity
-  version: unreleased local checkout (2026-10-26)
+  version: v1.0.0-rc
   redirects: []
   legacy_parent: https://docs.muxy.io/docs/unity-gateway-tutorial
   review_state: blocked-release

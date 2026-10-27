@@ -7,7 +7,7 @@ audience: game developers
 status: current
 owner: Gateway SDK owner
 source_of_truth: muxy/gateway-unity
-version: unreleased local checkout (2026-10-26)
+version: v1.0.0-rc
 last_verified: '2026-10-26'
 review_state: blocked-release
 page_type: quickstart
@@ -17,7 +17,7 @@ page_type: quickstart
 
 Take a new Unity project from package installation to a connected Twitch broadcaster channel. You will add a **Spawn Healthpack** action, publish a **Health** game text value, and run a 30-second viewer poll. The prefab supplies the authentication screen and SDK lifecycle; the [demo component](../assets/unity-gateway/GatewayPrefabDemo.cs) supplies test gameplay and a poll button.
 
-This walkthrough was performed on October 26, 2026, in the Unity **6000.6.6f1 Windows Editor** using a local `muxy/gateway-unity` checkout with compatibility and credential-log changes. The package identified itself as `0.0.1`. Live PIN authentication, return-session authentication, local health changes, and a final poll update with no votes were observed. The broadcaster channel was offline, so a viewer-triggered action and a submitted vote remain to be checked. The images show the actual test session.
+This walkthrough was performed on October 26, 2026, in the Unity **6000.6.6f1 Windows Editor** using a local `muxy/gateway-unity` checkout with compatibility and credential-log changes. The page's version metadata tracks the last public tag, `v1.0.0-rc`; that tag is **not** the checkout used for the hands-on test. The package identified itself as `0.0.1`. Live PIN authentication, return-session authentication, local health changes, and a final poll update with no votes were observed. The broadcaster channel was offline, so a viewer-triggered action and a submitted vote remain to be checked. The images show the actual test session.
 
 !!! warning "Unreleased package and player-build limits"
     The public [`v1.0.0-rc` tag](https://github.com/muxy/gateway-unity/tree/v1.0.0-rc) is older than the local checkout used here. Its standalone transport and `ws://` issues are documented in [installation](unity-gateway-installation.md). The prefab currently calls `RunInProduction()`; a testing Game ID does not select a sandbox host. This page remains `blocked-release` until the SDK owner publishes and pins a corrected package and verifies player targets. These Editor results do not establish macOS or other player support.
