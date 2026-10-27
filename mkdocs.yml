@@ -81,7 +81,7 @@ nav:
   - SDKs & Game Engines:
       - Gateway for Unity:
           - Overview: docs/unity-gateway-tutorial.md
-          - Prefab Quickstart: docs/unity-gateway-prefab-quickstart.md
+          - Unity SDK Walkthrough: docs/unity-gateway-prefab-quickstart.md
           - Installation: docs/unity-gateway-installation.md
           - Authentication and Lifecycle: docs/unity-gateway-authentication.md
           - Actions: docs/unity-gateway-actions.md

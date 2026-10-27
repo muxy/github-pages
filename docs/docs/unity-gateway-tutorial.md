@@ -19,7 +19,7 @@ page_type: task-guide
 Gateway supplies the Twitch Extension experience while your Unity game defines and responds to viewer interactions. Use this tutorial to install the SDK, authenticate a broadcaster, and add actions, polls, and game text.
 
 !!! warning "Release confirmation required"
-    These examples are verified against repository tag `v1.0.0-rc`, while its package metadata reports `0.0.1`. The pinned C# transport imports `UnityEditor` for standalone builds and opens Gateway's generated addresses with `ws://`, not `wss://`. Publication and production use remain blocked until the Gateway SDK owner publishes a consistent release with a secure transport and confirmed player-build matrix.
+    The code examples on these pages reference repository tag `v1.0.0-rc`, while its package metadata reports `0.0.1`. The pinned C# transport imports `UnityEditor` for standalone builds and opens Gateway's generated addresses with `ws://`, not `wss://`. The [step-by-step Unity SDK walkthrough](unity-gateway-prefab-quickstart.md) documents a later local checkout tested in the Windows Editor on October 26, 2026. Publication and production use remain blocked until the SDK owner publishes a consistent release with secure transport and a confirmed player-build matrix.
 
 ## What you will build
 
@@ -30,7 +30,7 @@ Gateway supplies the Twitch Extension experience while your Unity game defines a
 
 ## Tutorial sections
 
-1. [Start with the Gateway prefabs](unity-gateway-prefab-quickstart.md) for the fastest low-code path.
+1. [Follow the illustrated Unity SDK walkthrough](unity-gateway-prefab-quickstart.md) for the tested prefab setup, live authentication, and local poll test.
 2. [Install and initialize Gateway](unity-gateway-installation.md) for a custom code integration.
 3. [Authenticate and manage the SDK lifecycle](unity-gateway-authentication.md).
 4. [Create and handle game actions](unity-gateway-actions.md).
@@ -49,10 +49,10 @@ Gateway supplies the Twitch Extension experience while your Unity game defines a
 
 ## Before you start
 
-You need Unity 2020.3 or newer and the [Muxy Gateway Twitch Extension](https://www.twitch.tv/ext/i575hs2x9lb3u8hqujtezit03w1740-1.0.0). Use the shared `gateway-testing` game ID only for evaluation. It does not select the sandbox environment.
+You need Unity 2020.3 or newer and the [Muxy Gateway Twitch Extension](https://www.twitch.tv/ext/i575hs2x9lb3u8hqujtezit03w1740-1.0.0). In the extension's **Linked Games** list, use the exact Game ID connected to your broadcaster. The `gateway-testing` ID mentioned in the SDK README may not be linked to your account; the live walkthrough's account used `gamelink-testing`. A testing ID does not select the sandbox environment.
 
 The prefab manager in `v1.0.0-rc` always calls `SDK.RunInProduction()`; it has no production/sandbox Inspector setting. The code API exposes both modes, but the pinned transport uses insecure `ws://` for each. Treat the tag as source material, not a production-ready Unity package. Before shipping, obtain a corrected owner-approved release and [request a permanent game ID](https://www.muxy.io/gateway).
 
 After installing Gateway on a Twitch channel, open its configuration page to generate the six-character PIN used by the game. A PIN expires after five minutes; request a new one if authentication does not begin promptly.
 
-Next: [Start with the prefab quickstart](unity-gateway-prefab-quickstart.md) or [build a custom code integration](unity-gateway-installation.md).
+Next: [Follow the Unity SDK walkthrough](unity-gateway-prefab-quickstart.md) or [build a custom code integration](unity-gateway-installation.md).

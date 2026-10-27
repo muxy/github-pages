@@ -1974,9 +1974,8 @@ derived_documents:
   legacy_parent: https://docs.muxy.io/docs/unity-gateway-tutorial
   review_state: blocked-release
   page_type: task-guide
-- title: Gateway Prefab Quickstart
-  description: Add Gateway authentication, actions, notifications, polls, and game
-    text to Unity with the packaged prefabs.
+- title: Gateway Unity SDK Walkthrough
+  description: Install Gateway in Unity, connect a broadcaster, and test actions, game text, and polls.
   section: docs
   slug: unity-gateway-prefab-quickstart
   legacy_url: null
@@ -1987,7 +1986,7 @@ derived_documents:
   status: current
   owner: Gateway SDK owner
   source_of_truth: muxy/gateway-unity
-  version: v1.0.0-rc
+  version: unreleased local checkout (2026-10-26)
   redirects: []
   legacy_parent: https://docs.muxy.io/docs/unity-gateway-tutorial
   review_state: blocked-release
