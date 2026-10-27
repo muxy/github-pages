@@ -6,17 +6,15 @@ public class GatewayPrefabDemo : MonoBehaviour
 {
     public MuxyGatewayManager GatewayManager;
     private int health = 50;
-    private string status = "Enter a PIN in the Gateway authentication UI.";
+    private string status = "Local preview: use the component menu to add 10 health.";
 
     private void OnEnable()
     {
-        if (GatewayManager == null)
+        if (GatewayManager != null)
         {
-            Debug.LogError("Assign Gateway Manager before enabling the demo.");
-            enabled = false;
-            return;
+            status = "Enter a PIN in the Gateway authentication UI.";
+            GatewayManager.OnAuthentication.AddListener(OnAuthentication);
         }
-        GatewayManager.OnAuthentication.AddListener(OnAuthentication);
     }
 
     private void OnDisable()
@@ -42,10 +40,18 @@ public class GatewayPrefabDemo : MonoBehaviour
         Debug.Log("Gateway viewer action received: healthpack.");
     }
 
+    // Runs locally without a Gateway Manager, Twitch account, or UI input module.
+    [ContextMenu("Local preview: add 10 health")]
+    public void PreviewHealthpack()
+    {
+        ApplyHealth();
+        status = "Local preview: healthpack applied (no Gateway connection).";
+    }
+
     private void ApplyHealth()
     {
         health = Mathf.Min(100, health + 10);
-        if (GatewayManager.IsAuthenticated()) PublishHealth();
+        if (GatewayManager != null && GatewayManager.IsAuthenticated()) PublishHealth();
     }
 
     private void PublishHealth()
@@ -56,9 +62,10 @@ public class GatewayPrefabDemo : MonoBehaviour
         GatewayManager.SetGameTextAt(text, 0);
     }
 
+    [ContextMenu("Start 30-second viewer poll")]
     public void StartDemoPoll()
     {
-        if (!GatewayManager.IsAuthenticated()) return;
+        if (GatewayManager == null || !GatewayManager.IsAuthenticated()) return;
         PollConfiguration config = new PollConfiguration
         {
             Prompt = "Where should we go next?",
@@ -88,7 +95,7 @@ public class GatewayPrefabDemo : MonoBehaviour
         GUILayout.BeginArea(new Rect(16, 16, 440, 190), GUI.skin.box);
         GUILayout.Label("Gateway prefab demo | Health: " + health);
         GUILayout.Label(status);
-        if (GUILayout.Button("Local test: add 10 health")) ApplyHealth();
+        if (GUILayout.Button("Local test: add 10 health")) PreviewHealthpack();
         GUI.enabled = GatewayManager != null && GatewayManager.IsAuthenticated();
         if (GUILayout.Button("Start 30-second viewer poll")) StartDemoPoll();
         GUI.enabled = true;

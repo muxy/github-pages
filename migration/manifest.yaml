@@ -1974,7 +1974,7 @@ derived_documents:
   review_state: needs-sme-review
   page_type: task-guide
 - title: Gateway Unity SDK Walkthrough
-  description: Install Gateway in Unity, connect a broadcaster, and test actions, game text, and polls.
+  description: Preview a Health action locally, then connect Gateway to Twitch and test viewer actions, game text, and polls.
   section: docs
   slug: unity-gateway-prefab-quickstart
   legacy_url: null

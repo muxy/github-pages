@@ -9,7 +9,7 @@ status: current
 owner: Gateway SDK owner
 source_of_truth: muxy/gateway-unity
 version: v1.1.0-rc.1
-last_verified: '2026-10-26'
+last_verified: '2026-10-27'
 review_state: needs-sme-review
 page_type: task-guide
 ---
@@ -67,6 +67,16 @@ private void RestoreSession()
 ```
 
 Do not log PINs, JWTs, or refresh tokens. `PlayerPrefs` illustrates the flow but is not encrypted storage; use platform-secure storage for a shipped game.
+
+## Production token storage
+
+The **MuxyGatewayManager** prefab in 1.1.0-rc.1 reads, writes, and clears `MuxyGatewayRefreshToken` through `PlayerPrefs`; it has no token-store setting. For a shipped game, use the [code integration](unity-gateway-installation.md) to own authentication and persistence rather than relying on that prefab for refresh-token storage.
+
+1. Add a token-store adapter for each target platform. Store the refresh token in [Apple Keychain](https://developer.apple.com/documentation/security/keychain-services) on macOS/iOS or [Windows Credential Manager](https://learn.microsoft.com/en-us/windows/win32/SecBP/handling-passwords) on Windows. Use an equivalent OS credential store on other targets.
+2. On successful `OnAuthenticate`, save `response.RefreshToken`. At startup, load it and call `SDK.AuthenticateWithRefreshToken(token, callback)`; if absent, ask the broadcaster for a PIN and call `SDK.AuthenticateWithPIN(pin, callback)`.
+3. On logout or a rejected refresh token, delete the stored token. Never log it or put it in assets, build settings, or source control.
+
+Unity [documents that `PlayerPrefs` is unencrypted](https://docs.unity3d.com/ScriptReference/PlayerPrefs.html). The SDK does not provide a cross-platform secure-store implementation; add one for every player target you support. If you keep the prefab UI, adapt it to call your code integration's authentication method because its default button calls `MuxyGatewayManager.AuthenticateWithPIN`.
 
 ## Publish game metadata
 

@@ -1,6 +1,6 @@
 ---
 title: Gateway Unity SDK Walkthrough
-description: Install Gateway in Unity, connect a broadcaster, and test actions, game text, and polls.
+description: Preview a Health action locally, then connect Gateway to Twitch and test viewer actions, game text, and polls.
 slug: unity-gateway-prefab-quickstart
 product: Gateway
 audience: game developers
@@ -8,25 +8,34 @@ status: current
 owner: Gateway SDK owner
 source_of_truth: muxy/gateway-unity
 version: v1.1.0-rc.1
-last_verified: '2026-10-26'
+last_verified: '2026-10-27'
 review_state: needs-sme-review
 page_type: quickstart
 ---
 
 # Gateway Unity SDK Walkthrough
 
-Take a new Unity project from package installation to a connected Twitch broadcaster channel. You will add a **Spawn Healthpack** action, publish a **Health** game text value, and run a 30-second viewer poll. The prefab supplies the authentication screen and SDK lifecycle; the [demo component](../assets/unity-gateway/GatewayPrefabDemo.cs) supplies test gameplay and a poll button.
+Start with a local **Health 50 → 60** preview. Then connect a Twitch broadcaster, add a **Spawn Healthpack** viewer action, publish **Health** game text, and run a 30-second poll. The [demo component](../assets/unity-gateway/GatewayPrefabDemo.cs) contains the health effect and poll logic.
 
-This guide targets SDK **1.1.0-rc.1**. The screenshots show the Unity setup; numbered boxes mark the controls to use. The prefab connects to Gateway's production host. Use a Game ID linked to your broadcaster.
+<figure class="gateway-shot" markdown="1">
+<div class="gateway-shot__image" markdown="1">
+
+[![Unity Game view showing Health 60 after the local healthpack preview.](../assets/unity-gateway/04-local-test.jpg){ width="1924" height="1392" }](../assets/unity-gateway/04-local-test.jpg)
+
+<span class="gateway-shot__box" data-step="1" style="left: 14%; top: 10%; width: 23%; height: 8%;" aria-hidden="true"></span>
+</div>
+<figcaption><span class="gateway-shot__key">1</span> Unity result: Health rises to 60 in the local preview. The live viewer check is in step 5.</figcaption>
+</figure>
+
+This guide uses SDK **1.1.0-rc.1**, a release candidate for evaluation. The prefab connects to Gateway's production host. The local preview below exercises your game behavior without connecting to Gateway; the later viewer check requires a live channel. Numbered boxes on screenshots mark the controls to use.
 
 ## Before you start
 
-- Unity 2020.3 or newer and Git on your `PATH`. The illustrated setup was run in Unity 6000.6.6f1 on Windows.
-- A Twitch broadcaster account that can install and activate the [Muxy Gateway extension](https://www.twitch.tv/ext/i575hs2x9lb3u8hqujtezit03w1740-1.0.0).
-- A **Game ID linked to that broadcaster** in the extension's **Configure → Linked Games** view. Use the exact ID shown for your account.
-- A separate viewer session, ideally while the channel is live, for the final action and vote checks.
+- Unity 2020.3 or newer and Git on your `PATH`. No Twitch account is needed for the first local preview.
 
 If your own scripts use an assembly definition, add `Muxy.Gateway` to its Assembly Definition References. SDK types use `using MuxyGateway;`; prefab components such as `MuxyGatewayManager` are in the global namespace.
+
+**Tested versions:** The recorded Windows package-import and player checks cover **Unity 2020.3.48f1** and **6000.6.6f1**. The illustrated walkthrough was captured in **6000.6.6f1**. See the [validation report](https://github.com/muxy/gateway-unity/blob/v1.1.0-rc.1/Validation~/Transport-Rerun-20261023.md) for backends and test scope; verify your own target platform.
 
 ## 1. Install the SDK
 
@@ -41,16 +50,24 @@ If your own scripts use an assembly definition, add `Muxy.Gateway` to its Assemb
 
 You can also download the [release ZIP](https://github.com/muxy/gateway-unity/releases/tag/v1.1.0-rc.1), extract it outside `Assets`, and select **+ / Add → Add package from disk** with its `package.json`. Keep the extracted folder in place. [Unity's Git URL instructions](https://docs.unity3d.com/Manual/upm-ui-giturl.html) cover menu differences by Editor version.
 
-## 2. Build the scene
+## 2. Preview the health effect locally
 
-1. Create and save a test scene, for example `GatewayDemo`.
+1. Save [GatewayPrefabDemo.cs](../assets/unity-gateway/GatewayPrefabDemo.cs) in `Assets/Scripts`. If it does not appear after copying, use **Assets → Refresh**.
+2. Create an empty GameObject named `GatewayDemoController` and attach **GatewayPrefabDemo**. Leave **Gateway Manager** empty for this preview.
+3. Enter Play mode. On the **GatewayPrefabDemo** component, open the Inspector's **⋮** menu and select **Local preview: add 10 health**. The Game view should show **Health: 60**. This Inspector command works without a Twitch account or an Input System setting change.
+
+This runs the demo's health effect only. It does not create or accept a Gateway viewer transaction. Exit Play mode before building the live scene; Health resets to 50.
+
+## 3. Build the live scene
+
+For the live steps, you need a Twitch broadcaster account that can activate the [Muxy Gateway extension](https://www.twitch.tv/ext/i575hs2x9lb3u8hqujtezit03w1740-1.0.0), a **Game ID linked to that broadcaster** under **Configure → Linked Games**, and a separate viewer session for the final action and vote checks.
+
+1. Save the test scene as `GatewayDemo`.
 2. Drag **`MuxyGatewayManager.prefab`** from the package's `Prefabs` folder into the Hierarchy. Keep one manager active. Set **Game ID** to the exact linked ID, **Game Metadata → Name** to `Gateway Unity Demo`, and **Theme** to `default`. Leave **Logo** empty for this first test.
 3. Drag **`MuxyGatewayAuthenticateUI.prefab`** into the scene. In its `MuxyGatewayAuthentication` component, assign the scene's manager to **Gateway Manager**. Set this reference before entering Play mode; the UI subscribes when enabled.
 4. Keep one **EventSystem**. The authentication prefab already contains one. Remove an extra scene EventSystem if Unity warns about duplicates.
-5. In Unity 6 with the new Input System, select the authentication prefab's **EventSystem**. If **Standalone Input Module** warns that it will not work, select **Replace with InputSystemUIInputModule**. Make this change outside Play mode and save the scene. It made the PIN field clickable in this test.
-6. On the manager, add **Game Texts** element 0: **Label** `Health`, **Value** `50`, **Icon** `fa-solid:heart`.
-7. Save [GatewayPrefabDemo.cs](../assets/unity-gateway/GatewayPrefabDemo.cs) in your game's `Assets/Scripts` folder. Attach it to a new GameObject named `GatewayDemoController`, then assign its **Gateway Manager** field to the scene manager. Use **Assets → Refresh** if the component does not appear after copying it.
-8. The demo uses `OnGUI` buttons. If your project uses only the new Input System, set **Edit → Project Settings → Player → Other Settings → Active Input Handling** to **Both**. Unity may require an Editor restart.
+5. On the manager, add **Game Texts** element 0: **Label** `Health`, **Value** `50`, **Icon** `fa-solid:heart`.
+6. Assign the scene manager to **GatewayDemoController → Gateway Manager**. The demo subscribes to authentication when Play mode starts, so assign it before entering Play mode.
 
 <figure class="gateway-shot" markdown="1">
 <div class="gateway-shot__image" markdown="1">
@@ -63,20 +80,9 @@ You can also download the [release ZIP](https://github.com/muxy/gateway-unity/re
 <figcaption><span class="gateway-shot__key">1</span> Manager, authentication UI, and demo controller in the Hierarchy. <span class="gateway-shot__key">2</span> The authentication prefab's Gateway Manager reference.</figcaption>
 </figure>
 
-<figure class="gateway-shot" markdown="1">
-<div class="gateway-shot__image" markdown="1">
-
-[![Unity EventSystem Inspector showing Input System UI Input Module on the authentication prefab.](../assets/unity-gateway/02-input-module.png){ width="1924" height="1392" }](../assets/unity-gateway/02-input-module.png)
-
-<span class="gateway-shot__box" data-step="1" style="left: 4%; top: 17%; width: 9%; height: 4%;" aria-hidden="true"></span>
-<span class="gateway-shot__box" data-step="2" style="left: 55%; top: 27%; width: 44%; height: 31%;" aria-hidden="true"></span>
-</div>
-<figcaption><span class="gateway-shot__key">1</span> Select the authentication prefab's EventSystem. <span class="gateway-shot__key">2</span> Confirm Input System UI Input Module replaced the standalone module.</figcaption>
-</figure>
-
 **Checkpoint:** The manager, authentication UI, and demo controller have their references set; the scene is saved; the Console has no compilation errors.
 
-## 3. Activate the extension and connect the broadcaster
+## 4. Activate the extension and connect the broadcaster
 
 1. In the Twitch Creator Dashboard, install Gateway under **Extensions** and activate it in a supported overlay or panel slot.
 2. Open its **Configure** view. Under **Linked Games**, check the exact Game ID against the manager's **Game ID** field. Select **Get New Code** if the PIN has expired.
@@ -115,9 +121,9 @@ You can also download the [release ZIP](https://github.com/muxy/gateway-unity/re
 <figcaption><span class="gateway-shot__key">1</span> Demo status says Authenticated. <span class="gateway-shot__key">2</span> The prefab confirms authentication succeeded.</figcaption>
 </figure>
 
-The authentication prefab stores its refresh token in `PlayerPrefs`. Use platform-secure storage before shipping. For sandbox connections, use the [code API](unity-gateway-installation.md).
+The authentication prefab stores its refresh token in `PlayerPrefs`. For a shipped game, follow the [production token-storage steps](unity-gateway-authentication.md#production-token-storage). For sandbox connections, use the [code API](unity-gateway-installation.md); the prefab does not select sandbox.
 
-## 4. Add and test a viewer action
+## 5. Add and test a viewer action
 
 Leave Play mode before editing the manager. Under **Game Actions**, add one element:
 
@@ -134,6 +140,21 @@ Leave Play mode before editing the manager. Under **Game Actions**, add one elem
 
 On the action's **On Game Action Used** event, select **+**, drag in `GatewayDemoController`, and choose **GatewayPrefabDemo → OnHealthpack** under **Dynamic GameActionUsed**. The dynamic binding passes the received transaction to the handler.
 
+The [demo script](../assets/unity-gateway/GatewayPrefabDemo.cs) handles the transaction with this method:
+
+```csharp
+public void OnHealthpack(GameActionUsed used)
+{
+    if (used.ActionID != "healthpack") return;
+    ApplyHealth();
+    GatewayManager.AcceptGameAction(used, "Added up to 10 health.");
+    status = "Viewer action received: healthpack.";
+    Debug.Log("Gateway viewer action received: healthpack.");
+}
+```
+
+`ApplyHealth()` adds up to 10 Health (capped at 100) and publishes the new value after authentication. Accept the action only after the game effect succeeds.
+
 <figure class="gateway-shot" markdown="1">
 <div class="gateway-shot__image" markdown="1">
 
@@ -146,25 +167,13 @@ On the action's **On Game Action Used** event, select **+**, drag in `GatewayDem
 <figcaption><span class="gateway-shot__key">1</span> Healthpack action fields. <span class="gateway-shot__key">2</span> Dynamic OnHealthpack event binding. <span class="gateway-shot__key">3</span> Health game text.</figcaption>
 </figure>
 
-First use **Local test: add 10 health** in the Game view. Health should change from **50** to **60**. This checks the demo behavior and UI input only. Restart Play mode to reset health to 50.
+Authenticate, open the extension as a viewer while the channel is live, and select **Spawn Healthpack**. Unity should report **Viewer action received: healthpack** and Health should become **60**. In your own game, deduplicate transaction IDs and use `RefundGameAction` if an effect cannot be applied.
 
-<figure class="gateway-shot" markdown="1">
-<div class="gateway-shot__image" markdown="1">
-
-[![Unity Game view showing Health 60 after the local test button, with no Console errors.](../assets/unity-gateway/04-local-test.jpg){ width="1924" height="1392" }](../assets/unity-gateway/04-local-test.jpg)
-
-<span class="gateway-shot__box" data-step="1" style="left: 14%; top: 10%; width: 23%; height: 8%;" aria-hidden="true"></span>
-</div>
-<figcaption><span class="gateway-shot__key">1</span> Health is 60 after selecting Local test: add 10 health.</figcaption>
-</figure>
-
-Then authenticate, open the extension as a viewer while the channel is live, and select **Spawn Healthpack**. Unity should report **Viewer action received: healthpack** and Health should become **60**. The demo calls `AcceptGameAction` after applying the effect; deduplicate transaction IDs and use `RefundGameAction` if an effect cannot be applied.
-
-## 5. Publish game text and run a poll
+## 6. Publish game text and run a poll
 
 The demo updates **Health** game text after authentication and health changes. `SetGameTextAt` publishes the updated list. Call `SubmitGameTexts` when adding or clearing entries.
 
-While authenticated, select **Start 30-second viewer poll**. A final callback arrives after 30 seconds. With no votes, the demo reports **Poll ended without a usable winner**.
+While authenticated, select **GatewayPrefabDemo → ⋮ → Start 30-second viewer poll** in the Inspector. A final callback arrives after 30 seconds. With no votes, the demo reports **Poll ended without a usable winner**. The Game view buttons also work with legacy input; the Inspector command avoids changing **Active Input Handling**.
 
 <figure class="gateway-shot" markdown="1">
 <div class="gateway-shot__image" markdown="1">
@@ -178,7 +187,7 @@ While authenticated, select **Start 30-second viewer poll**. A final callback ar
 
 To verify voting, have a viewer submit an option through the live extension and check the final winner in Unity. If you add `MuxyGatewayPolling.prefab`, assign its **Gateway Manager** and forward the poll callback to its `OnPollUpdate` event. See [polls and game text](unity-gateway-polls-game-text.md).
 
-## 6. Test and troubleshoot
+## 7. Test and troubleshoot
 
 | Check | Expected result | If it fails |
 | --- | --- | --- |
@@ -186,9 +195,22 @@ To verify voting, have a viewer submit an option through the live extension and 
 | PIN field | Click and type in Play mode | Keep one EventSystem; replace Standalone Input Module with Input System UI Input Module outside Play mode. |
 | Authentication | Success UI and authenticated demo status | Use a fresh PIN; match **Game ID** to **Linked Games** exactly; check that Gateway is active. |
 | Return session | Restarting Play mode authenticates again | Check that initial authentication succeeded and local `PlayerPrefs` was retained. |
-| Local health button | Health changes 50 → 60 | Set **Active Input Handling** to **Both** for the demo's `OnGUI` buttons; assign the manager reference. |
+| Local health preview | Health changes 50 → 60 | Use the component's **⋮ → Local preview: add 10 health** command in Play mode. It needs no manager or UI input. |
 | Viewer action | Health changes after a viewer selects the action | Confirm the channel is live, extension visible, and **Dynamic GameActionUsed** wired to `OnHealthpack`. |
-| Poll | Final result arrives after 30 seconds | Confirm authentication, select the poll button once, and wait for the final update. No votes is a valid outcome. |
+| Poll | Final result arrives after 30 seconds | Confirm authentication, run the poll Inspector command once, and wait for the final update. No votes is a valid outcome. |
+
+If Unity's **Standalone Input Module** warns that it cannot work with the new Input System, select the authentication prefab's **EventSystem** and choose **Replace with InputSystemUIInputModule** outside Play mode, then save the scene. This is needed for the PIN UI in new-Input-System-only projects; the local preview and poll Inspector commands do not need it.
+
+<figure class="gateway-shot" markdown="1">
+<div class="gateway-shot__image" markdown="1">
+
+[![Unity EventSystem Inspector showing Input System UI Input Module on the authentication prefab.](../assets/unity-gateway/02-input-module.png){ width="1924" height="1392" }](../assets/unity-gateway/02-input-module.png)
+
+<span class="gateway-shot__box" data-step="1" style="left: 4%; top: 17%; width: 9%; height: 4%;" aria-hidden="true"></span>
+<span class="gateway-shot__box" data-step="2" style="left: 55%; top: 27%; width: 44%; height: 31%;" aria-hidden="true"></span>
+</div>
+<figcaption><span class="gateway-shot__key">1</span> Select the authentication prefab's EventSystem. <span class="gateway-shot__key">2</span> Confirm Input System UI Input Module replaced the standalone module.</figcaption>
+</figure>
 
 The screenshots capture setup and local checks. Verify a viewer action and submitted vote with your own live channel. Run the [QA checklist](unity-gateway-qa.md) on each player target you plan to ship.
 
