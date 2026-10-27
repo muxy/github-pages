@@ -33,13 +33,13 @@ The optional UI prefabs depend on TextMeshPro. In Unity, choose **Window → Tex
 
 ## Install the package
 
-In Unity Package Manager, choose **Add package from Git URL** and use the pinned release tag:
+With Git installed and available on `PATH`, choose **Add package from Git URL** in Unity Package Manager and use the pinned release tag ([Unity's installation instructions](https://docs.unity3d.com/Manual/upm-ui-giturl.html)):
 
 ```text
 https://github.com/muxy/gateway-unity.git#v1.0.0-rc
 ```
 
-Pinning the tag prevents a future `main` branch change from silently changing your build.
+The package manifest is at the repository root, so no `?path=` suffix is needed. Pinning the tag prevents a future `main` branch change from silently changing your build. This URL imports the older blocked tag; it was not the checkout used in the [hands-on walkthrough](unity-gateway-prefab-quickstart.md).
 
 ## Review the intended SDK lifecycle
 

@@ -36,6 +36,11 @@ If your own scripts use an assembly definition, add `Muxy.Gateway` to its Assemb
 
 ## 1. Install the local package
 
+!!! tip "Git URL alternative"
+    Yes, Unity Package Manager can install this repository directly: its `package.json` is at the repository root. With Git installed and available on `PATH`, choose **+ / Add → Install package from git URL**, paste `https://github.com/muxy/gateway-unity.git#v1.0.0-rc`, and let Unity resolve dependencies. It should appear with a **Git** source label. See [Unity's Git URL installation steps](https://docs.unity3d.com/Manual/upm-ui-giturl.html).
+
+    The pinned `v1.0.0-rc` tag is older than the local checkout used for this walkthrough and has the transport and player-build blockers noted above. Importing that tag does not reproduce the tested authentication flow. The steps and screenshots below use the local checkout; use a pinned Git tag or commit when the SDK owner publishes a corrected revision.
+
 1. Extract the SDK to a stable location outside the Unity project's `Assets` folder. Find its `package.json`.
 2. In Unity open **Window → Package Manager**. In some newer Editors the menu is **Window → Package Management → Package Manager**.
 3. Choose **+ / Add → Add package from disk…** (or **Install package from disk…**) and select `package.json`.
