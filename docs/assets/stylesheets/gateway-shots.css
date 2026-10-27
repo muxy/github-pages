@@ -10,6 +10,10 @@
   line-height: 0;
 }
 
+.md-typeset .gateway-shot__image p {
+  margin: 0;
+}
+
 .gateway-shot__image a,
 .gateway-shot__image img {
   display: block;
