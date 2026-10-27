@@ -1,0 +1,163 @@
+openapi: 3.1.0
+info:
+  title: Muxy Sandbox API
+  version: 1.0.0
+  description: Version-controlled source of truth recovered from the Muxy ReadMe API
+    reference.
+servers:
+- url: https://sandbox.api.muxy.io/v1/e
+paths:
+  /authtoken:
+    post:
+      summary: Authorization for Testing
+      description: 'Returns one or more JSON Web Tokens (JWT) for use in the sandbox
+        environment.
+
+
+        `user_id` and `user_ids` are both optional and may be combined. With neither,
+        the server creates one anonymous token. A token whose role string is `admin`
+        is not guaranteed to satisfy handlers that require a validated admin JWT.'
+      operationId: post-authtoken
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                extension_id:
+                  type: string
+                  description: The Client ID for the extension. A Twitch Extension
+                    Client ID that has been registered with Muxy. See [Quick Start](https://docs.muxy.io/docs/quick-start)
+                    for details.
+                channel_id:
+                  type: string
+                  description: The Twitch Channel ID to simulate
+                user_id:
+                  type: string
+                  description: Optional Twitch user ID. For broadcaster tokens the
+                    server replaces this value with `channel_id`.
+                role:
+                  type: string
+                  description: Role string copied into the testing JWT. The endpoint
+                    does not validate an enum. Use `viewer`, `broadcaster`, `admin`,
+                    or `backend` only when the target handler supports it.
+                user_ids:
+                  type: array
+                  description: Optional additional Twitch user IDs. May be supplied
+                    with `user_id`; one JWT is returned per ID.
+                  items:
+                    type: string
+                app_id:
+                  type: string
+                  description: Registered Muxy app ID. The server resolves its owning
+                    extension when available.
+              anyOf:
+              - required:
+                - extension_id
+              - required:
+                - app_id
+            examples:
+              Viewer token:
+                value:
+                  extension_id: your-extension-client-id
+                  channel_id: '12345678'
+                  user_id: '87654321'
+                  role: viewer
+              Anonymous token:
+                value:
+                  extension_id: your-extension-client-id
+                  channel_id: '12345678'
+                  role: viewer
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - type: object
+                  required:
+                  - token
+                  properties:
+                    token:
+                      type: string
+                - type: object
+                  required:
+                  - tokens
+                  properties:
+                    tokens:
+                      type: array
+                      items:
+                        type: string
+              examples:
+                Single user:
+                  value:
+                    token: <sandbox JWT>
+                Multiple users:
+                  value:
+                    tokens:
+                    - <sandbox JWT>
+                    - <sandbox JWT>
+        '400':
+          description: '400'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - reason
+                properties:
+                  reason:
+                    type: string
+              examples:
+                Unknown extension:
+                  value:
+                    reason: No such extension found
+      deprecated: false
+      security: []
+      x-doc-slug: try-sandbox-auth
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl --request POST \\\n  --url https://sandbox.api.muxy.io/v1/e/authtoken\
+            \ \\\n  --header 'content-type: application/json' \\\n  --data '{\"extension_id\"\
+            :\"your-extension-client-id\",\"channel_id\":\"12345678\",\"user_id\"\
+            :\"87654321\",\"role\":\"viewer\"}'"
+components:
+  securitySchemes:
+    MuxyAuthorization:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: '`<Twitch Extension Client ID> <Muxy JWT>`'
+  schemas:
+    JsonPatchOperation:
+      type: object
+      required:
+      - op
+      - path
+      properties:
+        op:
+          type: string
+          enum:
+          - add
+          - remove
+          - replace
+          - move
+          - copy
+          - test
+        path:
+          type: string
+          description: JSON Pointer to the target value.
+        from:
+          type: string
+          description: Source JSON Pointer for move or copy.
+        value:
+          description: Value used by add, replace, or test.
+    ErrorResponse:
+      type: object
+      properties:
+        reason:
+          type: string
+security: []

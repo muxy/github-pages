@@ -1,0 +1,81 @@
+# Muxy Documentation
+
+> Promote gaming viewer engagement with Twitch Extensions using real-time data handling and communication tools
+
+## Guides
+- [Quick Start for Developers](https://docs.muxy.io/docs/quick-start.md): These guides will help you get started with Muxy. You'll be up and running in a jiffy!
+- [Get Started with MEDKit](https://docs.muxy.io/docs/getting-started-with-medkit.md): Introduction to MEDKit and the Muxy SDK
+- [Build a Simple Extension](https://docs.muxy.io/docs/build-a-simple-extension.md): Add source for a Hello World extension to your basic installation
+- [Create a viewer panel](https://docs.muxy.io/docs/create-a-viewer-panel.md)
+- [Create a broadcaster panel](https://docs.muxy.io/docs/create-a-broadcaster-panel.md)
+- [Basic Muxy Login Workflow](https://docs.muxy.io/docs/basic-muxy-login-workflow.md)
+- [Install Manually](https://docs.muxy.io/docs/install-manually.md): Use npm and webpack to install and configure MEDKit
+- [Developing with MEDKit](https://docs.muxy.io/docs/developing-with-medkit.md): Set up your development environment and learn the basics
+- [Set up User Simulation](https://docs.muxy.io/docs/set-up-user-simulation.md): The Muxy debugging system provides user-simulation for testing and debugging in the development environment.
+- [Data Tracking](https://docs.muxy.io/docs/data-tracking.md): MEDKit offers three different ways to track any kind of extension and viewer data that you want to use.
+- [Store Extension and Viewer State](https://docs.muxy.io/docs/state-information.md): Muxy lets you define your own state data and maintains it in real time.
+- [Store Configuration Data](https://docs.muxy.io/docs/store-configuration-data.md): Muxy provides a storage area for developer-defined configuration data that is specific to either an extension or a channel.
+- [Store Arbitrary JSON Data](https://docs.muxy.io/docs/arbitrary-state.md): Define and store your own data values for users to retrieve.
+- [Get Viewer Information](https://docs.muxy.io/docs/get-viewer-information.md): Access information about the current viewer, or all users who have shared their information.
+- [Call into the Twitch API](https://docs.muxy.io/docs/call-into-the-twitch-api.md)
+- [Troubleshooting Tips](https://docs.muxy.io/docs/troubleshooting-tips.md): Some tips for avoiding common problems.
+- [Data Aggregation](https://docs.muxy.io/docs/data-aggregation-techniques.md): Build extensions that let streamers and broadcasters interact with viewers.
+- [Accumulating User Data](https://docs.muxy.io/docs/accumulation.md)
+- [Ranking User Data](https://docs.muxy.io/docs/ranking.md)
+- [Viewer Engagement Tools](https://docs.muxy.io/docs/viewer-engagement-tools.md): Build extensions that let streamers and broadcasters interact with viewers.
+- [Polls and User Voting](https://docs.muxy.io/docs/voting.md): An broadcaster or administrator can create and manage a named poll, and collect users' votes.
+- [Unity GameLink Tutorial](https://docs.muxy.io/docs/unity-gamelink-tutorial.md): This tutorial walks through building a small Unity scene that does GameLink authentication and reacts to a viewer poll.
+- [Unity FPS Demo Code Walkthrough](https://docs.muxy.io/docs/unity-fps-demo-code-walkthrough.md): Download and walk through an example project that demonstrates important functionality.
+- [Unity Gateway Tutorial](https://docs.muxy.io/docs/unity-gateway-tutorial.md)
+
+## API Reference
+- [Using the MEDKit REST API](https://docs.muxy.io/reference/medkit-rest-api.md): Overview of available functionality.
+- [Developing in the Sandbox](https://docs.muxy.io/reference/dev-auth.md): Muxy provides an off-Twitch environment for development and testing.
+- [Authorization for Testing](https://docs.muxy.io/reference/try-sandbox-auth.md): Returns one or more JSON Web Tokens (JWT) for use in the sandbox environment.
+- [Config API](https://docs.muxy.io/reference/config-api.md): Muxy provides a storage area for developer-defined configuration data that is specific to either an extension or a channel.
+- [All Config](https://docs.muxy.io/reference/extension-config.md)
+- [Extension Config](https://docs.muxy.io/reference/extension-config-1.md)
+- [Extension Config](https://docs.muxy.io/reference/extension-config-2.md)
+- [Extension Config](https://docs.muxy.io/reference/extension-config-3.md)
+- [Channel Config](https://docs.muxy.io/reference/channel-config.md)
+- [Channel Config](https://docs.muxy.io/reference/channel-config-1.md)
+- [Channel Config](https://docs.muxy.io/reference/channel-config-2.md)
+- [State API](https://docs.muxy.io/reference/rest-state-api.md): Use these endpoints to define and manage developer-defined game state.
+- [All State](https://docs.muxy.io/reference/viewer-state.md)
+- [Extension State](https://docs.muxy.io/reference/viewer-state-4.md)
+- [Extension State](https://docs.muxy.io/reference/extension-state.md)
+- [Extension State](https://docs.muxy.io/reference/extension-state-1.md)
+- [Channel State](https://docs.muxy.io/reference/channel-state.md)
+- [Channel State](https://docs.muxy.io/reference/channel-state-1.md)
+- [Channel State](https://docs.muxy.io/reference/channel-state-2.md)
+- [Viewer State](https://docs.muxy.io/reference/viewer-state-2.md)
+- [Viewer State](https://docs.muxy.io/reference/viewer-state-1.md)
+- [Viewer State](https://docs.muxy.io/reference/viewer-state-3.md)
+- [Extension Viewer State](https://docs.muxy.io/reference/extension-viewer-state.md)
+- [Extension Viewer State](https://docs.muxy.io/reference/extension-viewer-state-1.md)
+- [Extension Viewer State](https://docs.muxy.io/reference/extension-viewer-state-2.md)
+- [Engagement Tools API](https://docs.muxy.io/reference/aggregation-api.md): Use these tools to encourage viewer  engagement with interactive events and rewards.
+- [Basic Accumulation](https://docs.muxy.io/reference/accumulate.md): Basic accumulation allows you to collect large amounts of user input into a list for consumption by a backend.
+- [Accumulate](https://docs.muxy.io/reference/accumulate-1.md)
+- [Accumulate](https://docs.muxy.io/reference/accumulate-2.md)
+- [Basic Ranking](https://docs.muxy.io/reference/rank.md): The REST API provides a ranking service that collects user input and counts matching values.
+- [Rank](https://docs.muxy.io/reference/rank-1.md)
+- [Rank](https://docs.muxy.io/reference/rank-2.md)
+- [Rank](https://docs.muxy.io/reference/rank-3.md)
+- [Poll Management](https://docs.muxy.io/reference/poll-managment.md): The voting endpoints allow for high-volume polling activity.
+- [Communication API](https://docs.muxy.io/reference/communication-api.md): The MEDKit API offers administrative services for back-end communication among extensions.
+- [Broadcast Messaging](https://docs.muxy.io/reference/broadcast.md): The broadcast service enables a broadcaster or admin to define and publish messages to subscribers.
+- [Using the WebSocket Protocol](https://docs.muxy.io/reference/websocket-protocol.md): The GameLink connection provides a persistent, publish-subscribe connection for data flow between game clients or servers and a massive live streaming audience.
+- [Authentication](https://docs.muxy.io/reference/ws-authentication.md): The WebSocket protocol supports authorization using PIN or JWT.
+- [Client-Server Communication](https://docs.muxy.io/reference/ws-pubsub.md)
+- [Storing State on the Server](https://docs.muxy.io/reference/ws-state-access.md): The WebSocket protocol supports read and write of developer-defined game state values.
+- [Polling](https://docs.muxy.io/reference/ws-polling.md): A game client can create and update audience polls, and receive real-time updates on voting results using the `poll` topic.
+- [Purchase Transactions](https://docs.muxy.io/reference/ws-purchase-transactions.md): Twitch notifies you when users purchase products that you offer. Listening for these events lets you implement a fulfillment process.
+- [Muxy GameLink Library](https://docs.muxy.io/reference/gamelink-library.md): Use this native-code library to integrate Muxy functionality into your game or other Twitch extension.
+- [SDK Class](https://docs.muxy.io/reference/sdk-class.md): Provides primary access to Muxy functionality.
+- [Extension Setup API](https://docs.muxy.io/reference/extension-setup-api.md): These functions handle authentication and set up general server communication.
+- [State and Configuration Handling](https://docs.muxy.io/reference/state-config-fns.md): SDK functions that access Muxy Twitch Extension state and configuration data.
+- [Event Handling](https://docs.muxy.io/reference/event-handling.md): SDK functions for managing subscriptions and handling of event notification in all areas.
+
+## Changelog
+- [GameLink Release](https://docs.muxy.io/changelog/gamelink-release.md)

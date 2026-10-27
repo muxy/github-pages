@@ -98,6 +98,35 @@ def convert_tutorial_tile(payload: dict) -> str:
     return ""
 
 
+def convert_code(payload: dict) -> str:
+    codes = payload.get("codes", [])
+    if not codes:
+        return ""
+    if len(codes) == 1:
+        item = codes[0]
+        language = str(item.get("language", "text"))
+        code = str(item.get("code", "")).rstrip()
+        return f"```{language}\n{code}\n```"
+    tabs = []
+    for index, item in enumerate(codes, 1):
+        language = str(item.get("language", "text"))
+        name = str(item.get("name") or language.title() or f"Example {index}")
+        code = str(item.get("code", "")).rstrip()
+        fenced = f"```{language}\n{code}\n```"
+        tabs.append(f'=== "{name}"\n\n' + "\n".join(f"    {line}" for line in fenced.splitlines()))
+    return "\n\n".join(tabs)
+
+
+def convert_callout(payload: dict) -> str:
+    kind = str(payload.get("type", "info"))
+    kind = {"error": "danger", "success": "tip"}.get(kind, kind)
+    title = str(payload.get("title", "")).strip()
+    body = str(payload.get("body", "")).strip()
+    heading = f'!!! {kind} "{title}"' if title else f"!!! {kind}"
+    indented = "\n".join(f"    {line}" if line else "" for line in body.splitlines())
+    return f"{heading}\n{indented}"
+
+
 def convert_block(match: re.Match[str]) -> str:
     block_type = match.group(1)
     raw_json = match.group(2)
@@ -111,6 +140,8 @@ def convert_block(match: re.Match[str]) -> str:
         "api-header": convert_api_header,
         "parameters": convert_parameters,
         "tutorial-tile": convert_tutorial_tile,
+        "code": convert_code,
+        "callout": convert_callout,
     }
     converter = converters.get(block_type)
     if not converter:
@@ -181,4 +212,3 @@ def migrate() -> None:
 
 if __name__ == "__main__":
     migrate()
-
