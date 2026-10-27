@@ -194,3 +194,4 @@ extra:
 
 extra_css:
   - assets/stylesheets/home.css
+  - assets/stylesheets/gateway-shots.css
