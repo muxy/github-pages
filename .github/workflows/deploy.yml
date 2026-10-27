@@ -148,7 +148,7 @@ jobs:
           path: site
 
   deploy:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/codex/docs-self-hosted-upgrade'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
