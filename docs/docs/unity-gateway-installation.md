@@ -1,49 +1,31 @@
 ---
 title: Install and Initialize Gateway for Unity
-description: Install the pinned Gateway Unity package and create a component that
-  owns its SDK lifecycle.
+description: Install Gateway Unity SDK 1.1.0-rc.1 and own its lifecycle in code.
 slug: unity-gateway-installation
 product: Gateway
 audience: game developers
 status: current
 owner: Gateway SDK owner
 source_of_truth: muxy/gateway-unity
-version: v1.0.0-rc
-last_verified: '2026-07-14'
-review_state: blocked-release
+version: v1.1.0-rc.1
+last_verified: '2026-10-26'
+review_state: needs-sme-review
 page_type: task-guide
 ---
 
 # Install and Initialize Gateway for Unity
 
-!!! warning "Pinned source is not a supported player release"
-    Tag `v1.0.0-rc` contains native binaries for several desktop targets, but its C# transport imports `UnityEditor` when `UNITY_STANDALONE` is defined. It also prepends `ws://` to production and sandbox addresses. Do not ship or claim standalone support from this tag; wait for an owner-approved package that compiles players and uses `wss://`.
-
-## Editor and binary evidence
-
-| Item | Present in `v1.0.0-rc` | What it proves |
-| --- | --- | --- |
-| Unity | Package declares Unity 2020.3 | Minimum editor metadata only |
-| Windows | `Runtime/x64/cgamelink.dll` | A native artifact is bundled, not that a player compiles or runs |
-| macOS | `Runtime/macos/libcgamelink.dylib` | A native artifact is bundled, not an architecture support promise |
-| Linux | `Runtime/linux/x64/libcgamelink.so` | A native artifact is bundled, not that importer settings are correct |
-| WebGL, iOS, Android, consoles | No matching native library | These targets are not supplied by the tag |
-
-The optional UI prefabs depend on TextMeshPro. In Unity, choose **Window → TextMeshPro → Import TMP Essential Resources** before opening them.
-
-## Install the package
-
-With Git installed and available on `PATH`, choose **Add package from Git URL** in Unity Package Manager and use the pinned release tag ([Unity's installation instructions](https://docs.unity3d.com/Manual/upm-ui-giturl.html)):
+Requires Unity 2020.3 or newer and Git on your `PATH`. In **Window → Package Manager**, select **+ / Add → Install package from git URL** and paste:
 
 ```text
-https://github.com/muxy/gateway-unity.git#v1.0.0-rc
+https://github.com/muxy/gateway-unity.git#v1.1.0-rc.1
 ```
 
-The package manifest is at the repository root, so no `?path=` suffix is needed. Pinning the tag prevents a future `main` branch change from silently changing your build. This URL imports the older blocked tag; it was not the checkout used in the [hands-on walkthrough](unity-gateway-prefab-quickstart.md).
+Wait for compilation, then confirm **Muxy Gateway 1.1.0-rc.1** appears. The package is at the repository root; no `?path=` is needed. For prefabs, import **TMP Essential Resources** from **Window → TextMeshPro** if prompted. If your own scripts use an assembly definition, reference `Muxy.Gateway`.
 
-## Review the intended SDK lifecycle
+## Initialize from code
 
-The code API distinguishes `RunInSandbox()` from `RunInProduction()`. The following component documents that intended lifecycle, but it is not a production recipe until the transport blockers above are fixed. Attach one owner to a persistent GameObject. `gateway-testing` is an evaluation game ID, not an environment selector.
+Attach one SDK owner to a GameObject. Use the Game ID linked in your broadcaster's extension configuration. Select sandbox or production explicitly; a testing Game ID does not change the host.
 
 ```csharp
 using MuxyGateway;
@@ -51,7 +33,7 @@ using UnityEngine;
 
 public sealed class GatewayClient : MonoBehaviour
 {
-    [SerializeField] private string gameId = "gateway-testing";
+    [SerializeField] private string gameId;
     [SerializeField] private bool production;
 
     public SDK Client { get; private set; }
@@ -59,36 +41,29 @@ public sealed class GatewayClient : MonoBehaviour
     private void Awake()
     {
         Client = new SDK(gameId);
-
         if (production)
             Client.RunInProduction();
         else
             Client.RunInSandbox();
     }
 
-    private void Update()
-    {
-        Client?.Update();
-    }
+    private void Update() => Client?.Update();
 
     private void OnDestroy()
     {
-        Client?.StopWebsocketTransport();
+        Client?.Dispose();
+        Client = null;
     }
 }
 ```
 
-`SDK.Update()` dispatches queued Gateway work and must run on Unity's main thread. Keep one SDK owner and avoid creating a client per scene.
+`SDK.Update()` dispatches callbacks on Unity's main thread. Dispose the client when its owner is destroyed. If you use `MuxyGatewayManager.prefab`, it already owns these lifecycle calls and connects to production; follow the [illustrated prefab walkthrough](unity-gateway-prefab-quickstart.md).
 
-## Verify a corrected package
+## Check the connection
 
-1. Confirm the package imports `UnityEditor` only under `UNITY_EDITOR` and opens generated Gateway hosts with `wss://`.
-2. Run the game in sandbox mode and verify the sandbox hostname from sanitized diagnostics.
-3. Confirm that Gateway does not report transport initialization errors.
-4. Load and unload a scene; confirm the SDK-owning object is not duplicated.
-5. Stop Play mode and confirm the transport closes cleanly.
-6. Build and run each intended standalone target before recording it as supported.
-
-If the build reports a missing `UnityEditor` namespace or diagnostics show `ws://`, the package still matches the blocked tag. Do not switch to production as a workaround.
+1. Enter Play mode and check for compilation or connection errors in the Console.
+2. Authenticate with a current configuration PIN from the [extension](unity-gateway-authentication.md).
+3. Stop Play mode and confirm the transport closes cleanly.
+4. Build and run your intended player target before shipping. The release candidate has been validated on Windows Mono and IL2CPP; test other platforms in your own build.
 
 Next: [Authenticate and manage the SDK lifecycle](unity-gateway-authentication.md).

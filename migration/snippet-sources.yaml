@@ -70,27 +70,27 @@ artifacts:
         - debug
         - setup
 
-  gateway-unity-v1.0.0-rc:
+  gateway-unity-v1.1.0-rc.1:
     source_id: gateway-unity
     kind: github-tag
     repository: https://github.com/muxy/gateway-unity.git
-    ref: refs/tags/v1.0.0-rc
+    ref: refs/tags/v1.1.0-rc.1
     ref_kind: lightweight-tag
-    resolved_commit: 9ee3ace5d6c44d2169101c33588864488a3d0610
-    raw_base_url: https://raw.githubusercontent.com/muxy/gateway-unity/9ee3ace5d6c44d2169101c33588864488a3d0610/
-    package_version: 0.0.1
-    provenance_state: tagged-source-not-confirmed-package-release
+    resolved_commit: 06e834786a59a16bf35790862e8bf70f9a876ff5
+    raw_base_url: https://raw.githubusercontent.com/muxy/gateway-unity/06e834786a59a16bf35790862e8bf70f9a876ff5/
+    package_version: 1.1.0-rc.1
+    provenance_state: github-prerelease
     files:
-      Runtime/MuxyGateway.cs: 5409539289e754ca842da5be27b39f6c5561f0bfc1d6c290f5cae4d8379bae09
-      Prefabs/MuxyGatewayManager.cs: c921add67feb9cbc68b3d6a564baacc9ef8e78781e03a30ec746e483adef4ea8
-      package.json: 3e26b65b2dbc0b1f3677c90ac7e3b92e5ababa53027893e120e1df56eb2682a6
+      Runtime/MuxyGateway.cs: 26018ba1eac32bf979f24476aff5bf4fabe5017798bfc8d71e7880fee61b959f
+      Prefabs/MuxyGatewayManager.cs: 0c940f5ee1ae1f80b9e02f41fe6e81ea482c4efb5b572776a005b58bceab4cb8
+      package.json: 60b83001c30c7a93a5370020f530d057e2209ffdd4cffbe0cbf2d28c3cd4b0b9
     documentation:
       product: Gateway
       status: current
       globs:
         - docs/docs/unity-gateway-*.md
       required_literals:
-        docs/docs/unity-gateway-installation.md: https://github.com/muxy/gateway-unity.git#v1.0.0-rc
+        docs/docs/unity-gateway-installation.md: https://github.com/muxy/gateway-unity.git#v1.1.0-rc.1
       symbol_sources:
         - Runtime/MuxyGateway.cs
         - Prefabs/MuxyGatewayManager.cs
@@ -99,6 +99,7 @@ artifacts:
         - AuthenticateWithPIN
         - AuthenticateWithRefreshToken
         - ConvertTextureToBase64
+        - Dispose
         - GameAction
         - GameAction.InfiniteCount
         - GameActionCategory.Help
@@ -122,14 +123,9 @@ artifacts:
         - SetGameMetadata
         - SetGameTexts
         - StartPoll
-        - StopWebsocketTransport
         - Update
 
 blocked_sources:
-  gateway-unity:
-    expected_release_state: tagged-source
-    required_review_state: blocked-release
-    reason: The public tag resolves, but package metadata and runtime version disagree and the pinned transport does not compile supported standalone players.
   gamelink-unity:
     expected_release_state: unpublished
     required_review_state: blocked-release

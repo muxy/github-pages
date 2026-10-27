@@ -7,9 +7,9 @@ audience: game developers
 status: current
 owner: Gateway SDK owner
 source_of_truth: muxy/gateway-unity
-version: v1.0.0-rc
-last_verified: '2026-07-14'
-review_state: blocked-release
+version: v1.1.0-rc.1
+last_verified: '2026-10-26'
+review_state: needs-sme-review
 page_type: task-guide
 ---
 
@@ -81,7 +81,7 @@ private void RegisterActions()
 
 Register callbacks once after authentication. Make handlers idempotent by transaction ID so reconnects cannot apply an effect twice.
 
-`v1.0.0-rc` invokes each action's `OnGameActionUsed` UnityEvent before the global callback. Always initialize that event in code, as above, even when you handle every action through the global callback. Inspector-created actions receive the event automatically.
+Initialize each action's `OnGameActionUsed` UnityEvent in code even when handling actions through the global callback. Inspector-created actions receive it automatically.
 
 ## Handle Bits conversions
 

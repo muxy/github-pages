@@ -7,9 +7,9 @@ audience: game developers
 status: current
 owner: Gateway SDK owner
 source_of_truth: muxy/gateway-unity
-version: v1.0.0-rc
-last_verified: '2026-07-14'
-review_state: blocked-release
+version: v1.1.0-rc.1
+last_verified: '2026-10-26'
+review_state: needs-sme-review
 page_type: task-guide
 ---
 

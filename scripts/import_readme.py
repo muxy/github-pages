@@ -91,7 +91,7 @@ CURATED_SLUGS = {
 }
 
 PRODUCT_RULES = (
-    (("unity-gateway",), "Gateway", "Gateway SDK owner", "muxy/gateway-unity", "v1.0.0-rc"),
+    (("unity-gateway",), "Gateway", "Gateway SDK owner", "muxy/gateway-unity", "v1.1.0-rc.1"),
     (("unity-",), "Unity", "Unity SDK owner", "muxy/gamelink-unity", "unverified"),
     (("websocket", "ws-"), "GameLink WebSocket", "GameLink owner", "muxy/gamelink-cpp", "unverified"),
     (("gamelink-library", "sdk-class", "extension-setup-api", "state-config-fns", "event-handling"), "GameLink Native", "Native SDK owner", "muxy/gamelink-cpp", "unverified"),

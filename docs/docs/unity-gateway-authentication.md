@@ -8,9 +8,9 @@ audience: game developers
 status: current
 owner: Gateway SDK owner
 source_of_truth: muxy/gateway-unity
-version: v1.0.0-rc
-last_verified: '2026-07-14'
-review_state: blocked-release
+version: v1.1.0-rc.1
+last_verified: '2026-10-26'
+review_state: needs-sme-review
 page_type: task-guide
 ---
 
@@ -25,7 +25,7 @@ The broadcaster enters a short-lived PIN once. After successful authentication, 
 3. Copy the displayed six-character configuration PIN into the game.
 4. Submit it within five minutes. Generate a new PIN if it expires.
 
-For evaluation, initialize the SDK with `gateway-testing`. [Request a permanent game ID](https://www.muxy.io/gateway) before distributing the integration.
+Use the exact Game ID shown under **Configure → Linked Games** for your broadcaster. [Request a permanent game ID](https://www.muxy.io/gateway) before distributing the integration.
 
 ## Register the callback
 

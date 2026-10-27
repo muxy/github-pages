@@ -310,7 +310,7 @@ def validate_manifest(manifest: dict, sdk_sources: dict, errors: list[str]) -> N
     if scope.get("compiles_examples") is not False:
         errors.append("snippet manifest must explicitly set compiles_examples: false")
     artifacts = manifest.get("artifacts", {})
-    expected_ids = {"medkit-2.4.18", "gateway-unity-v1.0.0-rc"}
+    expected_ids = {"medkit-2.4.18", "gateway-unity-v1.1.0-rc.1"}
     if set(artifacts) != expected_ids:
         errors.append(
             f"snippet manifest artifacts must be exactly {sorted(expected_ids)}, "
@@ -334,7 +334,7 @@ def validate_manifest(manifest: dict, sdk_sources: dict, errors: list[str]) -> N
             r"[0-9a-f]{64}", str(config.get("sha256"))
         ):
             errors.append(f"{artifact_id}: tarball must have a lowercase SHA-256 hash")
-        if artifact_id == "gateway-unity-v1.0.0-rc":
+        if artifact_id == "gateway-unity-v1.1.0-rc.1":
             if source.get("ref") != config.get("ref", "").removeprefix("refs/tags/"):
                 errors.append(f"{artifact_id}: ref disagrees with sdk-sources.yaml")
             commit = config.get("resolved_commit", "")
@@ -342,8 +342,8 @@ def validate_manifest(manifest: dict, sdk_sources: dict, errors: list[str]) -> N
                 errors.append(f"{artifact_id}: resolved_commit must be a lowercase Git SHA-1")
             if commit not in config.get("raw_base_url", ""):
                 errors.append(f"{artifact_id}: raw_base_url must use resolved_commit")
-            if config.get("provenance_state") != "tagged-source-not-confirmed-package-release":
-                errors.append(f"{artifact_id}: tagged source must not claim a package release")
+            if config.get("provenance_state") != "github-prerelease":
+                errors.append(f"{artifact_id}: expected a GitHub prerelease")
 
         docs = config.get("documentation", {})
         symbol_lists = [
@@ -370,7 +370,7 @@ def main() -> int:
 
     artifacts = manifest.get("artifacts", {})
     medkit = artifacts.get("medkit-2.4.18")
-    gateway = artifacts.get("gateway-unity-v1.0.0-rc")
+    gateway = artifacts.get("gateway-unity-v1.1.0-rc.1")
     if medkit:
         verify_medkit_docs(medkit["documentation"], errors)
     if gateway:

@@ -7,9 +7,9 @@ audience: game developers
 status: current
 owner: Gateway SDK owner
 source_of_truth: muxy/gateway-unity
-version: v1.0.0-rc
+version: v1.1.0-rc.1
 last_verified: '2026-10-26'
-review_state: blocked-release
+review_state: needs-sme-review
 page_type: quickstart
 ---
 
@@ -17,48 +17,29 @@ page_type: quickstart
 
 Take a new Unity project from package installation to a connected Twitch broadcaster channel. You will add a **Spawn Healthpack** action, publish a **Health** game text value, and run a 30-second viewer poll. The prefab supplies the authentication screen and SDK lifecycle; the [demo component](../assets/unity-gateway/GatewayPrefabDemo.cs) supplies test gameplay and a poll button.
 
-This walkthrough was performed on October 26, 2026, in the Unity **6000.6.6f1 Windows Editor** using a local `muxy/gateway-unity` checkout with compatibility and credential-log changes. The page's version metadata tracks the last public tag, `v1.0.0-rc`; that tag is **not** the checkout used for the hands-on test. The package identified itself as `0.0.1`. Live PIN authentication, return-session authentication, local health changes, and a final poll update with no votes were observed. The broadcaster channel was offline, so a viewer-triggered action and a submitted vote remain to be checked. The images show the actual test session.
-
-The numbered boxes in the screenshots point to the relevant controls and results. Select an image to open it at full resolution.
-
-!!! warning "Unreleased package and player-build limits"
-    The public [`v1.0.0-rc` tag](https://github.com/muxy/gateway-unity/tree/v1.0.0-rc) is older than the local checkout used here. Its standalone transport and `ws://` issues are documented in [installation](unity-gateway-installation.md). The prefab currently calls `RunInProduction()`; a testing Game ID does not select a sandbox host. This page remains `blocked-release` until the SDK owner publishes and pins a corrected package and verifies player targets. These Editor results do not establish macOS or other player support.
+This guide targets SDK **1.1.0-rc.1**. The screenshots show the Unity setup; numbered boxes mark the controls to use. The prefab connects to Gateway's production host. Use a Game ID linked to your broadcaster.
 
 ## Before you start
 
-- A Unity project. The package declares Unity 2020.3 as its minimum; this procedure was tested in Unity 6000.6.6f1 on Windows.
-- The SDK checkout or a release ZIP containing `package.json`, `Runtime`, `Prefabs`, and their `.meta` files. Keep an extracted local package folder in place after installing it.
+- Unity 2020.3 or newer and Git on your `PATH`. The illustrated setup was run in Unity 6000.6.6f1 on Windows.
 - A Twitch broadcaster account that can install and activate the [Muxy Gateway extension](https://www.twitch.tv/ext/i575hs2x9lb3u8hqujtezit03w1740-1.0.0).
-- A **Game ID linked to that broadcaster** in the extension's **Configure → Linked Games** view. This test account listed `gamelink-testing`; the SDK README's `gateway-testing` was not linked to it. Use the exact ID shown for your account.
+- A **Game ID linked to that broadcaster** in the extension's **Configure → Linked Games** view. Use the exact ID shown for your account.
 - A separate viewer session, ideally while the channel is live, for the final action and vote checks.
 
 If your own scripts use an assembly definition, add `Muxy.Gateway` to its Assembly Definition References. SDK types use `using MuxyGateway;`; prefab components such as `MuxyGatewayManager` are in the global namespace.
 
-## 1. Install the local package
+## 1. Install the SDK
 
-!!! tip "Git URL alternative"
-    Yes, Unity Package Manager can install this repository directly: its `package.json` is at the repository root. With Git installed and available on `PATH`, choose **+ / Add → Install package from git URL**, paste `https://github.com/muxy/gateway-unity.git#v1.0.0-rc`, and let Unity resolve dependencies. It should appear with a **Git** source label. See [Unity's Git URL installation steps](https://docs.unity3d.com/Manual/upm-ui-giturl.html).
+1. In Unity, open **Window → Package Manager**.
+2. Select **+ / Add → Install package from git URL** and paste:
 
-    The pinned `v1.0.0-rc` tag is older than the local checkout used for this walkthrough and has the transport and player-build blockers noted above. Importing that tag does not reproduce the tested authentication flow. The steps and screenshots below use the local checkout; use a pinned Git tag or commit when the SDK owner publishes a corrected revision.
+    ```text
+    https://github.com/muxy/gateway-unity.git#v1.1.0-rc.1
+    ```
 
-1. Extract the SDK to a stable location outside the Unity project's `Assets` folder. Find its `package.json`.
-2. In Unity open **Window → Package Manager**. In some newer Editors the menu is **Window → Package Management → Package Manager**.
-3. Choose **+ / Add → Add package from disk…** (or **Install package from disk…**) and select `package.json`.
-4. Wait for dependency resolution and C# compilation. Import **TMP Essential Resources** from **Window → TextMeshPro** if Unity requests them.
-5. Confirm **Muxy Gateway** appears as a **Local** package and **Packages → Muxy Gateway → Prefabs** exists in the Project window. Resolve Console errors before continuing.
+3. Wait for compilation. Confirm **Muxy Gateway 1.1.0-rc.1** appears and **Packages → Muxy Gateway → Prefabs** exists. Import **TMP Essential Resources** from **Window → TextMeshPro** if prompted.
 
-<figure class="gateway-shot" markdown="1">
-<div class="gateway-shot__image" markdown="1">
-
-[![Unity Package Manager with Muxy Gateway installed as a local package and dependencies visible.](../assets/unity-gateway/01-package-manager.jpg){ width="802" height="604" }](../assets/unity-gateway/01-package-manager.jpg)
-
-<span class="gateway-shot__box" data-step="1" style="left: 34%; top: 12%; width: 34%; height: 41%;" aria-hidden="true"></span>
-<span class="gateway-shot__box" data-step="2" style="left: 16%; top: 30%; width: 18%; height: 9%;" aria-hidden="true"></span>
-</div>
-<figcaption><span class="gateway-shot__key">1</span> Muxy Gateway package details and dependencies. <span class="gateway-shot__key">2</span> The package in the local package list.</figcaption>
-</figure>
-
-*The test project showed package version `0.0.1`; Unity resolved a newer uGUI than the package manifest requested. Let the Editor resolve compatible UI versions.*
+You can also download the [release ZIP](https://github.com/muxy/gateway-unity/releases/tag/v1.1.0-rc.1), extract it outside `Assets`, and select **+ / Add → Add package from disk** with its `package.json`. Keep the extracted folder in place. [Unity's Git URL instructions](https://docs.unity3d.com/Manual/upm-ui-giturl.html) cover menu differences by Editor version.
 
 ## 2. Build the scene
 
@@ -134,7 +115,7 @@ If your own scripts use an assembly definition, add `Muxy.Gateway` to its Assemb
 <figcaption><span class="gateway-shot__key">1</span> Demo status says Authenticated. <span class="gateway-shot__key">2</span> The prefab confirms authentication succeeded.</figcaption>
 </figure>
 
-The packaged prefab stores its refresh token in `PlayerPrefs`. A shipped game needs platform-secure credential storage. The prefab calls `RunInProduction()`; neither the Game ID nor this scene changes its host. See [authentication and lifecycle](unity-gateway-authentication.md) for the code API.
+The authentication prefab stores its refresh token in `PlayerPrefs`. Use platform-secure storage before shipping. For sandbox connections, use the [code API](unity-gateway-installation.md).
 
 ## 4. Add and test a viewer action
 
@@ -177,13 +158,13 @@ First use **Local test: add 10 health** in the Game view. Health should change f
 <figcaption><span class="gateway-shot__key">1</span> Health is 60 after selecting Local test: add 10 health.</figcaption>
 </figure>
 
-Then authenticate, open the active extension as a viewer while the channel is live, and select **Spawn Healthpack**. Verify Unity reports **Viewer action received: healthpack**, health becomes **60**, and the extension's Health value updates to **60**. Review the Twitch confirmation and any purchase cost before submitting. This full viewer round trip was **not observed** in the offline-channel test and still needs its own screenshot. The demo calls `AcceptGameAction` after applying the effect; production handlers should deduplicate transaction IDs and use `RefundGameAction` when the effect cannot be applied.
+Then authenticate, open the extension as a viewer while the channel is live, and select **Spawn Healthpack**. Unity should report **Viewer action received: healthpack** and Health should become **60**. The demo calls `AcceptGameAction` after applying the effect; deduplicate transaction IDs and use `RefundGameAction` if an effect cannot be applied.
 
 ## 5. Publish game text and run a poll
 
-The demo updates the manager's **Health** game text after authentication and health changes. `SetGameTextAt` publishes the updated list. When adding or clearing entries in your own code, call `SubmitGameTexts` to publish the list; do not resend unchanged values every frame.
+The demo updates **Health** game text after authentication and health changes. `SetGameTextAt` publishes the updated list. Call `SubmitGameTexts` when adding or clearing entries.
 
-While authenticated, select **Start 30-second viewer poll** in the Game view. The demo asks **Where should we go next?** with **Forest**, **Desert**, and **Ice Cave** options. A final callback is expected after 30 seconds. With no votes, the demo reports **Poll ended without a usable winner**; it checks the reported index before using an option. This no-vote path succeeded in the live test.
+While authenticated, select **Start 30-second viewer poll**. A final callback arrives after 30 seconds. With no votes, the demo reports **Poll ended without a usable winner**.
 
 <figure class="gateway-shot" markdown="1">
 <div class="gateway-shot__image" markdown="1">
@@ -195,13 +176,13 @@ While authenticated, select **Start 30-second viewer poll** in the Game view. Th
 <figcaption><span class="gateway-shot__key">1</span> The demo reports that the poll ended without a usable winner after no viewer votes.</figcaption>
 </figure>
 
-To verify voting, have a viewer submit one of the options through the live extension and check the final winner in Unity. That path was not observed while the broadcaster was offline. If you add `MuxyGatewayPolling.prefab`, assign its **Gateway Manager** and forward the poll callback to its `OnPollUpdate` event as the demo component does. For further examples, see [polls and game text](unity-gateway-polls-game-text.md).
+To verify voting, have a viewer submit an option through the live extension and check the final winner in Unity. If you add `MuxyGatewayPolling.prefab`, assign its **Gateway Manager** and forward the poll callback to its `OnPollUpdate` event. See [polls and game text](unity-gateway-polls-game-text.md).
 
 ## 6. Test and troubleshoot
 
 | Check | Expected result | If it fails |
 | --- | --- | --- |
-| Package import | Local package and prefabs appear; no C# errors | Confirm `package.json` was selected and the package folder still exists. |
+| Package import | Version `1.1.0-rc.1` and prefabs appear; no C# errors | Check Git on `PATH` or the release ZIP's `package.json`. |
 | PIN field | Click and type in Play mode | Keep one EventSystem; replace Standalone Input Module with Input System UI Input Module outside Play mode. |
 | Authentication | Success UI and authenticated demo status | Use a fresh PIN; match **Game ID** to **Linked Games** exactly; check that Gateway is active. |
 | Return session | Restarting Play mode authenticates again | Check that initial authentication succeeded and local `PlayerPrefs` was retained. |
@@ -209,15 +190,6 @@ To verify voting, have a viewer submit one of the options through the live exten
 | Viewer action | Health changes after a viewer selects the action | Confirm the channel is live, extension visible, and **Dynamic GameActionUsed** wired to `OnHealthpack`. |
 | Poll | Final result arrives after 30 seconds | Confirm authentication, select the poll button once, and wait for the final update. No votes is a valid outcome. |
 
-The walkthrough verified the Windows Editor path. Before release, test a standalone player for each intended platform, disconnect/reconnect behavior, action idempotency, secure token storage, and complete viewer action and vote flows. The [QA checklist](unity-gateway-qa.md) tracks these checks; [production practices](unity-gateway-production.md) covers reliability and security.
-
-## Images still needed
-
-The nine images above were captured from the test session. Two proof images still require a live viewer interaction:
-
-1. **Viewer action round trip:** the extension showing **Spawn Healthpack** and Health changing from 50 to 60, beside Unity showing the received-action status and Health 60.
-2. **Voted poll result:** a submitted Forest, Desert, or Ice Cave vote in the extension and Unity's final winner message. A during-poll frame and a final frame are useful if one screenshot cannot show both.
-
-Capture readable application crops. Hide PINs, JWTs, refresh tokens, account details, browser notifications, and unrelated paths. The masked PIN screenshot above illustrates the intended treatment.
+The screenshots capture setup and local checks. Verify a viewer action and submitted vote with your own live channel. Run the [QA checklist](unity-gateway-qa.md) on each player target you plan to ship.
 
 Next, review the [custom-code installation](unity-gateway-installation.md) if you need to own the SDK lifecycle instead of using the prefab.

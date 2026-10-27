@@ -614,9 +614,9 @@ documents:
   product: Gateway
   owner: Gateway SDK owner
   source_of_truth: muxy/gateway-unity
-  version: v1.0.0-rc
+  version: v1.1.0-rc.1
   redirects: []
-  review_state: blocked-release
+  review_state: needs-sme-review
   page_type: task-guide
   source_sha256: 5fecb0d9932d6038170f8abc58014d6ccb274e278f1d62cc89cce10dcd49286e
 - title: Choose a Viewer Engagement API
@@ -1915,10 +1915,10 @@ derived_documents:
   status: current
   owner: Gateway SDK owner
   source_of_truth: muxy/gateway-unity
-  version: v1.0.0-rc
+  version: v1.1.0-rc.1
   redirects: []
   legacy_parent: https://docs.muxy.io/docs/unity-gateway-tutorial
-  review_state: blocked-release
+  review_state: needs-sme-review
   page_type: task-guide
 - title: Authenticate and Manage the Gateway Lifecycle
   description: Authenticate Gateway with a PIN, reuse refresh tokens, and publish
@@ -1933,14 +1933,13 @@ derived_documents:
   status: current
   owner: Gateway SDK owner
   source_of_truth: muxy/gateway-unity
-  version: v1.0.0-rc
+  version: v1.1.0-rc.1
   redirects: []
   legacy_parent: https://docs.muxy.io/docs/unity-gateway-tutorial
-  review_state: blocked-release
+  review_state: needs-sme-review
   page_type: task-guide
 - title: Install and Initialize Gateway for Unity
-  description: Install the pinned Gateway Unity package and create a component that
-    owns its SDK lifecycle.
+  description: Install Gateway Unity SDK 1.1.0-rc.1 and own its lifecycle in code.
   section: docs
   slug: unity-gateway-installation
   legacy_url: null
@@ -1951,10 +1950,10 @@ derived_documents:
   status: current
   owner: Gateway SDK owner
   source_of_truth: muxy/gateway-unity
-  version: v1.0.0-rc
+  version: v1.1.0-rc.1
   redirects: []
   legacy_parent: https://docs.muxy.io/docs/unity-gateway-tutorial
-  review_state: blocked-release
+  review_state: needs-sme-review
   page_type: task-guide
 - title: Add Gateway Polls and Game Text
   description: Start an audience poll and publish current game information through
@@ -1969,10 +1968,10 @@ derived_documents:
   status: current
   owner: Gateway SDK owner
   source_of_truth: muxy/gateway-unity
-  version: v1.0.0-rc
+  version: v1.1.0-rc.1
   redirects: []
   legacy_parent: https://docs.muxy.io/docs/unity-gateway-tutorial
-  review_state: blocked-release
+  review_state: needs-sme-review
   page_type: task-guide
 - title: Gateway Unity SDK Walkthrough
   description: Install Gateway in Unity, connect a broadcaster, and test actions, game text, and polls.
@@ -1986,14 +1985,13 @@ derived_documents:
   status: current
   owner: Gateway SDK owner
   source_of_truth: muxy/gateway-unity
-  version: v1.0.0-rc
+  version: v1.1.0-rc.1
   redirects: []
   legacy_parent: https://docs.muxy.io/docs/unity-gateway-tutorial
-  review_state: blocked-release
+  review_state: needs-sme-review
   page_type: quickstart
 - title: Prepare Gateway for Production
-  description: Make a Gateway Unity integration resilient, secure, and observable
-    before release.
+  description: Check reliability, credentials, and transactions before shipping a Gateway Unity integration.
   section: docs
   slug: unity-gateway-production
   legacy_url: null
@@ -2004,10 +2002,10 @@ derived_documents:
   status: current
   owner: Gateway SDK owner
   source_of_truth: muxy/gateway-unity
-  version: v1.0.0-rc
+  version: v1.1.0-rc.1
   redirects: []
   legacy_parent: https://docs.muxy.io/docs/unity-gateway-tutorial
-  review_state: blocked-release
+  review_state: needs-sme-review
   page_type: task-guide
 - title: Gateway Unity QA Checklist
   description: Verify authentication, actions, polls, metadata, game text, reconnects,
@@ -2022,10 +2020,10 @@ derived_documents:
   status: current
   owner: Gateway SDK owner
   source_of_truth: muxy/gateway-unity
-  version: v1.0.0-rc
+  version: v1.1.0-rc.1
   redirects: []
   legacy_parent: https://docs.muxy.io/docs/unity-gateway-tutorial
-  review_state: blocked-release
+  review_state: needs-sme-review
   page_type: task-guide
 - title: Create the MEDKit Control Object
   description: Initialize MEDKit and wait until Twitch authorization is available.

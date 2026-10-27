@@ -8,9 +8,9 @@ sources:
   gateway-unity:
     products: [Gateway]
     repository: muxy/gateway-unity
-    documented_version: v1.0.0-rc
-    ref: v1.0.0-rc
-    release_state: tagged-source
+    documented_version: v1.1.0-rc.1
+    ref: v1.1.0-rc.1
+    release_state: released
   gamelink-unity:
     products: [Unity]
     repository: muxy/gamelink-unity

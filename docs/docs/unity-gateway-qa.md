@@ -8,9 +8,9 @@ audience: game developers and QA
 status: current
 owner: Gateway SDK owner
 source_of_truth: muxy/gateway-unity
-version: v1.0.0-rc
-last_verified: '2026-07-14'
-review_state: blocked-release
+version: v1.1.0-rc.1
+last_verified: '2026-10-26'
+review_state: needs-sme-review
 page_type: task-guide
 ---
 
@@ -39,6 +39,6 @@ Run this checklist in a development build before enabling production mode.
 - [ ] Temporary network loss reconnects without duplicate callback registration or action fulfillment.
 - [ ] A 60-minute session shows no unbounded queue, handle, or memory growth.
 - [ ] Exiting Play mode or the game stops the transport cleanly.
-- [ ] Production builds use production mode; local and QA builds use sandbox mode.
+- [ ] The prefab's production connection or a code integration's explicit sandbox/production selection matches the intended test environment.
 
 Return to the [Gateway tutorial overview](unity-gateway-tutorial.md).
