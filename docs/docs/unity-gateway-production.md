@@ -25,6 +25,6 @@ Before shipping a game with **1.1.0-rc.1**:
 - Publish metadata and game text when values change, rather than every frame.
 - Test PIN and refresh authentication, disconnect/reconnect, viewer actions, votes, and scene transitions in each player target you plan to ship.
 
-The package includes Windows, macOS, and Linux native libraries. The release candidate's documented player validation covers Windows Mono and IL2CPP; verify other targets in your own builds. The prefab manager connects to production; use a code integration for sandbox testing.
+The package includes Windows, macOS, and Linux native libraries. Recorded player checks cover Windows Mono and IL2CPP; verify every target in your own build. The prefab manager connects to production; use a code integration for sandbox testing.
 
 Next: [Run the Gateway QA checklist](unity-gateway-qa.md).

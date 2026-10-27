@@ -64,6 +64,6 @@ public sealed class GatewayClient : MonoBehaviour
 1. Enter Play mode and check for compilation or connection errors in the Console.
 2. Authenticate with a current configuration PIN from the [extension](unity-gateway-authentication.md).
 3. Stop Play mode and confirm the transport closes cleanly.
-4. Build and run your intended player target before shipping. The release candidate has been validated on Windows Mono and IL2CPP; test other platforms in your own build.
+4. Build and run every player target you plan to ship. Available player checks cover Windows Mono and IL2CPP.
 
 Next: [Authenticate and manage the SDK lifecycle](unity-gateway-authentication.md).
