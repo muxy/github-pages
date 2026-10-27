@@ -45,7 +45,7 @@ If your own scripts use an assembly definition, add `Muxy.Gateway` to its Assemb
 <figure class="gateway-shot" markdown="1">
 <div class="gateway-shot__image" markdown="1">
 
-[![Unity Package Manager with Muxy Gateway installed as a local package and dependencies visible.](../assets/unity-gateway/01-package-manager.jpg){ width="802" height="604" loading="lazy" }](../assets/unity-gateway/01-package-manager.jpg)
+[![Unity Package Manager with Muxy Gateway installed as a local package and dependencies visible.](../assets/unity-gateway/01-package-manager.jpg){ width="802" height="604" }](../assets/unity-gateway/01-package-manager.jpg)
 
 <span class="gateway-shot__box" data-step="1" style="left: 34%; top: 12%; width: 34%; height: 41%;" aria-hidden="true"></span>
 <span class="gateway-shot__box" data-step="2" style="left: 16%; top: 30%; width: 18%; height: 9%;" aria-hidden="true"></span>
@@ -69,7 +69,7 @@ If your own scripts use an assembly definition, add `Muxy.Gateway` to its Assemb
 <figure class="gateway-shot" markdown="1">
 <div class="gateway-shot__image" markdown="1">
 
-[![Unity Hierarchy with Gateway manager, authentication prefab, and demo controller; authentication Inspector points to the scene manager.](../assets/unity-gateway/02-scene-wiring.jpg){ width="1924" height="1392" loading="lazy" }](../assets/unity-gateway/02-scene-wiring.jpg)
+[![Unity Hierarchy with Gateway manager, authentication prefab, and demo controller; authentication Inspector points to the scene manager.](../assets/unity-gateway/02-scene-wiring.jpg){ width="1924" height="1392" }](../assets/unity-gateway/02-scene-wiring.jpg)
 
 <span class="gateway-shot__box" data-step="1" style="left: 3%; top: 11%; width: 10%; height: 8%;" aria-hidden="true"></span>
 <span class="gateway-shot__box" data-step="2" style="left: 55%; top: 25%; width: 44%; height: 5%;" aria-hidden="true"></span>
@@ -80,7 +80,7 @@ If your own scripts use an assembly definition, add `Muxy.Gateway` to its Assemb
 <figure class="gateway-shot" markdown="1">
 <div class="gateway-shot__image" markdown="1">
 
-[![Unity EventSystem Inspector showing Input System UI Input Module on the authentication prefab.](../assets/unity-gateway/02-input-module.png){ width="1924" height="1392" loading="lazy" }](../assets/unity-gateway/02-input-module.png)
+[![Unity EventSystem Inspector showing Input System UI Input Module on the authentication prefab.](../assets/unity-gateway/02-input-module.png){ width="1924" height="1392" }](../assets/unity-gateway/02-input-module.png)
 
 <span class="gateway-shot__box" data-step="1" style="left: 4%; top: 17%; width: 9%; height: 4%;" aria-hidden="true"></span>
 <span class="gateway-shot__box" data-step="2" style="left: 55%; top: 27%; width: 44%; height: 31%;" aria-hidden="true"></span>
@@ -100,7 +100,7 @@ If your own scripts use an assembly definition, add `Muxy.Gateway` to its Assemb
 <figure class="gateway-shot" markdown="1">
 <div class="gateway-shot__image" markdown="1">
 
-[![Twitch Extensions dashboard showing Gateway active in an overlay slot.](../assets/unity-gateway/03-extension-active.png){ width="460" height="210" loading="lazy" }](../assets/unity-gateway/03-extension-active.png)
+[![Twitch Extensions dashboard showing Gateway active in an overlay slot.](../assets/unity-gateway/03-extension-active.png){ width="460" height="210" }](../assets/unity-gateway/03-extension-active.png)
 
 <span class="gateway-shot__box" data-step="1" style="left: 6%; top: 64%; width: 87%; height: 24%;" aria-hidden="true"></span>
 </div>
@@ -110,7 +110,7 @@ If your own scripts use an assembly definition, add `Muxy.Gateway` to its Assemb
 <figure class="gateway-shot" markdown="1">
 <div class="gateway-shot__image" markdown="1">
 
-[![Gateway configuration with a masked PIN and the Linked Games list visible.](../assets/unity-gateway/03-extension-pin.png){ width="1662" height="916" loading="lazy" }](../assets/unity-gateway/03-extension-pin.png)
+[![Gateway configuration with a masked PIN and the Linked Games list visible.](../assets/unity-gateway/03-extension-pin.png){ width="1662" height="916" }](../assets/unity-gateway/03-extension-pin.png)
 
 <span class="gateway-shot__box" data-step="1" style="left: 26%; top: 53%; width: 21%; height: 12%;" aria-hidden="true"></span>
 <span class="gateway-shot__box" data-step="2" style="left: 56%; top: 40%; width: 18%; height: 11%;" aria-hidden="true"></span>
@@ -121,7 +121,7 @@ If your own scripts use an assembly definition, add `Muxy.Gateway` to its Assemb
 <figure class="gateway-shot" markdown="1">
 <div class="gateway-shot__image" markdown="1">
 
-[![Unity Game view showing successful Gateway authentication and the demo's authenticated status.](../assets/unity-gateway/04-authenticated.png){ width="1924" height="1392" loading="lazy" }](../assets/unity-gateway/04-authenticated.png)
+[![Unity Game view showing successful Gateway authentication and the demo's authenticated status.](../assets/unity-gateway/04-authenticated.png){ width="1924" height="1392" }](../assets/unity-gateway/04-authenticated.png)
 
 <span class="gateway-shot__box" data-step="1" style="left: 14%; top: 10%; width: 23%; height: 5%;" aria-hidden="true"></span>
 <span class="gateway-shot__box" data-step="2" style="left: 25%; top: 35%; width: 17%; height: 4%;" aria-hidden="true"></span>
@@ -151,7 +151,7 @@ On the action's **On Game Action Used** event, select **+**, drag in `GatewayDem
 <figure class="gateway-shot" markdown="1">
 <div class="gateway-shot__image" markdown="1">
 
-[![Gateway manager Inspector showing the healthpack action fields and dynamic OnHealthpack event binding.](../assets/unity-gateway/05-action-inspector.jpg){ width="1924" height="1392" loading="lazy" }](../assets/unity-gateway/05-action-inspector.jpg)
+[![Gateway manager Inspector showing the healthpack action fields and dynamic OnHealthpack event binding.](../assets/unity-gateway/05-action-inspector.jpg){ width="1924" height="1392" }](../assets/unity-gateway/05-action-inspector.jpg)
 
 <span class="gateway-shot__box" data-step="1" style="left: 55%; top: 36%; width: 44%; height: 14%;" aria-hidden="true"></span>
 <span class="gateway-shot__box" data-step="2" style="left: 58%; top: 50%; width: 41%; height: 6%;" aria-hidden="true"></span>
@@ -165,7 +165,7 @@ First use **Local test: add 10 health** in the Game view. Health should change f
 <figure class="gateway-shot" markdown="1">
 <div class="gateway-shot__image" markdown="1">
 
-[![Unity Game view showing Health 60 after the local test button, with no Console errors.](../assets/unity-gateway/04-local-test.jpg){ width="1924" height="1392" loading="lazy" }](../assets/unity-gateway/04-local-test.jpg)
+[![Unity Game view showing Health 60 after the local test button, with no Console errors.](../assets/unity-gateway/04-local-test.jpg){ width="1924" height="1392" }](../assets/unity-gateway/04-local-test.jpg)
 
 <span class="gateway-shot__box" data-step="1" style="left: 14%; top: 10%; width: 23%; height: 8%;" aria-hidden="true"></span>
 </div>
@@ -183,7 +183,7 @@ While authenticated, select **Start 30-second viewer poll** in the Game view. Th
 <figure class="gateway-shot" markdown="1">
 <div class="gateway-shot__image" markdown="1">
 
-[![Unity Game view showing the final no-vote poll result after 30 seconds.](../assets/unity-gateway/07-poll-no-votes.png){ width="1924" height="1392" loading="lazy" }](../assets/unity-gateway/07-poll-no-votes.png)
+[![Unity Game view showing the final no-vote poll result after 30 seconds.](../assets/unity-gateway/07-poll-no-votes.png){ width="1924" height="1392" }](../assets/unity-gateway/07-poll-no-votes.png)
 
 <span class="gateway-shot__box" data-step="1" style="left: 14%; top: 10%; width: 23%; height: 5%;" aria-hidden="true"></span>
 </div>
